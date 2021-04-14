@@ -1,0 +1,204 @@
+.glossaryPage {
+  font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  * {
+    font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  overflow-x: hidden;
+  position: relative;
+
+  .flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .mx-2 {
+    margin-left: 1em!important;
+    margin-right: 1em!important;
+  }
+
+  .mb-2 {
+    margin-bottom: 1em!important;
+  }
+
+  h1 {
+    color: #3bc7d7;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+  }
+
+  iframe {
+    margin: 2rem 0;
+  }
+
+  .glossary-title {
+    background-color: #fff;
+    color: #3bc7d7;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+
+    img {
+      width: 53px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .letters-header {
+    background-color: #fff;
+    color: #3bc7d7;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 2rem 15%;
+  }
+
+  .letter-section {
+    background-color: #fff;
+    color: #3bc7d7;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 2rem 20%;
+    flex-wrap: wrap;
+  }
+
+  .selected-term-container {
+    background: #fff;
+
+    >img:first-child {
+      width: 53px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .page-section {
+    padding-top: 70px;
+
+    .letter-selector {
+      display: flex;
+      width: 30px;
+      background-color: #a08ac9;
+      margin: 0 auto;
+      line-height: 34px;
+      color: #fff;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 300ms;
+      cursor: pointer;
+    }
+  }
+
+  .gd-container {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+
+    .gd-item {
+      width: 50%;
+      flex-wrap: wrap;
+      align-content: start;
+
+      .gd-col-1 {
+        width: 20%;
+        max-height: 40px;
+        color: #7a839b;
+      }
+
+      .gd-col-2 {
+        display: flex;
+        flex: 1 1 80%;
+        font-size: 18px;
+        max-height: 36px;
+        height: 36px;
+        margin-top: 36px;
+        line-height: 1;
+
+        &.description {
+          max-height: unset;
+          height: unset;
+          margin-top: 0;
+          color: #7a839b;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          align-self: flex-start;
+          justify-self: flex-start;
+        }
+      }
+
+      .gd-link {
+        cursor: pointer;
+        text-decoration: underline;
+        font: 900;
+      }
+    }
+  }
+
+  .gd-paragraph {
+    transition: all 200ms ease-in-out;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    margin: 1rem 0;
+
+    &.smaller {
+      color: #7a839b;
+      width: 60%;
+      font-size: 15px;
+      font-weight: 500;
+      margin: 0.25rem 0;
+    }
+
+    li {
+      margin-left: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    .letters-header {
+      padding: 2rem 10% !important;
+    }
+
+    .gd-container .gd-item {
+      width: 100%;
+
+      .gd-col-2 {
+        max-height: unset;
+      }
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    .gd-container {
+      .gd-item {
+        .gd-col-1 {
+          font-size: 1vw;
+        }
+
+        .gd-col-2 {
+          font-size: 0.85vw;
+        }
+
+        .gd-col-2.description {
+          font-size: 0.7vw;
+          line-height: 1vw;
+        }
+      }
+    }
+  }
+}

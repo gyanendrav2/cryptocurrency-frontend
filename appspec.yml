@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+    - source: ./
+      destination: /home/coinmetro/frontend/
+permissions:
+    - object: /home/coinmetro/frontend
+      owner: coinmetro
+      group: www-data
+hooks:
+    BeforeInstall:
+        - location: scripts/before_install.sh
+    AfterInstall:
+        - location: scripts/after_install.sh

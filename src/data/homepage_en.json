@@ -1,0 +1,87 @@
+{
+  "hero_title": "The Best Crypto Exchange for Beginners and Pros",
+  "hero_content": "With CoinMetro you can buy, sell and trade crypto easily and understandably.",
+
+  "why_title": "Why CoinMetro",
+  "why_content": "Whether you’re a seasoned trader or want to buy your first bitcoin, we are the crypto exchange of choice.",
+  "why_bullets": [
+    {
+      "image": "why/img_why_illu_invest.png",
+      "title": "Buy Crypto",
+      "content": "Buy crypto instantly with credit card"
+    },
+    {
+      "image": "why/img_why_illu_trade.png",
+      "title": "Trade Crypto",
+      "content": "Advanced trading tools and indicators"
+    },
+    {
+      "image": "why/img_why_illu_buy.png",
+      "title": "Keep Profits",
+      "content": "We have the lowest fees in the industry"
+    },
+    {
+      "image": "why/img_why_illu_profits.png",
+      "title": "Invest in Crypto",
+      "content": "Copy the trades of professionals"
+    }
+  ],
+
+  "features_title": "What we offer",
+  "features": [
+    {
+      "image": "features/img_offer_illu_buysell.png",
+      "image_mobile": "features/img_offer_illu_buysell_mobile.png",
+      "title": "Buy & Sell Crypto ",
+      "content": "Buy & sell bitcoin and all top cryptos with ease",
+      "bullets": [
+        "Buy and sell crypto instantly with a few clicks.",
+        "Buy with a credit card or bank transfer.",
+        "Time to sell? Withdraw fiat straight to your bank account."
+      ]
+    },
+    {
+      "image": "features/img_offer_illu_exchange.png",
+      "image_mobile": "features/img_offer_illu_exchange_mobile.png",
+      "title": "Crypto Exchange",
+      "content": "Trade crypto, keep your profits",
+      "bullets": [
+        "Trade the markets on our crypto exchange.",
+        "Execute market orders, set up your limit orders and stop-loss orders.",
+        "And of course, all the indicators and tools you’ll ever need."
+      ]
+    },
+    {
+      "image": "features/img_offer_illu_margintrading.png",
+      "image_mobile": "features/img_offer_illu_margintrading_mobile.png",
+      "title": "Margin Trading",
+      "content": "Up your trading game with 5x leverage",
+      "bullets": [
+        "Know what you’re doing and want to take advantage of the markets?",
+        "Use our margin crypto platform and gain from 5x leverage.",
+        "Crypto trading platform for professional traders."
+      ]
+    },
+    {
+      "image": "features/img_offer_illu_copytrading.png",
+      "image_mobile": "features/img_offer_illu_copytrading_mobile.png",
+      "title": "Copy Trading",
+      "content": "Copy the trades of a market expert",
+      "bullets": [
+        "Follow professional traders with a proven track record of crypto trading.",
+        "You simply mirror their trades automatically.",
+        "Your money works for you, traders take a small management fee."
+      ]
+    }
+  ],
+
+  "regulations_title": "CoinMetro is a Pioneer of Crypto Regulations",
+  "regulations_content": "CoinMetro is an EU licensed exchange and holds active registrations with regulators in the USA and Australia.",
+
+  "logos": [],
+  "globe_title": "Traders in over 100 countries choose CoinMetro for their digital asset trading",
+
+  "cta_title": "Don’t miss the next big market move!",
+  "cta_content": "Sign up to our platform"
+
+}
