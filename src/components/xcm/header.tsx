@@ -1,37 +1,54 @@
 import React, { ReactElement, useEffect, useState } from "react"
-import { Box } from "@react-cssx/core"
+import { Box, Element, Grid } from "@react-cssx/core"
 import { Navbar } from "../Navbar"
 import { InitialData, Menu } from "../../interfaces/initial"
+import { Container } from "../../ui/Container"
+import { headerStyle } from "./cssxStyle/header"
+import { CurrMarketCard } from "./currMarketCard"
 
 interface HeaderProps {
   data: InitialData
 }
 
 export function Header({ data }: HeaderProps): ReactElement {
-  const [NavOptions, setNavOptions] = useState({ menu: [] })
+  const classes = headerStyle
+  const [NavOptions, setNavOptions] = useState<undefined | InitialData>()
+
   useEffect(() => {
     if (data) {
+      const tempData = { ...data }
       const menus: Menu[] = []
       data.menu.forEach((item: Menu) => {
         if (["Markets", "Exchange"].includes(item.title)) {
           menus.push(item)
         }
       })
-      setNavOptions({ menu: menus })
+      tempData.menu = menus
+      setNavOptions(tempData)
     }
   }, [data])
 
   return (
-    <Box
-      cssx={{
-        bg: "grey.dark",
-        px: 44.4,
-        py: 40,
-        height: "100vh",
-        backgroundImage: "url(xcmbg/starsbg.svg)",
-      }}
-    >
-      <Navbar data={NavOptions} />
+    <Box cssx={classes.wrapper}>
+      {NavOptions && <Navbar data={NavOptions} />}
+      <Element as="img" cssx={classes.img} src="xcmbg/earthflag.png" alt="earth top flag" />
+      <Container cssx={{ mt: 164 }}>
+        <Grid columns={{ _: 1, desktop: 2 }}>
+          <Box>
+            <Element as="h1" cssx={classes.h1}>
+              <Element as="span" cssx={{ color: "indigo.light" }}>
+                XCM
+              </Element>
+              , the token of the future
+            </Element>
+            <Element as="p" cssx={classes.bigP}>
+              XCM is the native utility token that powers the CoinMetro ecosystem.
+            </Element>
+            <CurrMarketCard />
+          </Box>
+          <p>Hello</p>
+        </Grid>
+      </Container>
     </Box>
   )
 }
