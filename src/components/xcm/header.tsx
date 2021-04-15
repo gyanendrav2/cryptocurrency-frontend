@@ -5,6 +5,7 @@ import { InitialData, Menu } from "../../interfaces/initial"
 import { Container } from "../../ui/Container"
 import { headerStyle } from "./cssxStyle/header"
 import { CurrMarketCard } from "./currMarketCard"
+import Form from "./form"
 
 interface HeaderProps {
   data: InitialData
@@ -33,7 +34,7 @@ export function Header({ data }: HeaderProps): ReactElement {
       {NavOptions && <Navbar data={NavOptions} />}
       <Element as="img" cssx={classes.img} src="xcmbg/earthflag.png" alt="earth top flag" />
       <Container cssx={{ mt: 164 }}>
-        <Grid columns={{ _: 1, desktop: 2 }}>
+        <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
           <Box>
             <Element as="h1" cssx={classes.h1}>
               <Element as="span" cssx={{ color: "indigo.light" }}>
@@ -46,7 +47,7 @@ export function Header({ data }: HeaderProps): ReactElement {
             </Element>
             <CurrMarketCard />
           </Box>
-          <p>Hello</p>
+          <Form />
         </Grid>
       </Container>
     </Box>

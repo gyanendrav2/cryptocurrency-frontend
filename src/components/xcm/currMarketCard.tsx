@@ -1,4 +1,4 @@
-import { Box, Element, Flex } from "@react-cssx/core"
+import { Element, Flex } from "@react-cssx/core"
 import React from "react"
 import { ArrowdownIcon } from "../icons/arrowdownIcon"
 import { InfoIcon } from "../icons/infoIcon"
@@ -9,7 +9,7 @@ export function CurrMarketCard() {
       align="center"
       justify="space-between"
       wrap="nowrap"
-      cssx={{ p: 24, backgroundColor: "#2E3654", borderRadius: 8, mt: 88, mb: 140 }}
+      cssx={{ p: 24, backgroundColor: "grey.lightDark", borderRadius: 8, mt: 88, mb: 140 }}
     >
       <Flex align="center" justify="space-between" wrap="nowrap">
         <InfoIcon />
