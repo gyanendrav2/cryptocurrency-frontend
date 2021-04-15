@@ -1,7 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from "react"
 
-export function EuropeFlagIcon(props) {
+export function EuropeFlagIcon() {
   return (
     <svg
       width={18}
@@ -23,21 +22,10 @@ export function EuropeFlagIcon(props) {
         <circle cx={9} cy={9} r={9} fill="#FFCE47" />
       </mask>
       <g mask="url(#mask0)">
-        <rect
-          x="-4.67969"
-          y="-0.180176"
-          width="27.36"
-          height="18.36"
-          fill="url(#pattern0)"
-        />
+        <rect x="-4.67969" y="-0.180176" width="27.36" height="18.36" fill="url(#pattern0)" />
       </g>
       <defs>
-        <pattern
-          id="pattern0"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
+        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width={1} height={1}>
           <use
             xlinkHref="#image0"
             transform="translate(-0.00348621) scale(0.000786697 0.00117233)"
@@ -51,7 +39,5 @@ export function EuropeFlagIcon(props) {
         />
       </defs>
     </svg>
-  );
+  )
 }
-
-EuropeFlagIcon.propTypes = {};

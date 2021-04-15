@@ -1,12 +1,37 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box } from "@react-cssx/core";
-import { CurrencyPicker } from "../currency/currencyPicker";
+import React, { ReactElement, useEffect, useState } from "react"
+import { Box } from "@react-cssx/core"
+import { Navbar } from "../Navbar"
+import { InitialData, Menu } from "../../interfaces/initial"
 
-export function Header(props) {
-  return <Box cssx={{ bg: "white", px: 56, py: 66 }}>
-      <CurrencyPicker />
-  </Box>;
+interface HeaderProps {
+  data: InitialData
 }
 
-Header.propTypes = {};
+export function Header({ data }: HeaderProps): ReactElement {
+  const [NavOptions, setNavOptions] = useState({ menu: [] })
+  useEffect(() => {
+    if (data) {
+      const menus: Menu[] = []
+      data.menu.forEach((item: Menu) => {
+        if (["Markets", "Exchange"].includes(item.title)) {
+          menus.push(item)
+        }
+      })
+      setNavOptions({ menu: menus })
+    }
+  }, [data])
+
+  return (
+    <Box
+      cssx={{
+        bg: "grey.dark",
+        px: 44.4,
+        py: 40,
+        height: "100vh",
+        backgroundImage: "url(xcmbg/starsbg.svg)",
+      }}
+    >
+      <Navbar data={NavOptions} />
+    </Box>
+  )
+}

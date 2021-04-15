@@ -1,4 +1,5 @@
-import React from "react";
-import { EuropeFlagIcon } from "../components/icons/europeFlagIcon";
+// import React from "react"
 
-export const currencyOptions = [{ name: "EURO", flag: EuropeFlagIcon }];
+// import { EuropeFlagIcon } from "../components/icons/europeFlagIcon"
+
+// export const currencyOptions = [{ name: "EURO", flag: EuropeFlagIcon }]

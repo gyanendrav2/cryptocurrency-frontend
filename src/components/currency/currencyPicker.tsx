@@ -1,12 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Box, Element, Flex } from "@react-cssx/core";
-import { EuropeFlagIcon } from "../icons/europeFlagIcon";
-import { ArrowdownIcon } from "../icons/arrowdownIcon";
+import React from "react"
+import { Box, Element, Flex } from "@react-cssx/core"
+import { EuropeFlagIcon } from "../icons/europeFlagIcon"
+import { ArrowdownIcon } from "../icons/arrowdownIcon"
 
-export function CurrencyPicker(props) {
+export function CurrencyPicker() {
   return (
-    <Box cssx={{ borderRadius: 8, bg: "grey.dark", w: 104, px: 16, py: 12.82 }}>
+    <Box
+      cssx={{
+        borderRadius: 8,
+        bg: "grey.dark",
+        w: 104,
+        px: 16,
+        py: 12.82,
+      }}
+    >
       <Element
         as="p"
         cssx={{
@@ -21,16 +28,11 @@ export function CurrencyPicker(props) {
       </Element>
       <Flex wrap="nowrap" justify="space-between" align="center">
         <EuropeFlagIcon />
-        <Element
-          as="p"
-          cssx={{ fontSize: 14, color: "white", textTransform: "uppercase" }}
-        >
+        <Element as="p" cssx={{ fontSize: 14, color: "white", textTransform: "uppercase" }}>
           eur
         </Element>
-        <ArrowdownIcon color="#C7EFEE" />
+        <ArrowdownIcon />
       </Flex>
     </Box>
-  );
+  )
 }
-
-CurrencyPicker.propTypes = {};

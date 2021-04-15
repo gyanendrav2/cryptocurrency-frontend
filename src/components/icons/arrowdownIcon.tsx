@@ -1,21 +1,14 @@
-import React, { ReactElement } from "react";
-import PropTypes from "prop-types";
+import React, { ReactElement } from "react"
 
-interface props {
-  width?: number;
-  height?: number;
-  color: string;
-}
+// interface props {
+// width?: number
+// height?: number
+// color: string
+// }
 
 export function ArrowdownIcon(props: props): ReactElement {
   return (
-    <svg
-      width={8}
-      height={8}
-      viewBox="0 0 8 8"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width={8} height={8} viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask
         id="mask0"
         mask-type="alpha"
@@ -25,13 +18,7 @@ export function ArrowdownIcon(props: props): ReactElement {
         width={8}
         height={8}
       >
-        <rect
-          x={8}
-          width={8}
-          height={8}
-          transform="rotate(90 8 0)"
-          fill="#C4C4C4"
-        />
+        <rect x={8} width={8} height={8} transform="rotate(90 8 0)" fill="#C4C4C4" />
       </mask>
       <g mask="url(#mask0)">
         <path
@@ -40,5 +27,5 @@ export function ArrowdownIcon(props: props): ReactElement {
         />
       </g>
     </svg>
-  );
+  )
 }
