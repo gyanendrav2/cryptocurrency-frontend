@@ -5,7 +5,6 @@ import { InitialData, Menu } from "../../interfaces/initial"
 import { Container } from "../../ui/Container"
 import { headerStyle } from "./cssxStyle/header"
 import { CurrMarketCard } from "./currMarketCard"
-// import { Form } from "./Form"
 import { BuyCurrencyCard } from "./buyCurrencyCard"
 
 interface HeaderProps {
@@ -31,26 +30,27 @@ export function Header({ data }: HeaderProps): ReactElement {
   }, [data])
 
   return (
-    <Box cssx={classes.wrapper}>
-      {NavOptions && <Navbar data={NavOptions} />}
-      <Element as="img" cssx={classes.img} src="xcmbg/earthflag.png" alt="earth top flag" />
-      <Container cssx={{ mt: 164 }}>
-        <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
-          <Box>
-            <Element as="h1" cssx={classes.h1}>
-              <Element as="span" cssx={{ color: "indigo.light" }}>
-                XCM
+    <>
+      <Box cssx={classes.wrapper}>
+        {NavOptions && <Navbar data={NavOptions} />}
+        <Container cssx={{ mt: 164 }}>
+          <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
+            <Box>
+              <Element as="h1" cssx={classes.h1}>
+                <Element as="span" cssx={{ color: "indigo.light" }}>
+                  XCM
+                </Element>
+                , the token of the future
               </Element>
-              , the token of the future
-            </Element>
-            <Element as="p" cssx={classes.bigP}>
-              XCM is the native utility token that powers the CoinMetro ecosystem.
-            </Element>
-            <CurrMarketCard />
-          </Box>
-          <BuyCurrencyCard />
-        </Grid>
-      </Container>
-    </Box>
+              <Element as="p" cssx={classes.bigP}>
+                XCM is the native utility token that powers the CoinMetro ecosystem.
+              </Element>
+              <CurrMarketCard />
+            </Box>
+            <BuyCurrencyCard />
+          </Grid>
+        </Container>
+      </Box>
+    </>
   )
 }

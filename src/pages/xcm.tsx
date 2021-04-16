@@ -1,8 +1,10 @@
 import React, { ReactElement } from "react"
 import { Box } from "@react-cssx/core"
-import { Header } from "../components/xcm/header"
+import { Header } from "../components/xcm"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import { InitialData } from "../interfaces/initial"
+import { WhyXcmCard } from "../components/xcm/cards/whyXcm"
+import { Footer } from "../components/sections/Footer"
 
 export interface XCMprops {
   data: InitialData
@@ -12,6 +14,8 @@ export default function XCM({ data }: XCMprops): ReactElement {
   return (
     <Box>
       <Header data={data} />
+      <WhyXcmCard data={data} />
+      <Footer data={data} />
     </Box>
   )
 }

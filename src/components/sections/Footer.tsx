@@ -1,7 +1,5 @@
 import React, { ReactElement } from "react"
-import {
-  Box, Element, Flex, Grid,
-} from "@react-cssx/core"
+import { Box, Element, Flex, Grid } from "@react-cssx/core"
 import { Container } from "../../ui/Container"
 import { Text } from "../../ui/Text"
 import TopDecorator from "../../../public/footer_bg_top.svg"
@@ -12,25 +10,39 @@ export interface IFooterProps {
 
 const Column = ({ title, list }) => (
   <Box>
-    <Text cssx={{
-      fontWeight: 800, mb: 30, color: "white", "& > p:not(:last-child)": { mb: 16 },
-    }}
-    >{title}
+    <Text
+      cssx={{
+        fontWeight: 800,
+        mb: 30,
+        color: "white",
+        "& > p:not(:last-child)": { mb: 16 },
+      }}
+    >
+      {title}
     </Text>
-    {list.map((item, index) => (<Box key={`${title}-${item.name}-${index}`}><Text as="a" href={item.link.url} target={item.link.target} cssx={{ color: "white", fontSize: 16, ":hover": { textDecoration: "underline" } }}>{item.name}</Text></Box>))}
+    {list.map((item, index) => (
+      <Box key={`${title}-${item.name}-${index}`}>
+        <Text
+          as="a"
+          href={item.link.url}
+          target={item.link.target}
+          cssx={{ color: "white", fontSize: 16, ":hover": { textDecoration: "underline" } }}
+        >
+          {item.name}
+        </Text>
+      </Box>
+    ))}
   </Box>
 )
 
 export function Footer({ data }: IFooterProps): ReactElement {
   return (
     <Box cssx={{ pos: "relative" }}>
-
-      <Flex cssx={{ mb: - 1, bg: "grey.bg", display: { _: "none", tablet: "block" } }}>
+      <Flex cssx={{ mb: -1, bg: "grey.bg", display: { _: "none", tablet: "block" } }}>
         <Element as={TopDecorator} cssx={{ mr: "auto" }} />
       </Flex>
 
       <Box cssx={{ pos: "relative", bg: "grey.dark" }}>
-
         <Container cssx={{ position: "relative", pt: 40 }}>
           <Grid columns={{ _: 2, desktop: 4 }} cssx={{ rowGap: 40 }}>
             <Column title={data.string_products} list={data.footer_products} />
@@ -42,10 +54,14 @@ export function Footer({ data }: IFooterProps): ReactElement {
           <Element as="hr" cssx={{ color: "teal.light", my: 30 }} />
 
           <Grid columns={{ _: 2, desktop: 4 }} cssx={{ rowGap: 30 }}>
-
             {data.footer_misc.map((item, index) => (
               <Box key={`misc-links-${index}`}>
-                <Text as="a" cssx={{ color: "white", fontSize: 16, ":hover": { textDecoration: "underline" } }} href={item.link.url} target={item.link.target}>
+                <Text
+                  as="a"
+                  cssx={{ color: "white", fontSize: 16, ":hover": { textDecoration: "underline" } }}
+                  href={item.link.url}
+                  target={item.link.target}
+                >
                   {item.name}
                 </Text>
               </Box>
@@ -63,13 +79,21 @@ export function Footer({ data }: IFooterProps): ReactElement {
                 },
               }}
             >
-
               {data.footer_social_media.map((item, index) => (
-                <a key={`desktop-${item.icon.url + String(index)}`} href={item.link?.url} target={item.link?.target} rel="noopener noreferrer">
-                  <Element as="img" aria-label={item.icon.alt} src={item.icon.url} alt={item.icon.alt} />
+                <a
+                  key={`desktop-${item.icon.url + String(index)}`}
+                  href={item.link?.url}
+                  target={item.link?.target}
+                  rel="noopener noreferrer"
+                >
+                  <Element
+                    as="img"
+                    aria-label={item.icon.alt}
+                    src={item.icon.url}
+                    alt={item.icon.alt}
+                  />
                 </a>
               ))}
-
             </Flex>
           </Grid>
           <Flex
@@ -84,8 +108,18 @@ export function Footer({ data }: IFooterProps): ReactElement {
             }}
           >
             {data.footer_social_media.map((item, index) => (
-              <a key={item.icon.url + String(index)} href={item.link?.url} target={item.link?.target} rel="noopener noreferrer">
-                <Element as="img" aria-label={item.icon.alt} src={item.icon.url} alt={item.icon.alt} />
+              <a
+                key={item.icon.url + String(index)}
+                href={item.link?.url}
+                target={item.link?.target}
+                rel="noopener noreferrer"
+              >
+                <Element
+                  as="img"
+                  aria-label={item.icon.alt}
+                  src={item.icon.url}
+                  alt={item.icon.alt}
+                />
               </a>
             ))}
           </Flex>
@@ -93,7 +127,9 @@ export function Footer({ data }: IFooterProps): ReactElement {
 
         <Box cssx={{ bg: "grey.bg", py: 24, mt: 30 }}>
           <Container>
-            <Element cssx={{ color: "grey.dark" }}>Copyright © {new Date().getFullYear()} CoinMetro OÜ</Element>
+            <Element cssx={{ color: "grey.dark" }}>
+              Copyright © {new Date().getFullYear()} CoinMetro OÜ
+            </Element>
           </Container>
         </Box>
       </Box>

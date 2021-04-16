@@ -1,7 +1,5 @@
 import React, { ReactElement, useState } from "react"
-import {
-  Flex, Element, Box, Drawer,
-} from "@react-cssx/core"
+import { Flex, Element, Box, Drawer } from "@react-cssx/core"
 import Logo from "../../public/logo.svg"
 import BurguerIcon from "../../public/burger.svg"
 import { Button } from "../ui/Button"
@@ -13,14 +11,17 @@ export interface INavbarProps {
   data: any
 }
 
-export function Navbar({ data } : INavbarProps): ReactElement {
+export function Navbar({ data }: INavbarProps): ReactElement {
   const [hasScrolled, setHasScrolled] = useState<boolean>()
 
   const [toggle, setToggle] = React.useState(false)
 
   return (
     <>
-      <IntersectionObserver rootMargin="150px 0px 0px" onChange={(e) => setHasScrolled(! e.isIntersecting)} />
+      <IntersectionObserver
+        rootMargin="150px 0px 0px"
+        onChange={(e) => setHasScrolled(!e.isIntersecting)}
+      />
       <Flex
         align="center"
         cssx={{
@@ -36,11 +37,14 @@ export function Navbar({ data } : INavbarProps): ReactElement {
           transition: "all 250ms ease-in-out",
         }}
       >
-
         <Element
           as={Logo}
           cssx={{
-            color: hasScrolled ? "teal.dark" : "white", pos: "relative", zIndex: 2, w: { _: 200, tablet: 260 }, h: { _: 50, tablet: 65 },
+            color: hasScrolled ? "teal.dark" : "white",
+            pos: "relative",
+            zIndex: 2,
+            w: { _: 200, tablet: 260 },
+            h: { _: 50, tablet: 65 },
           }}
         />
 
@@ -48,14 +52,19 @@ export function Navbar({ data } : INavbarProps): ReactElement {
           <Flex>
             {data.menu.map((item) => (
               <Box key={`${item.title}${item.link.url}`} cssx={{ my: "auto", mr: 30 }}>
-                <a href={item.link.url} target={item.link.target}>{item.title}</a>
+                <a href={item.link.url} target={item.link.target}>
+                  {item.title}
+                </a>
               </Box>
             ))}
 
             <Flex
               as="a"
               cssx={{
-                my: "auto", mr: 30, color: "#CACFE3", ":hover": { color: hasScrolled ? "grey.dark" : "white" },
+                my: "auto",
+                mr: 30,
+                color: "#CACFE3",
+                ":hover": { color: hasScrolled ? "grey.dark" : "white" },
               }}
               href="https://t.me/CoinMetro"
               target="_blank"
@@ -64,12 +73,24 @@ export function Navbar({ data } : INavbarProps): ReactElement {
             >
               {/*
               // @ts-ignore */}
-              <Element as="svg" cssx={{ mr: 12 }} width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M15.5 30C23.7843 30 30.5 23.2843 30.5 15C30.5 6.71573 23.7843 0 15.5 0C7.21573 0 0.5 6.71573 0.5 15C0.5 23.2843 7.21573 30 15.5 30ZM13.2653 22.074L13.5631 17.886L21.2335 10.9988C21.5672 10.7033 21.1615 10.5398 20.7152 10.8353L11.2327 16.7685L7.1504 15.4988C6.26238 15.2235 6.24588 14.616 7.33565 14.193L23.3035 8.0798C24.0431 7.80455 24.6896 8.2433 24.4488 9.3653L24.4481 9.36605L21.7315 22.095C21.5267 22.9935 20.992 23.2162 20.233 22.7932L16.0944 19.7625L14.0971 21.6712C13.8758 21.891 13.6913 22.074 13.2653 22.074Z" fill="currentColor" />
+              <Element
+                as="svg"
+                cssx={{ mr: 12 }}
+                width="31"
+                height="30"
+                viewBox="0 0 31 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M15.5 30C23.7843 30 30.5 23.2843 30.5 15C30.5 6.71573 23.7843 0 15.5 0C7.21573 0 0.5 6.71573 0.5 15C0.5 23.2843 7.21573 30 15.5 30ZM13.2653 22.074L13.5631 17.886L21.2335 10.9988C21.5672 10.7033 21.1615 10.5398 20.7152 10.8353L11.2327 16.7685L7.1504 15.4988C6.26238 15.2235 6.24588 14.616 7.33565 14.193L23.3035 8.0798C24.0431 7.80455 24.6896 8.2433 24.4488 9.3653L24.4481 9.36605L21.7315 22.095C21.5267 22.9935 20.992 23.2162 20.233 22.7932L16.0944 19.7625L14.0971 21.6712C13.8758 21.891 13.6913 22.074 13.2653 22.074Z"
+                  fill="currentColor"
+                />
               </Element>
               <Box cssx={{ color: hasScrolled ? "grey.dark" : "white" }}>Telegram</Box>
             </Flex>
-
           </Flex>
           <Box>
             <Button
@@ -103,12 +124,15 @@ export function Navbar({ data } : INavbarProps): ReactElement {
         <Element
           as="button"
           cssx={{
-          /*
+            /*
           // @ts-ignore */
-            display: { desktop: "none" }, ml: "auto", pos: "relative", zIndex: 120,
+            display: { desktop: "none" },
+            ml: "auto",
+            pos: "relative",
+            zIndex: 120,
           }}
           aria-label="Menu"
-          onClick={() => setToggle(! toggle)}
+          onClick={() => setToggle(!toggle)}
         >
           <Element as={toggle ? CloseIcon : BurguerIcon} cssx={{ w: 46 }} />
         </Element>
@@ -128,36 +152,65 @@ export function Navbar({ data } : INavbarProps): ReactElement {
                 as={Logo}
                 aria-labelledby="Coinmetro logo"
                 cssx={{
-                  color: "white", mr: "auto", w: { _: 200, tablet: 260 }, h: { _: 50, tablet: 65 },
+                  color: "white",
+                  mr: "auto",
+                  w: { _: 200, tablet: 260 },
+                  h: { _: 50, tablet: 65 },
                 }}
               />
               <Flex cssx={{ w: "full", h: "calc(100% - 75px)" }}>
-                <Box cssx={{
-                  my: "auto", mr: "auto", mx: "auto", textAlign: "center",
-                }}
+                <Box
+                  cssx={{
+                    my: "auto",
+                    mr: "auto",
+                    mx: "auto",
+                    textAlign: "center",
+                  }}
                 >
-
                   {data.menu.map((item) => (
-                    <Box key={`${item.title}${item.link.url}`} cssx={{ color: "white", mb: { _: 20, tablet: 40 } }}>
-                      <a href={item.link.url} target={item.link.target}>{item.title}</a>
+                    <Box
+                      key={`${item.title}${item.link.url}`}
+                      cssx={{ color: "white", mb: { _: 20, tablet: 40 } }}
+                    >
+                      <a href={item.link.url} target={item.link.target}>
+                        {item.title}
+                      </a>
                     </Box>
                   ))}
 
                   <Box cssx={{ color: "white", mb: { _: 20, tablet: 40 } }}>
-
-                    <Flex as="a" cssx={{ color: "#CACFE3", ":hover": { color: "white" } }} href="https://t.me/CoinMetro" target="_blank" rel="noopener noreferrer" align="center">
+                    <Flex
+                      as="a"
+                      cssx={{ color: "#CACFE3", ":hover": { color: "white" } }}
+                      href="https://t.me/CoinMetro"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      align="center"
+                    >
                       {/*
                        // @ts-ignore */}
                       <Flex cssx={{ mx: "auto" }}>
                         {/*
                         //@ts-ignore */}
-                        <Element as="svg" cssx={{ mr: 12 }} width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path fillRule="evenodd" clipRule="evenodd" d="M15.5 30C23.7843 30 30.5 23.2843 30.5 15C30.5 6.71573 23.7843 0 15.5 0C7.21573 0 0.5 6.71573 0.5 15C0.5 23.2843 7.21573 30 15.5 30ZM13.2653 22.074L13.5631 17.886L21.2335 10.9988C21.5672 10.7033 21.1615 10.5398 20.7152 10.8353L11.2327 16.7685L7.1504 15.4988C6.26238 15.2235 6.24588 14.616 7.33565 14.193L23.3035 8.0798C24.0431 7.80455 24.6896 8.2433 24.4488 9.3653L24.4481 9.36605L21.7315 22.095C21.5267 22.9935 20.992 23.2162 20.233 22.7932L16.0944 19.7625L14.0971 21.6712C13.8758 21.891 13.6913 22.074 13.2653 22.074Z" fill="currentColor" />
+                        <Element
+                          as="svg"
+                          cssx={{ mr: 12 }}
+                          width="31"
+                          height="30"
+                          viewBox="0 0 31 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M15.5 30C23.7843 30 30.5 23.2843 30.5 15C30.5 6.71573 23.7843 0 15.5 0C7.21573 0 0.5 6.71573 0.5 15C0.5 23.2843 7.21573 30 15.5 30ZM13.2653 22.074L13.5631 17.886L21.2335 10.9988C21.5672 10.7033 21.1615 10.5398 20.7152 10.8353L11.2327 16.7685L7.1504 15.4988C6.26238 15.2235 6.24588 14.616 7.33565 14.193L23.3035 8.0798C24.0431 7.80455 24.6896 8.2433 24.4488 9.3653L24.4481 9.36605L21.7315 22.095C21.5267 22.9935 20.992 23.2162 20.233 22.7932L16.0944 19.7625L14.0971 21.6712C13.8758 21.891 13.6913 22.074 13.2653 22.074Z"
+                            fill="currentColor"
+                          />
                         </Element>
                         <Box cssx={{ color: "white" }}>Telegram</Box>
                       </Flex>
                     </Flex>
-
                   </Box>
 
                   <Flex>
@@ -171,7 +224,8 @@ export function Navbar({ data } : INavbarProps): ReactElement {
                           py: 8,
                           mx: 8,
                         }}
-                      >Log In
+                      >
+                        Log In
                       </Button>
                     </Box>
                     <Box>
@@ -184,17 +238,16 @@ export function Navbar({ data } : INavbarProps): ReactElement {
                           px: 16,
                           py: 8,
                         }}
-                      >Sign Up
+                      >
+                        Sign Up
                       </Button>
                     </Box>
                   </Flex>
-
                 </Box>
               </Flex>
             </Container>
           </Flex>
         </Drawer>
-
       </Flex>
     </>
   )

@@ -11,7 +11,7 @@ export function CurrencyPicker() {
         bg: "grey.dark",
         w: 104,
         px: 16,
-        py: 12.82,
+        py: 9,
       }}
     >
       <Element
