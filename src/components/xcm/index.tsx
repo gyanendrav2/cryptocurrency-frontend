@@ -6,6 +6,7 @@ import { Container } from "../../ui/Container"
 import { headerStyle } from "./cssxStyle/header"
 import { CurrMarketCard } from "./currMarketCard"
 import { BuyCurrencyCard } from "./buyCurrencyCard"
+import { WhyXcmCard } from "./cards/whyXcm"
 
 interface HeaderProps {
   data: InitialData
@@ -50,6 +51,7 @@ export function Header({ data }: HeaderProps): ReactElement {
             <BuyCurrencyCard />
           </Grid>
         </Container>
+        <WhyXcmCard />
       </Box>
     </>
   )

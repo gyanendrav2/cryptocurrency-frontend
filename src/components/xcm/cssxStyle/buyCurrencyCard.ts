@@ -9,6 +9,7 @@ interface BuyCurrencyCard {
   h2: CssxObject
   img: CssxObject
   wrapper: CssxObject
+  inputLabel: CssxObject
 }
 
 export const buyCurrencyCardStyle: BuyCurrencyCard = {
@@ -45,11 +46,16 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     backgroundColor: "grey.dark",
     borderRadius: "0.5rem",
     resize: "none",
+    padding: "1rem",
+    paddingBottom: 0,
+    color: "white",
+    "&:focus": {
+      outline: "none",
+    },
     "&::placeholder": {
       fontWeight: 700,
       fontSize: "0.75rem",
       lineHeight: "1.25rem",
-      paddingLeft: "1rem",
     },
   },
   inputIconStyles: {
@@ -58,7 +64,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     borderRadius: "0.5rem",
   },
   h4: {
-    color: "purple.default",
+    color: "white",
     fontSize: 24,
     fontWeight: 800,
     lineHeight: "32px",
@@ -80,5 +86,12 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     pos: "absolute",
     top: "12.625rem",
     right: "-10.937rem",
+  },
+  inputLabel: {
+    position: "absolute",
+    top: "0.5rem",
+    left: "1rem",
+    color: "white",
+    fontSize: 12,
   },
 }

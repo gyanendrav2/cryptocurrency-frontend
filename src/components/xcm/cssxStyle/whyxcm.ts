@@ -9,10 +9,24 @@ interface WhyXCMstyleInterface {
 
 export const whyXCMstyle: WhyXCMstyleInterface = {
   wrapper: {
-    background: "url('xcmbg/curvebg.svg')",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "100% 208%",
     zIndex: 1,
+    // pos: "relative",
+    // overflow: "hidden",
+    // "&::before": {
+    //   content: "''",
+    //   background: "url('xcmbg/xcmEcobg.svg')",
+    //   position: "absolute",
+    //   left: "-50%",
+    //   right: 0,
+    //   top: "-50%",
+    //   width: "100%",
+    //   height: "100%",
+    //   zIndex: "-1",
+    //   overflowX: "hidden",
+    //   backgroundPosition: "100% 100%",
+    //   backgroundRepeat: "no-repeat",
+    //   transform: "scale(2)",
+    // },
   },
   h6: {
     fontWeight: 800,

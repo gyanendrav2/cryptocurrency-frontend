@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { Box, Element, Flex } from "@react-cssx/core"
 import { Button } from "../../ui/Button"
 import { buyCurrencyCardStyle } from "./cssxStyle/buyCurrencyCard"
 import { CurrencyPicker } from "../currency/currencyPicker"
+import { CurrencyOptionsInterface } from "../../interfaces/currencyOptionsInterface"
 // import Logo from "../../../public/logo.svg"
 // import Inputcoinmetrologo from "../../../public/inputcoinmetrologo.svg"
 
@@ -10,6 +11,19 @@ import { CurrencyPicker } from "../currency/currencyPicker"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
+  const [coinmetro, setCoinmetro] = useState<CurrencyOptionsInterface>({
+    name: "XCM",
+    currency: "coinmetro",
+    flag: "xcmFlags/europeFlag.png",
+  })
+
+  const [selectedCurrency, setSelectedCurrency] = useState<CurrencyOptionsInterface>({
+    name: "EUR",
+    currency: "EURO",
+    flag: "xcmFlags/europeFlag.png",
+  })
+
+  console.log(selectedCurrency)
   return (
     <Box cssx={{ pos: "relative" }}>
       <Flex
@@ -26,10 +40,13 @@ export function BuyCurrencyCard() {
             justify="space-between"
             wrap="nowrap"
             direction="row"
-            cssx={{ mb: 6 }}
+            cssx={{ mb: 6, pos: "relative" }}
           >
+            <Element as="p" cssx={classes.inputLabel}>
+              BUY
+            </Element>
             <Element as="input" required placeholder="0.212" cssx={classes.input1} />
-            <CurrencyPicker />
+            <CurrencyPicker disableDropdown hideDropdownIcon value={coinmetro} />
           </Flex>
           <Flex
             align="center"
@@ -42,9 +59,18 @@ export function BuyCurrencyCard() {
               Coinmetro price $0.2136
             </Element>
           </Flex>
-          <Flex align="center" justify="space-between" wrap="nowrap" direction="row">
+          <Flex
+            align="center"
+            justify="space-between"
+            wrap="nowrap"
+            direction="row"
+            cssx={{ pos: "relative" }}
+          >
+            <Element as="p" cssx={classes.inputLabel}>
+              PAY WITH
+            </Element>
             <Element as="input" required placeholder="PAY WITH" cssx={classes.input1} />
-            <CurrencyPicker />
+            <CurrencyPicker handleOnChange={setSelectedCurrency} value={selectedCurrency} />
           </Flex>
         </form>
         <Button

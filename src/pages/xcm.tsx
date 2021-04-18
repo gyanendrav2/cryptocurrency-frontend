@@ -5,6 +5,7 @@ import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import { InitialData } from "../interfaces/initial"
 import { WhyXcmCard } from "../components/xcm/cards/whyXcm"
 import { Footer } from "../components/sections/Footer"
+import EcoSystem from "../components/xcm/ecosystem"
 
 export interface XCMprops {
   data: InitialData
@@ -14,7 +15,7 @@ export default function XCM({ data }: XCMprops): ReactElement {
   return (
     <Box>
       <Header data={data} />
-      <WhyXcmCard data={data} />
+      <EcoSystem />
       <Footer data={data} />
     </Box>
   )
