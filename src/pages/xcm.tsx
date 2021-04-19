@@ -6,6 +6,7 @@ import { InitialData } from "../interfaces/initial"
 import { WhyXcmCard } from "../components/xcm/cards/whyXcm"
 import { Footer } from "../components/sections/Footer"
 import EcoSystem from "../components/xcm/ecosystem"
+import PriceStatistics from "../components/xcm/priceStatistics"
 
 export interface XCMprops {
   data: InitialData
@@ -16,6 +17,7 @@ export default function XCM({ data }: XCMprops): ReactElement {
     <Box>
       <Header data={data} />
       <EcoSystem />
+      <PriceStatistics />
       <Footer data={data} />
     </Box>
   )

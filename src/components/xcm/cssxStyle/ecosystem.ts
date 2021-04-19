@@ -5,13 +5,13 @@ export interface EcosystemStyleInterface {
   heading: CssxObject
   img: CssxObject
   title: CssxObject
+  wrapper2: CssxObject
 }
 
 export const ecoSsyemStyle: EcosystemStyleInterface = {
   wrapper: {
     pos: "relative",
     overflow: "hidden",
-    marginBottom: "4rem",
     "&::before": {
       content: "''",
       background: "url('xcmbg/xcmEcobg.svg')",
@@ -23,9 +23,31 @@ export const ecoSsyemStyle: EcosystemStyleInterface = {
       height: "100%",
       zIndex: "-1",
       overflowX: "hidden",
-      //   backgroundPosition: "100% 0%",
+      backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
       //   transform: "scale(2)",
+    },
+  },
+  wrapper2: {
+    pos: "relative",
+    overflow: "hidden",
+    height: "5rem",
+    marginTop: "-5px",
+    bg: "grey.bg",
+    "&::before": {
+      content: "''",
+      background: "url('xcmbg/xcmEcobg.svg')",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      top: 0,
+      width: "100%",
+      height: "100%",
+      zIndex: 1,
+      overflowX: "hidden",
+      backgroundSize: "100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "100% 100%",
     },
   },
   heading: {
