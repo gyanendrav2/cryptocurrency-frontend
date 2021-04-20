@@ -1,13 +1,16 @@
+import { Box } from "@react-cssx/core"
 import React from "react"
 
-export function DiagramIcon() {
+export function DiagramIcon(props) {
   return (
-    <svg
+    <Box
+      as="svg"
       width={100}
       height={119}
       viewBox="0 0 100 119"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M44.8385 90.6L33.1486 84.27L21.4785 90.6V112.24L33.1486 118.57L44.8385 112.24V90.6Z"
@@ -123,6 +126,6 @@ export function DiagramIcon() {
         d="M23.3682 35.8699C23.8184 37.4398 24.6418 38.8773 25.7682 40.0599C25.7682 40.0599 45.3882 19.2499 47.0082 14.3999C48.6982 9.30987 26.9682 28.6699 23.3682 35.8699Z"
         fill="#7D7DB7"
       />
-    </svg>
+    </Box>
   )
 }

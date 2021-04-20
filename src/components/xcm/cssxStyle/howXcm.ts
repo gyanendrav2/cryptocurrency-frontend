@@ -1,6 +1,6 @@
 import { CssxObject } from "@react-cssx/core"
 
-export interface EcosystemStyleInterface {
+export interface HowXcmStyleInterface {
   wrapper: CssxObject
   heading: CssxObject
   img: CssxObject
@@ -8,23 +8,26 @@ export interface EcosystemStyleInterface {
   wrapper2: CssxObject
 }
 
-export const ecoSyemStyle: EcosystemStyleInterface = {
+export const howXcmStyle: HowXcmStyleInterface = {
   wrapper: {
     pos: "relative",
     overflow: "hidden",
+    backgroundImage: "url(xcmbg/howBgstars.svg)",
     "&::before": {
       content: "''",
-      background: "url('xcmbg/xcmEcobg.svg')",
+      background: "url('xcmbg/union.png')",
       position: "absolute",
       left: 0,
       right: 0,
       top: 0,
+      // marginTop:"2rem",
       width: "100%",
       height: "100%",
       zIndex: "-1",
       overflowX: "hidden",
-      backgroundSize: "100%",
+      backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
+      // backgroundPosition: "100% 100%",
       // transform: "scale(2)",
     },
   },
@@ -45,23 +48,22 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
       height: "100%",
       zIndex: 1,
       overflowX: "hidden",
-      backgroundSize: "100%",
+      backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "100% 100%",
+      // backgroundPosition: "100% 100%",
     },
   },
   heading: {
-    fontSize: 48,
+    fontFamily: "Mulish",
+    fontStyle: "normal",
     fontWeight: 800,
-    lineHeight: "56px",
-    color: "white",
-    maxWidth: 680,
+    fontSize: "3rem",
+    lineHeight: "4rem",
     textAlign: "center",
-    margin: "auto",
-    marginTop: "17rem",
-    "& span": {
-      color: "indigo.light",
-    },
+    color: "indigo.light",
+    paddingTop: "8.5rem",
+    marginBottom: "3.5rem",
+    marginTop: "2rem",
   },
   img: {
     margin: "auto",

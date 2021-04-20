@@ -14,16 +14,14 @@ export function BuyCurrencyCard() {
   const [coinmetro, setCoinmetro] = useState<CurrencyOptionsInterface>({
     name: "XCM",
     currency: "coinmetro",
-    flag: "xcmFlags/europeFlag.png",
+    flag: "xcmFlags/input-coinmetro-logo.svg",
   })
-
   const [selectedCurrency, setSelectedCurrency] = useState<CurrencyOptionsInterface>({
     name: "EUR",
     currency: "EURO",
     flag: "xcmFlags/europeFlag.png",
   })
-
-  console.log(selectedCurrency)
+  // console.log(selectedCurrency)
   return (
     <Box cssx={{ pos: "relative" }}>
       <Flex
@@ -55,7 +53,7 @@ export function BuyCurrencyCard() {
             direction="row"
             cssx={{ mb: 6 }}
           >
-            <Element as="p" cssx={{ ml: 20, color: "white", mb: 24 }}>
+            <Element as="p" cssx={{ ml: 20, color: "white", mb: 24, fontSize: 12 }}>
               Coinmetro price $0.2136
             </Element>
           </Flex>
@@ -69,7 +67,7 @@ export function BuyCurrencyCard() {
             <Element as="p" cssx={classes.inputLabel}>
               PAY WITH
             </Element>
-            <Element as="input" required placeholder="PAY WITH" cssx={classes.input1} />
+            <Element as="input" required placeholder="100" cssx={classes.input1} />
             <CurrencyPicker handleOnChange={setSelectedCurrency} value={selectedCurrency} />
           </Flex>
         </form>

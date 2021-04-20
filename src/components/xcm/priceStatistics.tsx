@@ -6,7 +6,7 @@ import SupplyCard from "./cards/supplyCard"
 import XcmPriceCard from "./cards/xcmPriceCard"
 import { priceStatisticsStyle } from "./cssxStyle/priceStatistics"
 
-export default function PriceStatistics() {
+export function PriceStatistics() {
   const classes = priceStatisticsStyle
   return (
     <Box cssx={{ bg: "grey.bg", pt: 160 }}>
@@ -17,7 +17,7 @@ export default function PriceStatistics() {
         Real time XCM data
       </Element>
       <Container cssx={{ mx: 164 }}>
-        <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
+        <Grid columns={{ _: 1, desktop: 2 }} columnGap={24}>
           <XcmPriceCard />
           <SupplyCard />
         </Grid>

@@ -6,6 +6,7 @@ import TopDecorator from "../../../public/footer_bg_top.svg"
 
 export interface IFooterProps {
   data: any
+  hideTopCurve?: boolean
 }
 
 const Column = ({ title, list }) => (
@@ -35,11 +36,14 @@ const Column = ({ title, list }) => (
   </Box>
 )
 
-export function Footer({ data }: IFooterProps): ReactElement {
+export function Footer({ data, hideTopCurve }: IFooterProps): ReactElement {
   return (
     <Box cssx={{ pos: "relative" }}>
       <Flex cssx={{ mb: -1, bg: "grey.bg", display: { _: "none", tablet: "block" } }}>
-        <Element as={TopDecorator} cssx={{ mr: "auto" }} />
+        <Element
+          as={TopDecorator}
+          cssx={{ mr: "auto", display: hideTopCurve ? "none" : "block" }}
+        />
       </Flex>
 
       <Box cssx={{ pos: "relative", bg: "grey.dark" }}>

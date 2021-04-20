@@ -50,7 +50,10 @@ const colors: ITheme["colors"] = {
     default: "#635C99",
     dark: "#32407B",
   },
-
+  // white:
+  // {
+  //   default: "#fff",
+  // }
   // gray: {
   //   900: "#1a1f36",
   //   800: "#2a2f45",

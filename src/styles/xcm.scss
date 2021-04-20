@@ -1,3 +1,16 @@
-.xcm__header{
+.xcm__header {
+  display: none;
+}
+.price__chart {
+  height: 26.3rem;
+  padding-bottom: 4rem;
+  line[stroke-dasharray] {
     display: none;
+  }
+  line.recharts-cartesian-axis-line, line.recharts-cartesian-axis-tick-line {
+    stroke: #cacfe3;
+  }
+  text {
+    fill: #000;
+  }
 }

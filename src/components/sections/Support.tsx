@@ -51,7 +51,10 @@ export function Support({ data }: ISupportProps): ReactElement {
         src="support-top-notch.png"
         cssx={{
           // @ts-ignore
-          ml: "auto", mt: - 29, pos: "relative", display: { _: "none", tablet: "block" },
+          ml: "auto",
+          mt: -29,
+          pos: "relative",
+          display: { _: "none", tablet: "block" },
         }}
       />
       <Flex align="center" cssx={{ pt: 100, pb: 60 }}>
@@ -61,12 +64,21 @@ export function Support({ data }: ISupportProps): ReactElement {
           <PrismicImage node={data.support_image_desktop} cssx={{ ml: "auto", maxWidth: 800 }} />
         </Box>
 
-        <Flex direction="column" justify="center" cssx={{ mx: { _: "auto", desktop: 0 }, ml: { desktop: - 50 } }}>
+        <Flex
+          direction="column"
+          justify="center"
+          cssx={{ mx: { _: "auto", desktop: 0 }, ml: { desktop: -50 } }}
+        >
           <Box cssx={{ maxWidth: 550, textAlign: { _: "center", desktop: "left" } }}>
             <H2 cssx={{ mb: { _: 50, desktop: 40 } }} richText>
               {data.support_title}
             </H2>
-            <Button as="a" href="https://help.coinmetro.com/en/" variant="yellow" cssx={{ fontSize: 20 }}>
+            <Button
+              as="a"
+              href="https://help.coinmetro.com/en/"
+              variant="yellow"
+              cssx={{ fontSize: 20 }}
+            >
               {data.string_start_a_chat}
             </Button>
           </Box>
@@ -74,19 +86,17 @@ export function Support({ data }: ISupportProps): ReactElement {
       </Flex>
       {/*
        // @ts-ignore */}
-      <Box cssx={{ mt: - 20, pb: 60, display: { _: "none", phablet: "block", desktop: "none" } }}>
+      <Box cssx={{ mt: -20, pb: 60, display: { _: "none", phablet: "block", desktop: "none" } }}>
         <PrismicImage node={data.support_image_tablet} />
       </Box>
       {/*
        // @ts-ignore */}
-      <Box cssx={{ mt: - 20, display: { phablet: "none" } }}>
+      <Box cssx={{ mt: -20, display: { phablet: "none" } }}>
         <PrismicImage node={data.support_image_mobile} />
       </Box>
       <Container>
         <Box cssx={{ pb: 60, textAlign: "center" }}>
-          <H3 cssx={{ mb: 60 }}>
-            We Care About our Clients
-          </H3>
+          <H3 cssx={{ mb: 60 }}>We Care About our Clients</H3>
           <TrustBox />
         </Box>
       </Container>

@@ -17,7 +17,6 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     p: 24,
     backgroundColor: "grey.dark2",
     borderRadius: 8,
-    // mt: { _: 0, desktop: 88 },
     ml: { _: 0, desktop: 32 },
     mb: { _: 0, desktop: 140 },
     zIndex: 2,
@@ -43,6 +42,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     w: "calc(100% - 125px)",
     height: "4rem",
     MarginLeft: "2rem",
+    fontSize:"0.875rem",
     backgroundColor: "grey.dark",
     borderRadius: "0.5rem",
     resize: "none",
@@ -54,8 +54,9 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     },
     "&::placeholder": {
       fontWeight: 700,
-      fontSize: "0.75rem",
+      fontSize: "0.875rem",
       lineHeight: "1.25rem",
+      color: "white",
     },
   },
   inputIconStyles: {
@@ -83,6 +84,8 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     color: "purple.default",
   },
   img: {
+    height:18,
+    width:18,
     pos: "absolute",
     top: "12.625rem",
     right: "-10.937rem",

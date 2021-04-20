@@ -1,14 +1,13 @@
 import React from "react"
 import { Box, Element, Flex, Grid } from "@react-cssx/core"
 import { CoinsIcon } from "../../icons/coinsIcon"
-// import { DiagramIcon } from "../../icons/diagramIcon"
 import data from "../../../data/xcmData.json"
 import { Container } from "../../../ui/Container"
 import { DiagramIcon } from "../../icons/diagramIcon"
-import { whyXCMstyle } from "../cssxStyle/whyxcm"
+import { whatXcmStyle } from "../cssxStyle/whatxcm"
 
-export function WhyXcmCard() {
-  const classes = whyXCMstyle
+export function WhatXcmCard() {
+  const classes = whatXcmStyle
   return (
     <Box cssx={classes.wrapper}>
       <Container>
@@ -43,7 +42,7 @@ export function WhyXcmCard() {
               zIndex: 2,
             }}
           >
-            <DiagramIcon />
+            <DiagramIcon cssx={`header__icon ${classes.DiagramIconStyles}`} />
             <Element cssx={classes.h6}>{data.limited_subTitle}</Element>
             <Element cssx={classes.P}>{data.limited_content}</Element>
           </Flex>

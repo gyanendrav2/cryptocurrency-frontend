@@ -1,12 +1,15 @@
 import React, { ReactElement } from "react"
 import { Box } from "@react-cssx/core"
-import { Header } from "../components/xcm"
+import { Header } from "../components/xcm/header"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import { InitialData } from "../interfaces/initial"
-import { WhyXcmCard } from "../components/xcm/cards/whyXcm"
 import { Footer } from "../components/sections/Footer"
-import EcoSystem from "../components/xcm/ecosystem"
-import PriceStatistics from "../components/xcm/priceStatistics"
+import { EcoSystem } from "../components/xcm/ecoSystem"
+import { PriceStatistics } from "../components/xcm/priceStatistics"
+import { HowXcm } from "../components/xcm/howXcm"
+import { WhyXcm } from "../components/xcm/whyXcm"
+import { TrustXcm } from "../components/xcm/trustXcm"
+import StartEarning from "../components/xcm/startEarning"
 
 export interface XCMprops {
   data: InitialData
@@ -18,7 +21,11 @@ export default function XCM({ data }: XCMprops): ReactElement {
       <Header data={data} />
       <EcoSystem />
       <PriceStatistics />
-      <Footer data={data} />
+      <HowXcm />
+      <WhyXcm />
+      <TrustXcm />
+      <StartEarning />
+      <Footer data={data} hideTopCurve />
     </Box>
   )
 }

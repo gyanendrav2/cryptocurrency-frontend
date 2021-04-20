@@ -1,9 +1,9 @@
 import { Box, Element } from "@react-cssx/core"
 import React from "react"
-import { ecoSsyemStyle } from "../cssxStyle/ecosystem"
+import { ecoSyemStyle } from "./cssxStyle/ecosystem"
 
-export default function EcoSystem() {
-  const classes = ecoSsyemStyle
+export function EcoSystem() {
+  const classes = ecoSyemStyle
   return (
     <>
       <Box cssx={classes.wrapper}>
