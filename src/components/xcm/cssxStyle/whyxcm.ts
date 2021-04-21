@@ -38,22 +38,24 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
   rightWrapper: {},
   horseBig: {
     position: "absolute",
-    top: "-1rem",
-    left: "-8rem",
+    left: "-12rem",
+    zIndex:-2
   },
   horseSmall: {
     // position: "absolute",
     // right: 0,
     // bottom: 0,
-    mt: "14rem",
-    transform: "translateX(76px)",
+    mt: "10rem",
+    transform: "translate(47px,20px)",
+    width: "26.875rem",
+    height: "20.312rem",
   },
   h2: {
     fontWeight: 800,
     fontSize: "3rem",
     lineHeight: "3.5rem",
     color: "purple.default",
-    marginBottom: "3.5rem",
+     marginBottom: "2rem",
   },
   P: {
     fontWeight: 600,

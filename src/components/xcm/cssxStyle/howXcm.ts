@@ -1,9 +1,9 @@
 import { CssxObject } from "@react-cssx/core"
-
 export interface HowXcmStyleInterface {
   wrapper: CssxObject
   heading: CssxObject
   img: CssxObject
+  globeImg:CssxObject
   title: CssxObject
   wrapper2: CssxObject
 }
@@ -12,7 +12,9 @@ export const howXcmStyle: HowXcmStyleInterface = {
   wrapper: {
     pos: "relative",
     overflow: "hidden",
-    backgroundImage: "url(xcmbg/howBgstars.svg)",
+    backgroundImage: "url(xcmbg/starsbg.svg)",
+    marginTop:"-2rem",
+    zIndex:"2",
     "&::before": {
       content: "''",
       background: "url('xcmbg/union.png')",
@@ -20,13 +22,13 @@ export const howXcmStyle: HowXcmStyleInterface = {
       left: 0,
       right: 0,
       top: 0,
-      // marginTop:"2rem",
       width: "100%",
       height: "100%",
-      zIndex: "-1",
+      zIndex: "-2",
       overflowX: "hidden",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
+      // backgroundColor:"grey.bg"
       // backgroundPosition: "100% 100%",
       // transform: "scale(2)",
     },
@@ -47,7 +49,7 @@ export const howXcmStyle: HowXcmStyleInterface = {
       width: "100%",
       height: "100%",
       zIndex: 1,
-      overflowX: "hidden",
+      // overflowX: "hidden",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
       // backgroundPosition: "100% 100%",
@@ -67,6 +69,17 @@ export const howXcmStyle: HowXcmStyleInterface = {
   },
   img: {
     margin: "auto",
+    zIndex:0,
+    position:"relative",
+  },
+  globeImg:{
+    position:"absolute",
+    bottom: "31rem",
+    right: "20rem",
+    // transform:"translate(31rem,20rem)",
+    zIndex: -1,
+    width: 243,
+    height: 137,
   },
   title: {
     fontSize: 20,

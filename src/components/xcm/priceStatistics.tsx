@@ -9,7 +9,7 @@ import { priceStatisticsStyle } from "./cssxStyle/priceStatistics"
 export function PriceStatistics() {
   const classes = priceStatisticsStyle
   return (
-    <Box cssx={{ bg: "grey.bg", pt: 160 }}>
+    <Box cssx={{ bg: "grey.bg", pt: 135, zIndex: -2 }}>
       <Element as="h2" cssx={classes.heading}>
         XCM price statistics
       </Element>

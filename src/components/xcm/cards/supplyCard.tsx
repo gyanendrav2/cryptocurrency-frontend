@@ -11,7 +11,7 @@ interface SupplyDataItem {
   priceChange: string
 }
 
-function SupplyCardRow({ title, data }: { title: string; data: SupplyDataItem[] }) {
+function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem[] }) {
   return (
     <Box cssx={{ borderRadius: 8, p: 24, pl: 48, bg: "white", mb: 16 }}>
       <Element
@@ -31,7 +31,7 @@ function SupplyCardRow({ title, data }: { title: string; data: SupplyDataItem[] 
         {title}
       </Element>
       {data.map((item: SupplyDataItem) => (
-        <Flex align="center">
+        <Flex align="center" justify="center">
           <item.icon />
           <Flex
             align="center"
@@ -45,7 +45,7 @@ function SupplyCardRow({ title, data }: { title: string; data: SupplyDataItem[] 
             }}
           >
             <Flex as="P" cssx={{ mr: 24, color: "purple.default", w: "50%" }}>
-              {item.name} &nbsp; <InfoIcon />
+              {item.name} &nbsp; <InfoIcon cssx={{ mt: "0.4rem" }} />
             </Flex>
             <Flex align="center" justify="space-between" cssx={{ w: "50%" }}>
               <Element as="p" cssx={{ color: "grey.dark", mr: 24 }}>
@@ -53,17 +53,67 @@ function SupplyCardRow({ title, data }: { title: string; data: SupplyDataItem[] 
               </Element>
               {item.priceChange !== "" && (
                 <Flex align="center">
-                  <ArrowdownIcon color="red" />
-                  <Element as="p" cssx={{ color: "grey.dark", ml: 8 }}>
+                  <ArrowdownIcon color="#C85839" />
+                  <Element as="p" cssx={{ color: "red", ml: 8 }}>
                     {item.priceChange}
                   </Element>
                 </Flex>
               )}
             </Flex>
-
-            {/* <Element as="p" cssx={{ color: "red" }}>
-              <InfoIcon color="red" /> {item.priceChange}
-            </Element> */}
+          </Flex>
+        </Flex>
+      ))}
+    </Box>
+  )
+}
+function SupplyCardRowTwo({ title, data }: { title: string; data: SupplyDataItem[] }) {
+  return (
+    <Box cssx={{ borderRadius: 8, p: 24, pl: 48, bg: "white", mb: 16 }}>
+      <Element
+        as="p"
+        cssx={{
+          color: "teal.dark",
+          fontFamily: "Mulish",
+          fontStyle: "normal",
+          fontWeight: "bold",
+          fontSize: 12,
+          textTransform: "uppercase",
+          borderBottom: "1px solid #CACFE3",
+          py: 20,
+          ml: 36,
+        }}
+      >
+        {title}
+      </Element>
+      {data.map((item: SupplyDataItem) => (
+        <Flex align="center" justify="center">
+          <item.icon />
+          <Flex
+            align="center"
+            justify="center"
+            cssx={{
+              ml: 25,
+              py: 20,
+              borderBottom: "1px solid",
+              borderColor: "grey.light",
+              w: "100%",
+            }}
+          >
+            <Flex as="P" cssx={{ mr: 24, color: "purple.default", w: "50%" }}>
+              {item.name} &nbsp; <InfoIcon cssx={{ mt: "0.4rem" }} />
+            </Flex>
+            <Flex align="center" justify="space-between" cssx={{ w: "50%" }}>
+              <Element as="p" cssx={{ color: "grey.dark", mr: 24 }}>
+                {item.price}
+              </Element>
+              {item.priceChange !== "" && (
+                <Flex align="center">
+                  <Element as="p" cssx={{ color: "red", ml: 8 }}>
+                    {item.priceChange}
+                  </Element>
+                </Flex>
+              )}
+            </Flex>
           </Flex>
         </Flex>
       ))}
@@ -74,8 +124,8 @@ function SupplyCardRow({ title, data }: { title: string; data: SupplyDataItem[] 
 export default function SupplyCard() {
   return (
     <Box>
-      <SupplyCardRow title="xcm supply" data={xcmSupplyData} />
-      <SupplyCardRow title="other stats" data={xcmOtherStats} />
+      <SupplyCardRowOne title="xcm supply" data={xcmSupplyData} />
+      <SupplyCardRowTwo title="other stats" data={xcmOtherStats} />
     </Box>
   )
 }

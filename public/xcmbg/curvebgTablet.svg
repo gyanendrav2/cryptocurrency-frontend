@@ -1,0 +1,10 @@
+<svg width="768" height="1255" viewBox="0 0 768 1255" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M768 967V0H0C0 129.748 0.0389862 242.036 0.0761414 349.051C0.144974 547.304 0.207504 727.459 0.00427246 967H-177V967.667H0.00370789C0.00248718 969.109 0.00125122 970.554 0 972L396.383 972C398.33 973.42 399.966 975.063 401.627 976.731C407.903 983.034 414.529 989.69 439.598 985.959C646.762 955.132 687.083 1069.38 719.895 1162.35C733.46 1200.79 745.742 1235.59 768 1255V972V967Z" fill="url(#paint0_linear)"/>
+<defs>
+<linearGradient id="paint0_linear" x1="241.724" y1="-18.7994" x2="280.186" y2="1893.59" gradientUnits="userSpaceOnUse">
+<stop stop-color="#111930"/>
+<stop offset="1" stop-color="#32407B"/>
+<stop offset="1" stop-color="#32407B"/>
+</linearGradient>
+</defs>
+</svg>

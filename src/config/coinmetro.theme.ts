@@ -2,6 +2,7 @@ import { ITheme } from "@react-cssx/core"
 
 // Must use ems (divide pixels by 16)
 const breakpoints: ITheme["breakpoints"] = {
+  xsm: "20rem",
   phablet: "30em", // 480px
   tablet: "48em", // 768px
   desktop: "75em", // 1200px
@@ -186,9 +187,9 @@ const space: ITheme["space"] = {
 
 const fonts: ITheme["fonts"] = {
   sans:
-    "\"Mulish\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-  serif: "Georgia, Cambria, \"Times New Roman\", Times, serif",
-  mono: "SFMono-Regular, Menlo, Monaco,Consolas, \"Liberation Mono\", \"Courier New\",monospace",
+    '"Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  serif: 'Georgia, Cambria, "Times New Roman", Times, serif',
+  mono: 'SFMono-Regular, Menlo, Monaco,Consolas, "Liberation Mono", "Courier New",monospace',
 }
 
 const fontSizes: ITheme["fontSizes"] = {
@@ -324,7 +325,6 @@ const globalStyles: ITheme["globalStyles"] = {
     fontWeight: 600,
     fontFamily: "sans",
   },
-
 }
 
 const theme: ITheme = {

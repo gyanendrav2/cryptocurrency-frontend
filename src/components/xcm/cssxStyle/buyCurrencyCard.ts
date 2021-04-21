@@ -10,6 +10,7 @@ interface BuyCurrencyCard {
   img: CssxObject
   wrapper: CssxObject
   inputLabel: CssxObject
+  mobileTabletShow: CssxObject
 }
 
 export const buyCurrencyCardStyle: BuyCurrencyCard = {
@@ -21,6 +22,14 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     mb: { _: 0, desktop: 140 },
     zIndex: 2,
     pos: "relative",
+    "@mq": {
+      xsm: {
+        mt: 117,
+      },
+      tablet: {
+        mt: 0,
+      },
+    },
     // "&::after": {
     //   content: "''",
     //   position: "absolute",
@@ -42,7 +51,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     w: "calc(100% - 125px)",
     height: "4rem",
     MarginLeft: "2rem",
-    fontSize:"0.875rem",
+    fontSize: "0.875rem",
     backgroundColor: "grey.dark",
     borderRadius: "0.5rem",
     resize: "none",
@@ -84,17 +93,33 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     color: "purple.default",
   },
   img: {
-    height:18,
-    width:18,
+    height: 301,
+    width: 631,
     pos: "absolute",
-    top: "12.625rem",
-    right: "-10.937rem",
+
+    "@mq": {
+      xsm: {
+        top: "1.375rem",
+        right: "8%",
+      },
+      tablet: {
+        top: "8.625rem",
+        right: "-10.937rem",
+      },
+    },
   },
   inputLabel: {
     position: "absolute",
     top: "0.5rem",
     left: "1rem",
-    color: "white",
     fontSize: 12,
+    color: "teal.light",
+  },
+  mobileTabletShow: {
+    "@mq": {
+      desktop: {
+        display: "none",
+      },
+    },
   },
 }

@@ -17,7 +17,7 @@ export function TrustXcm() {
     <Box cssx={{ bg: "grey.bg", pt: 144, pb: 158 }}>
       <Container cssx={{ m: "auto", mb: 69 }}>
         <Grid columns={{ _: 1, desktop: 2 }}>
-          <Box cssx={classes.rightWrapper}>
+          <Box>
             {trustXcmData.map((item) => (
               <Flex
                 align="center"
@@ -33,8 +33,8 @@ export function TrustXcm() {
               </Flex>
             ))}
           </Box>
-          <Box cssx={classes.leftWrapper}>
-            <Element as="img" src="xcmbg/trust.png" alt="trust" />
+          <Box>
+            <Element as="img" cssx={classes.img} src="xcmbg/trust.png" alt="trust" />
           </Box>
         </Grid>
       </Container>

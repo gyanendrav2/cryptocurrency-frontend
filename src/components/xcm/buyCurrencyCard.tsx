@@ -4,6 +4,7 @@ import { Button } from "../../ui/Button"
 import { buyCurrencyCardStyle } from "./cssxStyle/buyCurrencyCard"
 import { CurrencyPicker } from "../currency/currencyPicker"
 import { CurrencyOptionsInterface } from "../../interfaces/currencyOptionsInterface"
+import { CurrMarketCard } from "./currMarketCard"
 // import Logo from "../../../public/logo.svg"
 // import Inputcoinmetrologo from "../../../public/inputcoinmetrologo.svg"
 
@@ -87,6 +88,9 @@ export function BuyCurrencyCard() {
           Buy Now
         </Button>
       </Flex>
+      <Box cssx={classes.mobileTabletShow}>
+        <CurrMarketCard />
+      </Box>
       <Element as="img" cssx={classes.img} src="xcmbg/earthflag.png" alt="earth top flag" />
     </Box>
   )

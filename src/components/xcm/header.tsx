@@ -34,7 +34,7 @@ export function Header({ data }: HeaderProps): ReactElement {
     <>
       <Box cssx={classes.wrapper}>
         {NavOptions && <Navbar data={NavOptions} />}
-        <Container cssx={{ mt: 164 }}>
+        <Container cssx={classes.container}>
           <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
             <Box>
               <Element as="h1" cssx={classes.h1}>
@@ -46,12 +46,13 @@ export function Header({ data }: HeaderProps): ReactElement {
               <Element as="p" cssx={classes.bigP}>
                 XCM is the native utility token that powers the CoinMetro ecosystem.
               </Element>
-              <CurrMarketCard />
+              <Box cssx={classes.showonlyDesktop}>
+                <CurrMarketCard />
+              </Box>
             </Box>
             <BuyCurrencyCard />
           </Grid>
         </Container>
-        <WhatXcmCard />
       </Box>
     </>
   )

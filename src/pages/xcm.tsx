@@ -10,6 +10,7 @@ import { HowXcm } from "../components/xcm/howXcm"
 import { WhyXcm } from "../components/xcm/whyXcm"
 import { TrustXcm } from "../components/xcm/trustXcm"
 import StartEarning from "../components/xcm/startEarning"
+import { WhatXcmCard } from "../components/xcm/cards/whatXcm"
 
 export interface XCMprops {
   data: InitialData
@@ -19,6 +20,7 @@ export default function XCM({ data }: XCMprops): ReactElement {
   return (
     <Box>
       <Header data={data} />
+      <WhatXcmCard />
       <EcoSystem />
       <PriceStatistics />
       <HowXcm />

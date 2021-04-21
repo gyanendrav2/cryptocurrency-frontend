@@ -10,6 +10,12 @@ export function WhatXcmCard() {
   const classes = whatXcmStyle
   return (
     <Box cssx={classes.wrapper}>
+      {/* <Element
+        as="img"
+        src="xcmbg/curvebg.svg"
+        cssx={{ pos: "absolute", top: 0, right: 0, w: "100%" }}
+        alt=""
+      /> */}
       <Container>
         <Grid columns={{ _: 1, desktop: 2 }}>
           <Flex
@@ -30,7 +36,7 @@ export function WhatXcmCard() {
             <Element cssx={classes.P}>{data.what_content}</Element>
           </Flex>
           <Flex
-            align="center"
+            align="flex-start"
             justify="flex-end"
             wrap="nowrap"
             direction="column"
@@ -42,7 +48,7 @@ export function WhatXcmCard() {
               zIndex: 2,
             }}
           >
-            <DiagramIcon cssx={`header__icon ${classes.DiagramIconStyles}`} />
+            <DiagramIcon />
             <Element cssx={classes.h6}>{data.limited_subTitle}</Element>
             <Element cssx={classes.P}>{data.limited_content}</Element>
           </Flex>

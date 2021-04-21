@@ -12,13 +12,13 @@ import {
 
 const data = [
   {
-    name: "Page A",
+    name: "Today",
     uv: 0,
     pv: 0,
     amt: 0,
   },
   {
-    name: "Page B",
+    name: "1 week",
     uv: 0.42,
     pv: 0.44,
     amt: 0.46,
@@ -100,6 +100,7 @@ export default function PriceStatisticsChart() {
             </linearGradient>
           </defs>
           <YAxis />
+          <XAxis hide />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Area

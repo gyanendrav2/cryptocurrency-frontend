@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Element, Flex, Grid } from "@react-cssx/core"
-import { WhyXcmStyle } from "./cssxStyle/whyXcm"
+import { WhyXcmStyle } from "./cssxStyle/whyxcm"
 import { Container } from "../../ui/Container"
 
 const whyXcmData = [
@@ -24,15 +24,13 @@ export function WhyXcm() {
           <Box>
             {whyXcmData.map((item) => (
               <Flex
-                align="center"
-                justify="flex-end"
+                align="flex-start"
+                justify="center"
                 wrap="nowrap"
                 direction="column"
                 cssx={{ mb: 24 }}
               >
-                <Element as="h2" cssx={classes.h2}>
-                  {item.title}
-                </Element>
+                <Element cssx={classes.h2}>{item.title}</Element>
                 <Element cssx={classes.P}>{item.description}</Element>
               </Flex>
             ))}

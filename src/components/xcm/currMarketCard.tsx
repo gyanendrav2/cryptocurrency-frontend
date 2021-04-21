@@ -9,7 +9,19 @@ export function CurrMarketCard() {
       align="center"
       justify="space-between"
       wrap="nowrap"
-      cssx={{ p: 24, backgroundColor: "grey.dark2", borderRadius: 8, mt: 88, mb: 140 }}
+      cssx={{
+        p: 24,
+        backgroundColor: "grey.dark2",
+        borderRadius: 8,
+        "@mq": {
+          xsm: {
+            mt: 16,
+          },
+          desktop: {
+            mt: 118,
+          },
+        },
+      }}
     >
       <Flex align="center" justify="space-between" wrap="nowrap">
         <InfoIcon />
