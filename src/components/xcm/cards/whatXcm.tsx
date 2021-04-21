@@ -9,14 +9,14 @@ import { whatXcmStyle } from "../cssxStyle/whatxcm"
 export function WhatXcmCard() {
   const classes = whatXcmStyle
   return (
-    <Box cssx={classes.wrapper}>
+    <div className="whatxcm__wrapper">
       {/* <Element
         as="img"
         src="xcmbg/curvebg.svg"
         cssx={{ pos: "absolute", top: 0, right: 0, w: "100%" }}
         alt=""
       /> */}
-      <Container>
+      <Container cssx={classes.container}>
         <Grid columns={{ _: 1, desktop: 2 }}>
           <Flex
             align="flex-start"
@@ -31,7 +31,9 @@ export function WhatXcmCard() {
             }}
           >
             <Element cssx={classes.h2}>{data.what_title}</Element>
-            <CoinsIcon />
+            <Box cssx={classes.coinIcon}>
+              <CoinsIcon />
+            </Box>
             <Element cssx={classes.h6}>{data.what_subtitle}</Element>
             <Element cssx={classes.P}>{data.what_content}</Element>
           </Flex>
@@ -40,20 +42,16 @@ export function WhatXcmCard() {
             justify="flex-end"
             wrap="nowrap"
             direction="column"
-            cssx={{
-              p: 24,
-              backgroundColor: "transparent",
-              // mt: { _: 0, desktop: 88 },
-              paddingTop: 433,
-              zIndex: 2,
-            }}
+            cssx={classes.limitedContainer}
           >
-            <DiagramIcon />
+            <Box cssx={classes.coinIcon}>
+              <DiagramIcon />
+            </Box>
             <Element cssx={classes.h6}>{data.limited_subTitle}</Element>
             <Element cssx={classes.P}>{data.limited_content}</Element>
           </Flex>
         </Grid>
       </Container>
-    </Box>
+    </div>
   )
 }

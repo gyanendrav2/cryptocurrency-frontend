@@ -24,7 +24,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     pos: "relative",
     "@mq": {
       xsm: {
-        mt: 117,
+        mt: "4.3rem",
       },
       tablet: {
         mt: 0,
@@ -93,7 +93,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     color: "purple.default",
   },
   img: {
-    height: 301,
+    // height: 301,
     width: 631,
     pos: "absolute",
 

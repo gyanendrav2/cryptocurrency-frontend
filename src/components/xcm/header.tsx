@@ -32,7 +32,7 @@ export function Header({ data }: HeaderProps): ReactElement {
 
   return (
     <>
-      <Box cssx={classes.wrapper}>
+      <div className="header__wrapper">
         {NavOptions && <Navbar data={NavOptions} />}
         <Container cssx={classes.container}>
           <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
@@ -53,7 +53,8 @@ export function Header({ data }: HeaderProps): ReactElement {
             <BuyCurrencyCard />
           </Grid>
         </Container>
-      </Box>
+      </div>
+      <WhatXcmCard />
     </>
   )
 }
