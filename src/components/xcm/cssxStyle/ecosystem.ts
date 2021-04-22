@@ -6,6 +6,7 @@ export interface EcosystemStyleInterface {
   img: CssxObject
   title: CssxObject
   wrapper2: CssxObject
+  wrapper1: CssxObject
 }
 
 export const ecoSyemStyle: EcosystemStyleInterface = {
@@ -30,12 +31,36 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     //   // transform: "scale(2)",
     // },
   },
+  wrapper1: {
+    pos: "relative",
+    overflow: "hidden",
+    height: "5rem",
+    bg: "grey.bg",
+    transform: "translateY(10px)",
+    "&::before": {
+      content: "''",
+      background: "url('xcmbg/xcmEcobg.svg')",
+      position: "absolute",
+      transform: "scale(-1)",
+      left: 0,
+      right: 0,
+      top: 0,
+      width: "100%",
+      height: "100%",
+      zIndex: 1,
+      overflowX: "hidden",
+      backgroundSize: "100%",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "100% 100%",
+    },
+  },
   wrapper2: {
     pos: "relative",
     overflow: "hidden",
     height: "5rem",
     marginTop: "-5px",
     bg: "grey.bg",
+    zIndex: "-1",
     "&::before": {
       content: "''",
       background: "url('xcmbg/xcmEcobg.svg')",
@@ -60,9 +85,19 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     maxWidth: 680,
     textAlign: "center",
     margin: "auto",
-    marginTop: "22rem",
+    marginTop: "2rem",
     "& span": {
       color: "indigo.light",
+    },
+    "@mq": {
+      xsm: {
+        fontSize: 32,
+        lineHeight: "40px",
+      },
+      tablet: {
+        fontSize: 48,
+        lineHeight: "56px",
+      },
     },
   },
   img: {

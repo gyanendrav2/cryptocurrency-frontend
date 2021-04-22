@@ -6,6 +6,7 @@ export function EcoSystem() {
   const classes = ecoSyemStyle
   return (
     <>
+      <Box cssx={classes.wrapper1} />
       <Box cssx={classes.wrapper}>
         <Element as="h4" cssx={classes.heading}>
           <span> XCM </span>in the CoinMetro ecosystem

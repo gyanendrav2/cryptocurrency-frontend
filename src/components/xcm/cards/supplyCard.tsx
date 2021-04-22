@@ -13,7 +13,20 @@ interface SupplyDataItem {
 
 function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem[] }) {
   return (
-    <Box cssx={{ borderRadius: 8, p: 24, pl: 48, bg: "white", mb: 16 }}>
+    <Box
+      cssx={{
+        borderRadius: 8,
+        p: 24,
+        pl: 48,
+        bg: "white",
+        mb: 16,
+        "@mq": {
+          xsm: {
+            p: 16,
+          },
+        },
+      }}
+    >
       <Element
         as="p"
         cssx={{
@@ -30,7 +43,7 @@ function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem
       >
         {title}
       </Element>
-      {data.map((item: SupplyDataItem) => (
+      {data.map((item: SupplyDataItem, i: number) => (
         <Flex align="center" justify="center">
           <item.icon />
           <Flex
@@ -39,15 +52,26 @@ function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem
             cssx={{
               ml: 25,
               py: 20,
-              borderBottom: "1px solid",
-              borderColor: "grey.light",
+              borderBottom: i !== data.length - 1 ? "1px solid" : "none",
+              borderColor: i !== data.length - 1 ? "grey.light" : "none",
+              pb: i !== data.length - 1 ? 20 : 0,
               w: "100%",
+              "@mq": {
+                xsm: {
+                  ml: 10,
+                  w: "84%",
+                },
+                tablet: {
+                  ml: 25,
+                  w: "100%",
+                },
+              },
             }}
           >
             <Flex as="P" cssx={{ mr: 24, color: "purple.default", w: "50%" }}>
               {item.name} &nbsp; <InfoIcon cssx={{ mt: "0.4rem" }} />
             </Flex>
-            <Flex align="center" justify="space-between" cssx={{ w: "50%" }}>
+            <Flex align="center" justify="space-between" wrap="wrap" cssx={{ w: "50%" }}>
               <Element as="p" cssx={{ color: "grey.dark", mr: 24 }}>
                 {item.price}
               </Element>
@@ -68,7 +92,20 @@ function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem
 }
 function SupplyCardRowTwo({ title, data }: { title: string; data: SupplyDataItem[] }) {
   return (
-    <Box cssx={{ borderRadius: 8, p: 24, pl: 48, bg: "white", mb: 16 }}>
+    <Box
+      cssx={{
+        borderRadius: 8,
+        p: 24,
+        pl: 48,
+        bg: "white",
+        mb: 16,
+        "@mq": {
+          xsm: {
+            p: 16,
+          },
+        },
+      }}
+    >
       <Element
         as="p"
         cssx={{
@@ -85,7 +122,7 @@ function SupplyCardRowTwo({ title, data }: { title: string; data: SupplyDataItem
       >
         {title}
       </Element>
-      {data.map((item: SupplyDataItem) => (
+      {data.map((item: SupplyDataItem, i: number) => (
         <Flex align="center" justify="center">
           <item.icon />
           <Flex
@@ -94,15 +131,23 @@ function SupplyCardRowTwo({ title, data }: { title: string; data: SupplyDataItem
             cssx={{
               ml: 25,
               py: 20,
-              borderBottom: "1px solid",
-              borderColor: "grey.light",
+              borderBottom: i !== data.length - 1 ? "1px solid" : "none",
+              borderColor: i !== data.length - 1 ? "grey.light" : "none",
+              pb: i !== data.length - 1 ? 20 : 0,
               w: "100%",
             }}
           >
             <Flex as="P" cssx={{ mr: 24, color: "purple.default", w: "50%" }}>
               {item.name} &nbsp; <InfoIcon cssx={{ mt: "0.4rem" }} />
             </Flex>
-            <Flex align="center" justify="space-between" cssx={{ w: "50%" }}>
+            <Flex
+              align="center"
+              justify="space-between"
+              wrap="wrap"
+              cssx={{
+                w: "50%",
+              }}
+            >
               <Element as="p" cssx={{ color: "grey.dark", mr: 24 }}>
                 {item.price}
               </Element>

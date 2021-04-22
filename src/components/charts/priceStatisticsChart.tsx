@@ -1,5 +1,5 @@
 import { Element, Flex } from "@react-cssx/core"
-import React from "react"
+import React, { useState } from "react"
 import {
   AreaChart,
   Area,
@@ -56,30 +56,49 @@ const data = [
 ]
 
 const filterRange = [
-  { time: "1 day" },
-  { time: "1 week" },
-  { time: "3 months" },
-  { time: "1 years" },
-  { time: "max" },
+  { time: "1 day", active: true },
+  { time: "1 week", active: false },
+  { time: "3 months", active: false },
+  { time: "1 years", active: false },
+  { time: "max", active: false },
 ]
 
 export default function PriceStatisticsChart() {
-  const demoUrl = "https://codesandbox.io/s/simple-area-chart-4ujxw"
+  const [filterOptions, setFilterOptions] = useState(filterRange)
 
+  const handleAcitve = (i) => {
+    const tempData: any = [...filterOptions]
+    const result = tempData.map((item) => ({ ...item, active: false }))
+    result[i].active = true
+    setFilterOptions(result)
+  }
   return (
     <div className="price__chart">
       <Flex align="center" justify="flex-end" cssx={{ pr: "2rem", mb: "2rem" }}>
-        {filterRange.map((item: { time: string }, i: number) => (
+        {filterOptions.map((item: { time: string; active: boolean }, i: number) => (
           <Element
             key={i}
             as="p"
+            onClick={() => handleAcitve(i)}
             cssx={{
               minWidth: "5rem",
+              cursor: "pointer",
               textAlign: "center",
-              color: "grey.dark",
-              opacity: 0.4,
+              color: "#a4a6b3",
               borderBottom: "1px solid",
-              borderColor: "indigo.dark",
+              borderColor: item.active ? "#69D5DD" : "#a4a6b3",
+              "@mq": {
+                xsm: {
+                  fontSize: 10,
+                  lineHeight: "24px",
+                  width: "20%",
+                  minWidth: "unset",
+                },
+                tablet: {
+                  minWidth: "5rem",
+                  width: "unset",
+                },
+              },
             }}
           >
             {item.time}

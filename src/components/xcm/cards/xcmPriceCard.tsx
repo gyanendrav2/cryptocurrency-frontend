@@ -22,7 +22,7 @@ export default function XcmPriceCard() {
           </Box>
         </Flex>
       </Box>
-      <Box cssx={{ borderRadius: 8, px: 13, pr: 0, py: 18, bg: "white" }}>
+      <Box cssx={{ borderRadius: 8, px: 13, pr: 0, py: 18, bg: "white", mb: "1rem" }}>
         <PriceStatisticsChart />
       </Box>
     </Box>

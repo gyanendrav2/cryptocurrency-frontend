@@ -87,15 +87,19 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     marginBottom: "3.5rem",
     "@mq": {
       xsm: {
-        fontSize: 42,
+        fontSize: 40,
         lineHeight: "54px",
-        mt: "9rem",
+        mt: "2rem",
+        textAlign: "center",
+        mx: "auto",
       },
       tablet: {
         fontSize: 48,
         lineHeight: "56px",
       },
       desktop: {
+        textAlign: "left",
+        mx: "unset",
         fontSize: "3rem",
         lineHeight: "3.5rem",
       },
@@ -115,7 +119,10 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
   coinIcon: {
     "@mq": {
       xsm: {
-        m: "auto",
+        mx: "auto",
+      },
+      desktop: {
+        mx: "unset",
       },
     },
   },
@@ -133,6 +140,7 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     zIndex: 2,
     "@mq": {
       xsm: {
+        padding: "1rem",
         paddingTop: 43,
       },
       tablet: {

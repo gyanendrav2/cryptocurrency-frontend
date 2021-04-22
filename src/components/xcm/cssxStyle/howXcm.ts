@@ -1,9 +1,10 @@
 import { CssxObject } from "@react-cssx/core"
+
 export interface HowXcmStyleInterface {
   wrapper: CssxObject
   heading: CssxObject
   img: CssxObject
-  globeImg:CssxObject
+  globeImg: CssxObject
   title: CssxObject
   wrapper2: CssxObject
 }
@@ -13,8 +14,8 @@ export const howXcmStyle: HowXcmStyleInterface = {
     pos: "relative",
     overflow: "hidden",
     backgroundImage: "url(xcmbg/starsbg.svg)",
-    marginTop:"-2rem",
-    zIndex:"2",
+    marginTop: "-2rem",
+    zIndex: "2",
     "&::before": {
       content: "''",
       background: "url('xcmbg/union.png')",
@@ -69,15 +70,15 @@ export const howXcmStyle: HowXcmStyleInterface = {
   },
   img: {
     margin: "auto",
-    zIndex:0,
-    position:"relative",
+    zIndex: 0,
+    position: "relative",
   },
-  globeImg:{
-    position:"absolute",
+  globeImg: {
+    position: "absolute",
     bottom: "31rem",
     right: "20rem",
     // transform:"translate(31rem,20rem)",
-    zIndex: -1,
+    zIndex: "-1",
     width: 243,
     height: 137,
   },

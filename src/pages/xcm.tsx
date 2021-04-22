@@ -20,9 +20,9 @@ export default function XCM({ data }: XCMprops): ReactElement {
   return (
     <Box>
       <Header data={data} />
-      {/* <WhatXcmCard /> */}
+      <WhatXcmCard />
       <EcoSystem />
-      {/* <PriceStatistics /> */}
+      <PriceStatistics />
       <HowXcm />
       <WhyXcm />
       <TrustXcm />

@@ -13,6 +13,8 @@ export function CurrMarketCard() {
         p: 24,
         backgroundColor: "grey.dark2",
         borderRadius: 8,
+        maxWidth: 416,
+        mx: "auto",
         "@mq": {
           xsm: {
             mt: 16,
@@ -23,7 +25,7 @@ export function CurrMarketCard() {
         },
       }}
     >
-      <Flex align="center" justify="space-between" wrap="nowrap">
+      <Flex align="center" justify="space-between" wrap="nowrap" cssx={{ zIndex: "3" }}>
         <InfoIcon />
         <Element as="p" cssx={{ ml: 16, color: "grey.light" }}>
           Current Market Cap

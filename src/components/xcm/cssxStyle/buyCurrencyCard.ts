@@ -22,6 +22,8 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     mb: { _: 0, desktop: 140 },
     zIndex: 2,
     pos: "relative",
+    maxWidth: 416,
+    mx: "auto",
     "@mq": {
       xsm: {
         mt: "4.3rem",
@@ -93,18 +95,24 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     color: "purple.default",
   },
   img: {
-    // height: 301,
+    //  height: 301,
+    zIndex: "-1",
     width: 631,
     pos: "absolute",
-
     "@mq": {
       xsm: {
-        top: "1.375rem",
+        top: "0.375rem",
         right: "8%",
       },
       tablet: {
-        top: "8.625rem",
-        right: "-10.937rem",
+        top: "17.625rem",
+        right: "-2.937rem",
+        width: "30.9375rem",
+      },
+      desktop: {
+        top: "14.625rem",
+        right: "-8.937rem",
+        width: "25.9375rem",
       },
     },
   },

@@ -54,7 +54,6 @@ export function Header({ data }: HeaderProps): ReactElement {
           </Grid>
         </Container>
       </div>
-      <WhatXcmCard />
     </>
   )
 }
