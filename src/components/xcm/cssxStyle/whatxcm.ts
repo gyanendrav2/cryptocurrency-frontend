@@ -6,8 +6,8 @@ interface WhatXcmStyleInterface {
   h2: CssxObject
   P: CssxObject
   coinIcon: CssxObject
-  container: CssxObject
   limitedContainer: CssxObject
+  diagramIcon:CssxObject
 }
 
 export const whatXcmStyle: WhatXcmStyleInterface = {
@@ -57,7 +57,7 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     //   },
     // },
     "@mq": {
-      xsm: {
+      disktop: {
         pb: "5rem",
       },
     },
@@ -69,37 +69,32 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     color: "purple.default",
     marginTop: "2.5rem",
     marginBottom: "2rem",
-    // textAlign:"left"
-    "@mq": {
-      xsm: {
-        fontSize: 24,
-        lineHeight: "32px",
-        textAlign: "center",
-        ml: "auto",
-        mr: "auto",
-        mb: 24,
-      },
+    width:"100%",
+    textAlign:"center",
+    mx:"auto",
+    "@mq": {  
+    desktop: {
+    textAlign:"left",
+      }
     },
   },
   h2: {
     fontWeight: 800,
+    fontFamily:"Mulish",
     color: "purple.default",
-    marginBottom: "3.5rem",
+    mb: "2rem",
+    fontSize: 40,
+    lineHeight: "54px",
+    width:"100%",
+    textAlign: "center",
+    mx: "auto",
     "@mq": {
-      xsm: {
-        fontSize: 40,
-        lineHeight: "54px",
-        mt: "2rem",
-        textAlign: "center",
-        mx: "auto",
-      },
       tablet: {
         fontSize: 48,
         lineHeight: "56px",
       },
       desktop: {
         textAlign: "left",
-        mx: "unset",
         fontSize: "3rem",
         lineHeight: "3.5rem",
       },
@@ -109,14 +104,17 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     fontWeight: 600,
     fontSize: "1rem",
     lineHeight: "2rem",
+     mx: "auto",
+     textAlign: "center",
+     width:"100%",
     "@mq": {
-      xsm: {
-        mx: "auto",
-        textAlign: "center",
+      desktop: {
+     textAlign: "left",
       },
     },
   },
   coinIcon: {
+    mx: "auto",
     "@mq": {
       xsm: {
         mx: "auto",
@@ -126,28 +124,31 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
       },
     },
   },
-  container: {
+  diagramIcon:{
+     mx: "auto",
+     mt:"2rem",
     "@mq": {
       xsm: {
-        p: 0,
+        mx: "auto",
+      },
+      desktop: {
+        mx: "unset",
       },
     },
   },
   limitedContainer: {
-    p: 24,
+     pb: 16,
+     px:0,
     backgroundColor: "transparent",
     // mt: { _: 0, desktop: 88 },
     zIndex: 2,
     "@mq": {
-      xsm: {
-        padding: "1rem",
-        paddingTop: 43,
-      },
       tablet: {
         paddingTop: 69,
       },
       desktop: {
         paddingTop: 433,
+        px:24,
       },
     },
   },

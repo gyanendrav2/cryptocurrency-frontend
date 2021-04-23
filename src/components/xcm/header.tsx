@@ -6,7 +6,7 @@ import { Container } from "../../ui/Container"
 import { headerStyle } from "./cssxStyle/header"
 import { CurrMarketCard } from "./currMarketCard"
 import { BuyCurrencyCard } from "./buyCurrencyCard"
-import { WhatXcmCard } from "./cards/whatXcm"
+// import { WhatXcmCard } from "./cards/whatXcm"
 
 interface HeaderProps {
   data: InitialData

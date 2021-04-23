@@ -4,7 +4,6 @@ interface trustXcmStyleInterface {
   wrapper: CssxObject
   h2: CssxObject
   P: CssxObject
-  img:CssxObject
 }
 
 export const TrustXcmStyle: trustXcmStyleInterface = {
@@ -23,8 +22,4 @@ export const TrustXcmStyle: trustXcmStyleInterface = {
     fontSize: "1rem",
     lineHeight: "2rem",
   },
-  img:{
-    width: 592,
-    height: 333,
-  }
 }

@@ -16,8 +16,20 @@ export function EcoSystem() {
         </Element>
         <Element
           as="img"
-          cssx={classes.img}
-          src="xcmbg/earthEcosystem.png"
+          cssx={classes.imgMob}
+          src="xcmbg/earthEcosystemMob.png"
+          alt="coin metro ecosystem"
+        />
+        <Element
+          as="img"
+          cssx={classes.imgTab}
+          src="xcmbg/earthEcosystemTab.png"
+          alt="coin metro ecosystem"
+        />
+        <Element
+          as="img"
+          cssx={classes.imgDesk}
+          src="xcmbg/earthEcosystemDesk.png"
           alt="coin metro ecosystem"
         />
       </Box>

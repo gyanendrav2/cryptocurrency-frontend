@@ -16,7 +16,7 @@ export function WhyXcm() {
   return (
     <Box cssx={classes.wrapper}>
       <Container cssx={{ m: "auto" }}>
-        <Grid columns={{ _: 1, desktop: 2 }}>
+        <Grid columns={{ _: 1, desktop: 2 }} cssx={classes.flexBox}>
           <Box cssx={classes.leftWrapper}>
             <Element as="img" cssx={classes.horseBig} src="xcmbg/horseBig.svg" alt="Horse" />
             <Element as="img" cssx={classes.horseSmall} src="xcmbg/horseSmall.svg" alt="Horse" />

@@ -8,6 +8,7 @@ interface WhyXcmStyleInterface {
   P: CssxObject
   horseBig: CssxObject
   horseSmall: CssxObject
+  flexBox: CssxObject
 }
 
 export const WhyXcmStyle: WhyXcmStyleInterface = {
@@ -29,7 +30,22 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
       overflowX: "hidden",
       backgroundPosition: "100% 100%",
       backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
       // transform: "scale(2)",
+      "@mq": {
+        xsm: {
+          background: "url('xcmbg/whybgMob.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          top: "40%",
+        },
+        desktop: {
+          background: "url('xcmbg/whyxcmbg.svg')",
+          backgroundRepeat: "no-repeat",
+          top: "0",
+          backgroundSize: "cover",
+        },
+      },
     },
   },
   leftWrapper: {
@@ -39,7 +55,15 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
   horseBig: {
     position: "absolute",
     left: "-12rem",
-    zIndex:-2
+    zIndex: "-2",
+    "@mq": {
+      xsm: {
+        left: "-1rem",
+      },
+      desktop: {
+        left: "-12rem",
+      },
+    },
   },
   horseSmall: {
     // position: "absolute",
@@ -49,13 +73,21 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     transform: "translate(47px,20px)",
     width: "26.875rem",
     height: "20.312rem",
+    "@mq": {
+      xsm: {
+        mt: "4rem",
+      },
+      desktop: {
+        mt: "10rem!important",
+      },
+    },
   },
   h2: {
     fontWeight: 800,
     fontSize: "3rem",
     lineHeight: "3.5rem",
     color: "purple.default",
-     marginBottom: "2rem",
+    marginBottom: "2rem",
   },
   P: {
     fontWeight: 600,
@@ -63,5 +95,18 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     lineHeight: "2rem",
     fontFamily: "Mulish",
     fontStyle: "normal",
+  },
+  flexBox: {
+    "@mq": {
+      xsm: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column-reverse",
+      },
+      desktop: {
+        display: "grid!important",
+      },
+    },
   },
 }

@@ -16,7 +16,7 @@ export function WhatXcmCard() {
         cssx={{ pos: "absolute", top: 0, right: 0, w: "100%" }}
         alt=""
       /> */}
-      <Container cssx={classes.container}>
+      <Container>
         <Grid columns={{ _: 1, desktop: 2 }}>
           <Flex
             align="flex-start"
@@ -24,7 +24,7 @@ export function WhatXcmCard() {
             wrap="nowrap"
             direction="column"
             cssx={{
-              p: 24,
+              pr: { _: 0, desktop: 24 },
               backgroundColor: "transparent",
               // mt: { _: 0, desktop: 88 },
               zIndex: 2,
@@ -44,7 +44,7 @@ export function WhatXcmCard() {
             direction="column"
             cssx={classes.limitedContainer}
           >
-            <Box cssx={classes.coinIcon}>
+            <Box cssx={classes.diagramIcon}>
               <DiagramIcon />
             </Box>
             <Element cssx={classes.h6}>{data.limited_subTitle}</Element>

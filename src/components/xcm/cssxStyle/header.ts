@@ -1,76 +1,80 @@
 import { CssxObject } from "@react-cssx/core"
 
 interface HeaderStyleInterface {
-  wrapper: CssxObject
+  // wrapper: CssxObject
   h1: CssxObject
   bigP: CssxObject
   P: CssxObject
   container: CssxObject
   showonlyDesktop: CssxObject
+  cardWrapper: CssxObject
 }
 
 export const headerStyle: HeaderStyleInterface = {
-  wrapper: {
-    px: 44.4,
-    py: 70,
-    mb: "-80",
-    backgroundImage: "url(xcmbg/starsbg.svg)",
-    pos: "relative",
-    overflow: "hidden",
-    mt: 164,
-    "@mq": {
-      xsm: {
-        px: 0,
-        mt: 0,
-      },
-      tablet: {
-        mt: 0,
-        pb: 70,
-      },
-    },
-  },
+  // wrapper: {
+  //   px: 44.4,
+  //   py: 70,
+  //   mb: "-80",
+  //   backgroundImage: "url(xcmbg/starsbg.svg)",
+  //   pos: "relative",
+  //   overflow: "hidden",
+  //   mt: 164,
+  //   "@mq": {
+  //     xsm: {
+  //       px: 0,
+  //       mt: 0,
+  //     },
+  //     tablet: {
+  //       mt: 0,
+  //       pb: 70,
+  //     },
+  //   },
+  // },
   h1: {
-    color: "white",
+    fontSize: "2.625rem",
+    lineHeight: "3.375rem",
+    mt: "2rem",
+    textAlign: "center",
     fontFamily: "Mulish",
-    fontSize: "3.875rem",
+    color: "white",
     fontWeight: 800,
-    lineHeight: "72px",
     "@mq": {
-      xsm: {
-        fontSize: "2.2rem",
-        lineHeight: "34px",
-        mt: "2rem",
-        textAlign: "center",
-      },
       tablet: {
-        fontSize: 62,
-        fontWeight: 800,
+        fontSize: "3.875rem",
         lineHeight: "72px",
         maxWidth: 504,
-        textAlign: "center",
         mx: "auto",
+      },
+      desktop: {
+        mt: 0,
+        color: "white",
+        fontSize: "3.875rem",
+        fontWeight: 800,
+        textAlign: "left",
       },
     },
   },
   bigP: {
-    fontSize: 20,
-    lineHeight: "32px",
-    color: "white",
-    fontWeight: 600,
+    fontSize: "1.25rem",
+    lineHeight: "20px",
+    mt: 16,
     fontFamily: "Mulish",
-    mt: 24,
+    color: "white",
+    textAlign: "center",
     "@mq": {
-      xsm: {
-        fontSize: "1.25rem",
-        lineHeight: "20px",
-        mt: 16,
-        textAlign: "center",
-      },
       tablet: {
         maxWidth: 504,
         textAlign: "center",
         m: "auto",
-        mb: 32,
+        my: 32,
+        lineHeight: "2rem",
+      },
+      desktop: {
+        mt: 32,
+        textAlign: "left",
+        lineHeight: "2rem",
+        fontSize: 20,
+        fontWeight: 600,
       },
     },
   },
@@ -98,6 +102,26 @@ export const headerStyle: HeaderStyleInterface = {
       // },
       desktop: {
         mt: "9.5rem",
+      },
+    },
+  },
+  cardWrapper: {
+    p: 24,
+    backgroundColor: "grey.dark2",
+    borderRadius: 8,
+    // maxWidth: 416,
+    width: "100%",
+    // mx: "auto",
+    mt: 16,
+    "@mq": {
+      pahblet: {
+        mt: 16,
+        p: 8,
+        backgroundColor: "grey.dark2",
+        borderRadius: 8,
+      },
+      desktop: {
+        mt: 110,
       },
     },
   },

@@ -39,16 +39,15 @@
     }
     @media screen and (min-width: 320px) and (max-width: 375px) {
       background: url("/xcmbg/curvebgMobile.svg");
-      // left: 5rem;
       background-repeat: no-repeat;
-      top: 1rem;
+      top: 5rem;
       transform: scale(1.5);
     }
     @media screen and (min-width: 376px) and (max-width: 493px) {
       background: url("/xcmbg/curvebgMobile.svg");
       left: 5rem;
       background-repeat: no-repeat;
-      top: -4rem;
+      top: 2rem;
       transform: scale(1.5);
     }
     @media screen and (min-width: 494px) and (max-width: 767px) {

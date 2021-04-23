@@ -56,7 +56,7 @@ export default function StartEarning() {
             </Grid>
             <Element
               as="img"
-              src="/xcmbg/startEarningCon.png"
+              src="/xcmbg/startEarningConDesk.png"
               cssx={{ pos: "absolute", right: 0, top: 120, zIndex: 2 }}
             />
             <Element
@@ -68,7 +68,7 @@ export default function StartEarning() {
         </Box>
       </Box>
       <Box cssx={{ bg: "grey.dark", pt: "1rem", pb: "1rem" }}>
-        <Container cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }}></Container>
+        <Container cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }}>""</Container>
       </Box>
     </>
   )

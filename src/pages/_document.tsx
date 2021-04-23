@@ -1,7 +1,5 @@
 import React from "react"
-import Document, {
-  Html, Head, Main, NextScript,
-} from "next/document"
+import Document, { Html, Head, Main, NextScript } from "next/document"
 
 const isProduction = process.env.NODE_ENV === "production"
 
@@ -12,7 +10,10 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="description" content="The best crypto exchange for both beginners and pros. Buy, sell and trade crypto with ease. Keep your profits - we have the lowest fees in the industry." />
+          <meta
+            name="description"
+            content="The best crypto exchange for both beginners and pros. Buy, sell and trade crypto with ease. Keep your profits - we have the lowest fees in the industry."
+          />
 
           <link rel="shortcut icon" href="/favicon.png" type="image/ico" />
           <link rel="canonical" href="https://coinmetro.com/" />
@@ -22,15 +23,27 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://coinmetro.com" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="The Best Crypto Exchange for Beginners and Pros" />
-          <meta property="og:description" content="The best crypto exchange for both beginners and pros. Buy, sell and trade crypto with ease. Keep your profits - we have the lowest fees in the industry." />
-          <meta property="og:image" content="https://coinmetro.com/meta/52042630-0-sm-banner-homepage.png" />
+          <meta
+            property="og:description"
+            content="The best crypto exchange for both beginners and pros. Buy, sell and trade crypto with ease. Keep your profits - we have the lowest fees in the industry."
+          />
+          <meta
+            property="og:image"
+            content="https://coinmetro.com/meta/52042630-0-sm-banner-homepage.png"
+          />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="coinmetro.com" />
           <meta property="twitter:url" content="https://coinmetro.com" />
           <meta name="twitter:title" content="The Best Crypto Exchange for Beginners and Pros" />
-          <meta name="twitter:description" content="The best crypto exchange for both beginners and pros. Buy, sell and trade crypto with ease. Keep your profits - we have the lowest fees in the industry." />
-          <meta name="twitter:image" content="https://coinmetro.com/meta/52042630-0-sm-banner-homepage.png" />
+          <meta
+            name="twitter:description"
+            content="The best crypto exchange for both beginners and pros. Buy, sell and trade crypto with ease. Keep your profits - we have the lowest fees in the industry."
+          />
+          <meta
+            name="twitter:image"
+            content="https://coinmetro.com/meta/52042630-0-sm-banner-homepage.png"
+          />
 
           {isProduction && (
             <meta
@@ -60,7 +73,6 @@ export default class MyDocument extends Document {
 
           <script defer nonce={nonce} type="text/javascript" async src="/js/loadRef.js?v=1.3.0" />
           <script defer nonce={nonce} type="text/javascript" async src="/js/snippets.js?v=1.0.12" />
-
         </Head>
         <body>
           <Main />

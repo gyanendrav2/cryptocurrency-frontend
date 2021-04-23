@@ -1,5 +1,6 @@
 import { Element, Flex } from "@react-cssx/core"
-import React, { useState } from "react"
+import axios from "axios"
+import React, { useEffect, useState } from "react"
 import {
   AreaChart,
   Area,
@@ -9,68 +10,49 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts"
-
-const data = [
-  {
-    name: "Today",
-    uv: 0,
-    pv: 0,
-    amt: 0,
-  },
-  {
-    name: "1 week",
-    uv: 0.42,
-    pv: 0.44,
-    amt: 0.46,
-  },
-  {
-    name: "Page C",
-    uv: 0.32,
-    pv: 0.34,
-    amt: 0.36,
-  },
-  {
-    name: "Page D",
-    uv: 0.22,
-    pv: 0.24,
-    amt: 0.36,
-  },
-  {
-    name: "Page E",
-    uv: 0.12,
-    pv: 0.24,
-    amt: 0.16,
-  },
-  {
-    name: "Page F",
-    uv: 0.22,
-    pv: 0.24,
-    amt: 0.16,
-  },
-  {
-    name: "Page G",
-    uv: 0.32,
-    pv: 0.34,
-    amt: 0.36,
-  },
-]
+import { priceChartAPI } from "../../API/xcmAPI"
 
 const filterRange = [
-  { time: "1 day", active: true },
-  { time: "1 week", active: false },
-  { time: "3 months", active: false },
-  { time: "1 years", active: false },
-  { time: "max", active: false },
+  { time: "1 day", active: true, shortTime: "1D" },
+  { time: "1 week", active: false, shortTime: "1W" },
+  { time: "3 months", active: false, shortTime: "1M" },
+  { time: "1 years", active: false, shortTime: "1Y" },
+  { time: "max", active: false, shortTime: "MAX" },
 ]
 
-export default function PriceStatisticsChart() {
+export default function PriceStatisticsChart(props) {
+  const data = [
+    { price: 0.41141751220214 },
+    { price: 0.21141751220214 },
+    { price: 0.31141751220214 },
+    { price: 0.21141751220214 },
+    { price: 0.51141751220214 },
+    { price: 0.61141751220214 },
+  ]
+
+  console.log("props", props)
   const [filterOptions, setFilterOptions] = useState(filterRange)
+  const [graphData, setGraphData] = useState([])
+  const [activeTime, setActiveTime] = useState("1D")
+
+  const handlePriceAPI = async (timePeriod) => {
+    const result = await priceChartAPI(timePeriod)
+    if (result.status === 200) {
+      const priceData = result.data.prices.map((item: string) => ({ price: item }))
+      setGraphData(priceData)
+    }
+  }
+  useEffect(() => {
+    handlePriceAPI(activeTime)
+  }, [])
 
   const handleAcitve = (i) => {
     const tempData: any = [...filterOptions]
     const result = tempData.map((item) => ({ ...item, active: false }))
     result[i].active = true
+    setActiveTime(result[i].shortTime)
     setFilterOptions(result)
+    handlePriceAPI(result[i].shortTime)
   }
   return (
     <div className="price__chart">
@@ -109,7 +91,7 @@ export default function PriceStatisticsChart() {
         <AreaChart
           width={730}
           height={250}
-          data={data}
+          data={graphData}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
@@ -124,7 +106,7 @@ export default function PriceStatisticsChart() {
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="uv"
+            dataKey="price"
             stroke="#8884d8"
             fillOpacity={1}
             fill="url(#colorUv)"
@@ -133,4 +115,18 @@ export default function PriceStatisticsChart() {
       </ResponsiveContainer>
     </div>
   )
+}
+
+// PriceStatisticsChart.getInitialProps = async () => {
+//   const result = await axios.get("https://api.coinmetro.com/exchange/price-series/XCMEUR/1M")
+//   const data = await result.data
+//   return data
+// }
+
+PriceStatisticsChart.getInitialProps = async () => {
+  const result = await axios.get("https://api.mocki.io/v1/58fdd8b2")
+  const data = await result.data
+  // const result = await API.get(endpoints.discover)
+  // const data = await result.data
+  return { homeData: { data } }
 }

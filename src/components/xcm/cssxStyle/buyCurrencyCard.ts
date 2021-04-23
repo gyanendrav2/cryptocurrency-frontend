@@ -15,22 +15,24 @@ interface BuyCurrencyCard {
 
 export const buyCurrencyCardStyle: BuyCurrencyCard = {
   wrapper: {
-    p: 24,
     backgroundColor: "grey.dark2",
     borderRadius: 8,
-    ml: { _: 0, desktop: 32 },
-    mb: { _: 0, desktop: 140 },
+    ml:0,
+    mb:0,
     zIndex: 2,
     pos: "relative",
-    maxWidth: 416,
-    mx: "auto",
+    mt: "4.3rem",
+    p: 24,
     "@mq": {
-      xsm: {
-        mt: "4.3rem",
-      },
       tablet: {
         mt: 0,
       },
+      desktop: {
+        maxWidth: 416,
+        mx: "auto",
+        ml:32,
+        mb:140,
+      }
     },
     // "&::after": {
     //   content: "''",
@@ -95,24 +97,19 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     color: "purple.default",
   },
   img: {
-    //  height: 301,
     zIndex: "-1",
-    width: 631,
+    // width: 631,
     pos: "absolute",
+    top: "0.375rem",
+    right: "8%",
     "@mq": {
-      xsm: {
-        top: "0.375rem",
-        right: "8%",
-      },
       tablet: {
-        top: "17.625rem",
-        right: "-2.937rem",
-        width: "30.9375rem",
+        top: "6.625rem",
+        right: "-12.937rem",
       },
       desktop: {
-        top: "14.625rem",
+        top: "6.625rem",
         right: "-8.937rem",
-        width: "25.9375rem",
       },
     },
   },

@@ -34,7 +34,7 @@ export function TrustXcm() {
             ))}
           </Box>
           <Box>
-            <Element as="img" cssx={classes.img} src="xcmbg/trust.png" alt="trust" />
+            <Element as="img" src="xcmbg/trust.png" alt="trust" />
           </Box>
         </Grid>
       </Container>

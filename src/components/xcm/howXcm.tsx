@@ -73,13 +73,20 @@ export function HowXcm() {
             </Grid>
           </Container>
         </Container>
-        <Element as="img" cssx={classes.img} src="xcmbg/howxcmbg.png" alt="coin metro ecosystem" />
-        <Element
-          as="img"
-          cssx={classes.globeImg}
-          src="xcmbg/howGlobeFlag.svg"
-          alt="coin metro ecosystem"
-        />
+        <Box cssx={{ pos: "relative" }}>
+          <Element
+            as="img"
+            cssx={classes.img}
+            src="xcmbg/howxcmbg.png"
+            alt="coin metro ecosystem"
+          />
+          <Element
+            as="img"
+            cssx={classes.globeImg}
+            src="xcmbg/globe.png"
+            alt="coin metro ecosystem"
+          />
+        </Box>
       </Box>
     </>
   )

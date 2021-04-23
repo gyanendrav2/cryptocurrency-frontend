@@ -12,13 +12,18 @@ export interface HowXcmStyleInterface {
 export const howXcmStyle: HowXcmStyleInterface = {
   wrapper: {
     pos: "relative",
+    top: 0,
+    right: 0,
+    backgroundColor: "white",
     overflow: "hidden",
-    backgroundImage: "url(xcmbg/starsbg.svg)",
+    background: "url('xcmbg/union.png')",
     marginTop: "-2rem",
+    backgroundSize: "cover",
+    backgroundPosition: "100% 100%",
     zIndex: "2",
     "&::before": {
       content: "''",
-      background: "url('xcmbg/union.png')",
+      backgroundImage: "url(xcmbg/howBgstars.png)",
       position: "absolute",
       left: 0,
       right: 0,
@@ -27,11 +32,12 @@ export const howXcmStyle: HowXcmStyleInterface = {
       height: "100%",
       zIndex: "-2",
       overflowX: "hidden",
-      backgroundSize: "100% 100%",
+      backgroundSize: "cover",
+      backgroundPosition: "100%, 100%",
       backgroundRepeat: "no-repeat",
       // backgroundColor:"grey.bg"
       // backgroundPosition: "100% 100%",
-      // transform: "scale(2)",
+      transform: "scale(1)",
     },
   },
   wrapper2: {
@@ -50,7 +56,7 @@ export const howXcmStyle: HowXcmStyleInterface = {
       width: "100%",
       height: "100%",
       zIndex: 1,
-      // overflowX: "hidden",
+      //  overflowX: "hidden",
       backgroundSize: "100% 100%",
       backgroundRepeat: "no-repeat",
       // backgroundPosition: "100% 100%",
@@ -75,12 +81,26 @@ export const howXcmStyle: HowXcmStyleInterface = {
   },
   globeImg: {
     position: "absolute",
-    bottom: "31rem",
+    top: "-3rem",
     right: "20rem",
-    // transform:"translate(31rem,20rem)",
     zIndex: "-1",
-    width: 243,
-    height: 137,
+    "@mq": {
+      xsm: {
+        top: "-2rem",
+        right: "15vw",
+        width: "7rem",
+      },
+      tablet: {
+        top: "-1rem",
+        right: "15vw",
+        width: "10rem",
+      },
+      desktop: {
+        top: "-3rem",
+        right: "32vw",
+        width: "auto",
+      },
+    },
   },
   title: {
     fontSize: 20,

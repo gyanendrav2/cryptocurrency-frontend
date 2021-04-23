@@ -3,7 +3,9 @@ import { CssxObject } from "@react-cssx/core"
 export interface EcosystemStyleInterface {
   wrapper: CssxObject
   heading: CssxObject
-  img: CssxObject
+  imgDesk: CssxObject
+  imgTab: CssxObject
+  imgMob: CssxObject
   title: CssxObject
   wrapper2: CssxObject
   wrapper1: CssxObject
@@ -15,21 +17,6 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     overflow: "hidden",
     backgroundColor: "grey.dark",
     backgroundImage: "url(xcmbg/starsbg.svg)",
-    // "&::before": {
-    //   content: "''",
-    //   background: "url('xcmbg/xcmEcobg.svg')",
-    //   position: "absolute",
-    //   left: 0,
-    //   right: 0,
-    //   top: 0,
-    //   width: "100%",
-    //   height: "100%",
-    //   zIndex: "-1",
-    //   overflowX: "hidden",
-    //   backgroundSize: "100%",
-    //   backgroundRepeat: "no-repeat",
-    //   // transform: "scale(2)",
-    // },
   },
   wrapper1: {
     pos: "relative",
@@ -51,7 +38,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
       overflowX: "hidden",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "100% 100%",
+      backgroundPosition: "bottom",
     },
   },
   wrapper2: {
@@ -74,40 +61,72 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
       overflowX: "hidden",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "100% 100%",
+      backgroundPosition: "bottom",
     },
   },
   heading: {
-    fontSize: 48,
+    fontSize: "2rem",
     fontWeight: 800,
-    lineHeight: "56px",
+    lineHeight: "2.5rem",
     color: "white",
-    maxWidth: 680,
+    // maxWidth: 680,
     textAlign: "center",
-    margin: "auto",
-    marginTop: "2rem",
+    // margin: "auto",
+    mt: "2rem",
+    mb: "2rem",
     "& span": {
       color: "indigo.light",
     },
     "@mq": {
-      xsm: {
-        fontSize: 32,
-        lineHeight: "40px",
-      },
       tablet: {
-        fontSize: 48,
+        fontSize: "3rem",
         lineHeight: "56px",
       },
     },
   },
-  img: {
+  imgDesk: {
     margin: "auto",
+    display: "none",
+    "@mq": {
+      desktop: {
+        display: "block",
+      },
+    },
+  },
+  imgTab: {
+    display: "none",
+    margin: "auto",
+    "@mq": {
+      tablet: {
+        display: "block",
+      },
+      desktop: {
+        display: "none",
+      },
+    },
+  },
+  imgMob: {
+    display: "block",
+    margin: "auto",
+    padding: 40,
+    "@mq": {
+      xsm: {
+        display: "block",
+      },
+      tablet: {
+        display: "none",
+      },
+      desktop: {
+        display: "none",
+      },
+    },
   },
   title: {
     fontSize: 20,
-    lineHeight: "32px",
+    lineHeight: "2rem",
     fontWeight: 600,
     textAlign: "center",
+    px: 16,
     margin: "auto",
     maxWidth: 502,
     color: "white",
