@@ -9,7 +9,18 @@ import { priceStatisticsStyle } from "./cssxStyle/priceStatistics"
 export function PriceStatistics() {
   const classes = priceStatisticsStyle
   return (
-    <Box cssx={{ bg: "grey.bg", pt: 135, zIndex: "-2" }}>
+    <Box
+      cssx={{
+        bg: "grey.bg",
+        pt: "3.5rem",
+        zIndex: "-2",
+        "@mq": {
+          tablet: {
+            pt: 135,
+          },
+        },
+      }}
+    >
       <Element as="h2" cssx={classes.heading}>
         XCM price statistics
       </Element>
@@ -40,7 +51,19 @@ export function PriceStatistics() {
         </Grid>
       </Container>
       <Flex align="center" justify="center">
-        <Button variant="purple" cssx={{ mt: 40, mb: 190 }}>
+        <Button
+          variant="purple"
+          cssx={{
+            mt: "1.5rem",
+            mb: "4rem",
+            "@mq": {
+              tablet: {
+                mb: 190,
+                mt: 40,
+              },
+            },
+          }}
+        >
           View all statistics
         </Button>
       </Flex>

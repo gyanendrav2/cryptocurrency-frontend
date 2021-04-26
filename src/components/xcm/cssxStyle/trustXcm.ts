@@ -12,10 +12,17 @@ export const TrustXcmStyle: trustXcmStyleInterface = {
   },
   h2: {
     fontWeight: 800,
-    fontSize: "3.2rem",
-    lineHeight: "3.5rem",
+    fontSize: "2rem",
+    lineHeight: "2.5rem",
     color: "purple.default",
-    marginBottom: "3.5rem",
+    marginBottom: "2rem",
+    "@mq": {
+      tablet: {
+        lineHeight: "3.5rem",
+        fontSize: "3.2rem",
+        marginBottom:"3.5rem"
+      }
+    }
   },
   P: {
     fontWeight: 600,

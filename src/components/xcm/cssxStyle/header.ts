@@ -1,7 +1,6 @@
 import { CssxObject } from "@react-cssx/core"
 
 interface HeaderStyleInterface {
-  // wrapper: CssxObject
   h1: CssxObject
   bigP: CssxObject
   P: CssxObject
@@ -11,28 +10,9 @@ interface HeaderStyleInterface {
 }
 
 export const headerStyle: HeaderStyleInterface = {
-  // wrapper: {
-  //   px: 44.4,
-  //   py: 70,
-  //   mb: "-80",
-  //   backgroundImage: "url(xcmbg/starsbg.svg)",
-  //   pos: "relative",
-  //   overflow: "hidden",
-  //   mt: 164,
-  //   "@mq": {
-  //     xsm: {
-  //       px: 0,
-  //       mt: 0,
-  //     },
-  //     tablet: {
-  //       mt: 0,
-  //       pb: 70,
-  //     },
-  //   },
-  // },
   h1: {
-    fontSize: "2.625rem",
-    lineHeight: "3.375rem",
+    fontSize: "2rem",
+    lineHeight: "2.5rem",
     mt: "2rem",
     textAlign: "center",
     fontFamily: "Mulish",
@@ -87,21 +67,8 @@ export const headerStyle: HeaderStyleInterface = {
     pt: 36,
     mt: 64,
     "@mq": {
-      // // xsm: {
-      // //   pt: 36,
-      // //   mt: 64,
-      // // },
-
-      // // phablet: {
-      // //   pt: 36,
-      // //   mt: 40,
-      // // },
-      // tablet: {
-      //   pt: 36,
-      //   mt: 136,
-      // },
-      desktop: {
-        mt: "9.5rem",
+       desktop: {
+        mt: "8.5rem",
       },
     },
   },
@@ -109,9 +76,7 @@ export const headerStyle: HeaderStyleInterface = {
     p: 24,
     backgroundColor: "grey.dark2",
     borderRadius: 8,
-    // maxWidth: 416,
     width: "100%",
-    // mx: "auto",
     mt: 16,
     "@mq": {
       pahblet: {

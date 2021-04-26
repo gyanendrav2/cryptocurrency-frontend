@@ -19,7 +19,7 @@ export const howXcmStyle: HowXcmStyleInterface = {
     background: "url('xcmbg/union.png')",
     marginTop: "-2rem",
     backgroundSize: "cover",
-    backgroundPosition: "100% 100%",
+    backgroundPosition: "100% 50%",
     zIndex: "2",
     "&::before": {
       content: "''",
@@ -35,8 +35,6 @@ export const howXcmStyle: HowXcmStyleInterface = {
       backgroundSize: "cover",
       backgroundPosition: "100%, 100%",
       backgroundRepeat: "no-repeat",
-      // backgroundColor:"grey.bg"
-      // backgroundPosition: "100% 100%",
       transform: "scale(1)",
     },
   },
@@ -66,13 +64,22 @@ export const howXcmStyle: HowXcmStyleInterface = {
     fontFamily: "Mulish",
     fontStyle: "normal",
     fontWeight: 800,
-    fontSize: "3rem",
-    lineHeight: "4rem",
+    fontSize: "2rem",
+    lineHeight: "2.5rem",
     textAlign: "center",
     color: "indigo.light",
-    paddingTop: "8.5rem",
-    marginBottom: "3.5rem",
+    paddingTop: "4.5rem",
+    marginBottom: "2.5rem",
     marginTop: "2rem",
+    "@mq":{
+      tablet:{
+        fontSize: "3rem",
+       lineHeight: "4rem",
+       paddingTop: "8.5rem",
+      marginBottom: "3.5rem",
+      }
+
+    }
   },
   img: {
     margin: "auto",

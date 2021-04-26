@@ -10,12 +10,6 @@ export function WhatXcmCard() {
   const classes = whatXcmStyle
   return (
     <div className="whatxcm__wrapper">
-      {/* <Element
-        as="img"
-        src="xcmbg/curvebg.svg"
-        cssx={{ pos: "absolute", top: 0, right: 0, w: "100%" }}
-        alt=""
-      /> */}
       <Container>
         <Grid columns={{ _: 1, desktop: 2 }}>
           <Flex
@@ -25,8 +19,8 @@ export function WhatXcmCard() {
             direction="column"
             cssx={{
               pr: { _: 0, desktop: 24 },
+              pt: { xsm: "2rem" },
               backgroundColor: "transparent",
-              // mt: { _: 0, desktop: 88 },
               zIndex: 2,
             }}
           >

@@ -32,8 +32,17 @@ export function HowXcm() {
             <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
               <Box>
                 {howXcmDataLeft.splice(0, 3).map((item) => (
-                  <Flex align="center" cssx={{ mb: 24 }}>
-                    <Element cssx={{ mr: 17 }}>
+                  <Flex align="flex-start" cssx={{ mb: 24 }}>
+                    <Element
+                      cssx={{
+                        mr: 17,
+                        // "@mq": {
+                        //   xsm: {
+                        //     mt: "0.5rem",
+                        //   },
+                        // },
+                      }}
+                    >
                       <item.icon />
                     </Element>
                     <Flex
@@ -52,7 +61,7 @@ export function HowXcm() {
               </Box>
               <Box>
                 {howXcmDataRight.map((item) => (
-                  <Flex align="center" cssx={{ mb: 24 }}>
+                  <Flex align="flex-start" cssx={{ mb: 24 }}>
                     <Element cssx={{ mr: 17 }}>
                       <item.icon />
                     </Element>

@@ -28,7 +28,7 @@ export function WhyXcm() {
                 justify="center"
                 wrap="nowrap"
                 direction="column"
-                cssx={{ mb: 24 }}
+                cssx={{ mb: 24, textAlign: "left" }}
               >
                 <Element cssx={classes.h2}>{item.title}</Element>
                 <Element cssx={classes.P}>{item.description}</Element>

@@ -15,22 +15,14 @@ import { priceChartAPI } from "../../API/xcmAPI"
 const filterRange = [
   { time: "1 day", active: true, shortTime: "1D" },
   { time: "1 week", active: false, shortTime: "1W" },
-  { time: "3 months", active: false, shortTime: "1M" },
-  { time: "1 years", active: false, shortTime: "1Y" },
+  { time: "1 month", active: false, shortTime: "1M" },
+  { time: "3 months", active: false, shortTime: "3M" },
+  { time: "1 year", active: false, shortTime: "1Y" },
+  { time: "3 years", active: false, shortTime: "3Y" },
   { time: "max", active: false, shortTime: "MAX" },
 ]
 
-export default function PriceStatisticsChart(props) {
-  const data = [
-    { price: 0.41141751220214 },
-    { price: 0.21141751220214 },
-    { price: 0.31141751220214 },
-    { price: 0.21141751220214 },
-    { price: 0.51141751220214 },
-    { price: 0.61141751220214 },
-  ]
-
-  console.log("props", props)
+export default function PriceStatisticsChart() {
   const [filterOptions, setFilterOptions] = useState(filterRange)
   const [graphData, setGraphData] = useState([])
   const [activeTime, setActiveTime] = useState("1D")
@@ -69,10 +61,11 @@ export default function PriceStatisticsChart(props) {
               color: "#a4a6b3",
               borderBottom: "1px solid",
               borderColor: item.active ? "#69D5DD" : "#a4a6b3",
+
               "@mq": {
                 xsm: {
                   fontSize: 10,
-                  lineHeight: "24px",
+                  lineHeight: "1.5rem",
                   width: "20%",
                   minWidth: "unset",
                 },
@@ -120,13 +113,5 @@ export default function PriceStatisticsChart(props) {
 // PriceStatisticsChart.getInitialProps = async () => {
 //   const result = await axios.get("https://api.coinmetro.com/exchange/price-series/XCMEUR/1M")
 //   const data = await result.data
-//   return data
+//   return { data: data }
 // }
-
-PriceStatisticsChart.getInitialProps = async () => {
-  const result = await axios.get("https://api.mocki.io/v1/58fdd8b2")
-  const data = await result.data
-  // const result = await API.get(endpoints.discover)
-  // const data = await result.data
-  return { homeData: { data } }
-}

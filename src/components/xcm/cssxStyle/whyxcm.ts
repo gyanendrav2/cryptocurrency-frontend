@@ -66,9 +66,6 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     },
   },
   horseSmall: {
-    // position: "absolute",
-    // right: 0,
-    // bottom: 0,
     mt: "10rem",
     transform: "translate(47px,20px)",
     width: "26.875rem",
@@ -84,10 +81,18 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
   },
   h2: {
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "2rem",
     lineHeight: "3.5rem",
     color: "purple.default",
-    marginBottom: "2rem",
+    marginBottom: "1rem",
+    textAlign:"center",
+    "@mq": {
+      tablet: {
+    fontSize: "3rem",
+    marginBottom: "1.5rem",
+    textAlign:"left",
+      },
+    },
   },
   P: {
     fontWeight: 600,

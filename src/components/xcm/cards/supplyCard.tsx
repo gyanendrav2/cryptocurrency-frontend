@@ -3,7 +3,7 @@ import { Box, Element, Flex } from "@react-cssx/core"
 import { xcmSupplyData, xcmOtherStats } from "../../../data/xcmSupplydata"
 import { InfoIcon } from "../../icons/infoIcon"
 import { ArrowdownIcon } from "../../icons/arrowdownIcon"
-import { xcmSupplyAPIcall } from "../../../API/xcmAPI"
+import { vaultAmountAPIcall, xcmSupplyAPIcall, lockedWalletAPIcall } from "../../../API/xcmAPI"
 
 interface SupplyDataItem {
   icon: any
@@ -169,14 +169,25 @@ function SupplyCardRowTwo({ title, data }: { title: string; data: SupplyDataItem
 
 export default function SupplyCard() {
   const [card1Data, setCard1Data] = useState(xcmSupplyData)
+  const [vaultValue, setVaultValue] = useState(xcmOtherStats)
+
   const handleAPIcall = async () => {
     const totalResult = await xcmSupplyAPIcall()
+    const vaultResult = await vaultAmountAPIcall()
+    const lockedWalletResult = await lockedWalletAPIcall()
+
     if (totalResult.status === 200) {
       const tempData = [...card1Data]
       tempData[0].price = totalResult.data.XCM.totalSupply
       tempData[1].price = totalResult.data.XCM.circulatingSupply
       tempData[2].price = totalResult.data.XCM.marketCap
       setCard1Data(tempData)
+    }
+    if (totalResult.status === 200 && lockedWalletResult.status === 200) {
+      const tempVaultData = [...vaultValue]
+      tempVaultData[0].price = lockedWalletResult.data.allTime
+      tempVaultData[1].price = vaultResult.data
+      setVaultValue(tempVaultData)
     }
   }
   useEffect(() => {
@@ -186,7 +197,7 @@ export default function SupplyCard() {
   return (
     <Box>
       <SupplyCardRowOne title="xcm supply" data={card1Data} />
-      <SupplyCardRowTwo title="other stats" data={xcmOtherStats} />
+      <SupplyCardRowTwo title="other stats" data={vaultValue} />
     </Box>
   )
 }

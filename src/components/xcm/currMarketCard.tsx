@@ -1,10 +1,29 @@
 import { Element, Flex } from "@react-cssx/core"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { ArrowdownIcon } from "../icons/arrowdownIcon"
 import { InfoIcon } from "../icons/infoIcon"
 import { headerStyle } from "./cssxStyle/header"
+import { priceVariationAPIcall, marketCapXCMAPIcall } from "../../API/xcmAPI"
 
 export function CurrMarketCard() {
+  const [currentmarketCap, setCurrentmarketCap] = useState<any>("")
+  const [pricevariation, setPricevariation] = useState<any>("")
+
+  const handleAPIcall = async () => {
+    const priceVarResult = await priceVariationAPIcall()
+    const marketCapResult = await marketCapXCMAPIcall()
+    if (priceVarResult.status === 200) {
+      setPricevariation(Number(priceVarResult.data["24hInfo"][0].delta * 100).toFixed(2))
+    }
+    if (marketCapResult.status === 200) {
+      setCurrentmarketCap(marketCapResult.data.EUR)
+    }
+  }
+
+  useEffect(() => {
+    handleAPIcall()
+  }, [])
+
   const classes = headerStyle
   return (
     <Flex align="center" justify="space-between" wrap="nowrap" cssx={classes.cardWrapper}>
@@ -25,14 +44,14 @@ export function CurrMarketCard() {
           </Element>
         </Flex>
         <Element as="p" cssx={{ color: "white", ml: 16 }}>
-          $64,812,048
+          €{currentmarketCap}
         </Element>
       </Flex>
 
       <Flex align="center" justify="space-between" wrap="nowrap" cssx={{ color: "red" }}>
         <ArrowdownIcon />
         <Element as="p" cssx={{ ml: 6.23 }}>
-          1,99
+          {pricevariation}
         </Element>
       </Flex>
     </Flex>

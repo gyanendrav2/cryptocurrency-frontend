@@ -10,12 +10,17 @@ export default function XcmPriceCard() {
         <Flex align="center" wrap="nowrap">
           <CoinmetroLogo />
           <Box cssx={{ marginLeft: 32 }}>
-            <Element as="P" cssx={{ color: "teal.dark", fontSize: 12, lineHeight: "20px" }}>
+            <Element as="P" cssx={{ color: "teal.dark", fontSize: 12, lineHeight: "1.25rem" }}>
               XCM price
             </Element>
             <Element
               as="h1"
-              cssx={{ color: "purple.default", fontSize: 30, lineHeight: "40px", fontWeight: 800 }}
+              cssx={{
+                color: "purple.default",
+                fontSize: 30,
+                lineHeight: "2.5rem",
+                fontWeight: 800,
+              }}
             >
               $0.2136
             </Element>

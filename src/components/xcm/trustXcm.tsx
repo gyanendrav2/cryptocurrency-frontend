@@ -13,8 +13,21 @@ const trustXcmData = [
 
 export function TrustXcm() {
   const classes = TrustXcmStyle
+
   return (
-    <Box cssx={{ bg: "grey.bg", pt: 144, pb: 158 }}>
+    <Box
+      cssx={{
+        bg: "grey.bg",
+        pt: "4rem",
+        pb: "5.875rem",
+        "@mq": {
+          tablet: {
+            pt: 144,
+            pb: 158,
+          },
+        },
+      }}
+    >
       <Container cssx={{ m: "auto", mb: 69 }}>
         <Grid columns={{ _: 1, desktop: 2 }}>
           <Box>
@@ -38,7 +51,7 @@ export function TrustXcm() {
           </Box>
         </Grid>
       </Container>
-      <Container cssx={{ m: "auto" }}>
+      <Container cssx={{ mx: "auto", pl: 0, "@mq": { phablet: { pl: "1.5rem" } } }}>
         <div
           className="trustpilot-widget"
           data-locale="en-US"
@@ -56,7 +69,6 @@ export function TrustXcm() {
           </a>
         </div>
       </Container>
-      {/* End TrustBox widget */}
     </Box>
   )
 }

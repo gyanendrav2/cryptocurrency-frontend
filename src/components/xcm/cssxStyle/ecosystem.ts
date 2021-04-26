@@ -24,6 +24,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     height: "5rem",
     bg: "grey.bg",
     transform: "translateY(10px)",
+    backgroundColor:"white",
     "&::before": {
       content: "''",
       background: "url('xcmbg/xcmEcobg.svg')",
@@ -69,10 +70,8 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     fontWeight: 800,
     lineHeight: "2.5rem",
     color: "white",
-    // maxWidth: 680,
     textAlign: "center",
-    // margin: "auto",
-    mt: "2rem",
+    mt: "1rem",
     mb: "2rem",
     "& span": {
       color: "indigo.light",
@@ -81,6 +80,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
       tablet: {
         fontSize: "3rem",
         lineHeight: "56px",
+         mt: "2rem",
       },
     },
   },
@@ -99,6 +99,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     "@mq": {
       tablet: {
         display: "block",
+        marginBottom:"-8rem"
       },
       desktop: {
         display: "none",

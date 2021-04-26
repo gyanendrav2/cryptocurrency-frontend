@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Box, Element, Flex } from "@react-cssx/core"
 import { Button } from "../../ui/Button"
 import { buyCurrencyCardStyle } from "./cssxStyle/buyCurrencyCard"
 import { CurrencyPicker } from "../currency/currencyPicker"
 import { CurrencyOptionsInterface } from "../../interfaces/currencyOptionsInterface"
 import { CurrMarketCard } from "./currMarketCard"
+import { xcmRatesAPIcall } from "../../API/xcmAPI"
 // import Logo from "../../../public/logo.svg"
 // import Inputcoinmetrologo from "../../../public/inputcoinmetrologo.svg"
 
@@ -12,6 +13,7 @@ import { CurrMarketCard } from "./currMarketCard"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
+  const [currData, setCurrData] = useState({ XCM: "" })
   const [coinmetro, setCoinmetro] = useState<CurrencyOptionsInterface>({
     name: "XCM",
     currency: "coinmetro",
@@ -22,7 +24,22 @@ export function BuyCurrencyCard() {
     currency: "EURO",
     flag: "xcmFlags/europeFlag.png",
   })
-  // console.log(selectedCurrency)
+  const [payWithValue, setPayWithValue] = useState("")
+  const handleAPIcall = async () => {
+    const result = await xcmRatesAPIcall()
+    if (result.status === 200) {
+      setCurrData(result.data)
+    }
+  }
+  useEffect(() => {
+    handleAPIcall()
+  }, [])
+  const handleCurrency = (data: CurrencyOptionsInterface) => {
+    setSelectedCurrency(data)
+    if (currData[data.name]) {
+      setPayWithValue(currData[data.name])
+    }
+  }
   return (
     <Box cssx={{ pos: "relative" }}>
       <Flex
@@ -44,7 +61,13 @@ export function BuyCurrencyCard() {
             <Element as="p" cssx={classes.inputLabel}>
               BUY
             </Element>
-            <Element as="input" required placeholder="0.212" cssx={classes.input1} />
+            <Element
+              as="input"
+              required
+              placeholder="0.212"
+              cssx={classes.input1}
+              value={currData?.XCM}
+            />
             <CurrencyPicker disableDropdown hideDropdownIcon value={coinmetro} />
           </Flex>
           <Flex
@@ -55,7 +78,7 @@ export function BuyCurrencyCard() {
             cssx={{ mb: 6 }}
           >
             <Element as="p" cssx={{ ml: 20, color: "white", mb: 24, fontSize: 12 }}>
-              Coinmetro price $0.2136
+              Coinmetro price {currData?.XCM}
             </Element>
           </Flex>
           <Flex
@@ -68,8 +91,14 @@ export function BuyCurrencyCard() {
             <Element as="p" cssx={classes.inputLabel}>
               PAY WITH
             </Element>
-            <Element as="input" required placeholder="100" cssx={classes.input1} />
-            <CurrencyPicker handleOnChange={setSelectedCurrency} value={selectedCurrency} />
+            <Element
+              as="input"
+              required
+              placeholder="100"
+              cssx={classes.input1}
+              value={payWithValue}
+            />
+            <CurrencyPicker handleOnChange={handleCurrency} value={selectedCurrency} />
           </Flex>
         </form>
         <Button

@@ -2,25 +2,49 @@ import { Box, Element, Grid } from "@react-cssx/core"
 import React from "react"
 import { Button } from "../../ui/Button"
 import { Container } from "../../ui/Container"
+import { startEarningStyle } from "./cssxStyle/startEarning"
 
 export default function StartEarning() {
+  const classes = startEarningStyle
   return (
     <>
       <Box cssx={{ bg: "grey.bg" }}>
         <Element as="img" src="/xcmbg/curveRight.svg" cssx={{ pos: "relative", ml: "auto" }} />
-        <Box cssx={{ bg: "grey.dark", position: "relative", pt: 187, pb: "25rem" }}>
+        <Box
+          cssx={{
+            bg: "grey.dark",
+            position: "relative",
+            pt: "3.5rem",
+            pb: "20rem",
+            "@mq": {
+              phablet: {
+                pb: "30rem",
+              },
+              tablet: {
+                pt: "7.6875rem",
+                pb: "27rem",
+              },
+            },
+          }}
+        >
           <Container>
             <Grid columns={{ _: 1, desktop: 2 }}>
               <Box>
                 <Element
                   as="h4"
                   cssx={{
-                    fontSize: 48,
-                    lineHeight: "56px",
+                    fontSize: 32,
+                    lineHeight: "40px",
                     maxWidth: 475,
                     color: "indigo.light",
                     fontWeight: 800,
                     mb: 24,
+                    "@mq": {
+                      tablet: {
+                        fontSize: 48,
+                        lineHeight: "56px",
+                      },
+                    },
                   }}
                 >
                   Start earning with Coinmetro!
@@ -48,17 +72,16 @@ export default function StartEarning() {
                     w: "100%",
                     textAlign: "center",
                     verticalAlign: "middle",
+                    zIndex: 5,
                   }}
                 >
                   Buy XCM Now
                 </Button>
               </Box>
             </Grid>
-            <Element
-              as="img"
-              src="/xcmbg/startEarningConDesk.png"
-              cssx={{ pos: "absolute", right: 0, top: 120, zIndex: 2 }}
-            />
+            <Element as="img" src="/xcmbg/startEarningConDesk.png" cssx={classes.imgDesk} />
+            <Element as="img" src="/xcmbg/startEarningConTab.png" cssx={classes.imgTab} />
+            <Element as="img" src="/xcmbg/startEarningConTab.png" cssx={classes.imgMob} />
             <Element
               as="img"
               src="/xcmbg/lines.svg"
@@ -68,7 +91,7 @@ export default function StartEarning() {
         </Box>
       </Box>
       <Box cssx={{ bg: "grey.dark", pt: "1rem", pb: "1rem" }}>
-        <Container cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }}>""</Container>
+        <Container cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }} />
       </Box>
     </>
   )

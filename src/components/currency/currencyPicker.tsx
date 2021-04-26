@@ -39,7 +39,7 @@ export function CurrencyPicker({
         as="p"
         cssx={{
           fontSize: 12,
-          lineHeight: "20px",
+          lineHeight: "1.25rem",
           color: "teal.light",
           textTransform: "uppercase",
           marginBottom: 4.82,

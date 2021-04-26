@@ -8,11 +8,17 @@ interface PriceStatisticsInterface {
 export const priceStatisticsStyle: PriceStatisticsInterface = {
   heading: {
     textAlign: "center",
-    fontSize: 48,
-    lineHeight: "56px",
+    fontSize: "2rem",
+    lineHeight: "2.5rem",
     fontWeight: 800,
     color: "purple.default",
     marginBottom: 24,
+    "@mq":{
+      tablet:{
+        fontSize: 48,
+       lineHeight: "56px",
+      }
+    }
   },
   title: {
     fontSize: 20,
