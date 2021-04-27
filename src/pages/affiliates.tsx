@@ -1,16 +1,14 @@
 import React, { ReactElement } from "react"
 import { Box } from "@react-cssx/core"
-import { Header } from "../components/xcm/header"
+import { Header } from "../components/affiliates/header"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import { InitialData } from "../interfaces/initial"
 import { Footer } from "../components/sections/Footer"
-import { EcoSystem } from "../components/xcm/ecoSystem"
-import { PriceStatistics } from "../components/xcm/priceStatistics"
-import { HowXcm } from "../components/xcm/howXcm"
-import { WhyXcm } from "../components/xcm/whyXcm"
-import { TrustXcm } from "../components/xcm/trustXcm"
-import StartEarning from "../components/xcm/startEarning"
-import { WhatXcmCard } from "../components/xcm/cards/whatXcm"
+import HowWorks from "../components/affiliates/howWorks"
+import Reward from "../components/affiliates/reward"
+import Commission from "../components/affiliates/commission"
+import TrackCommission from "../components/affiliates/trackCommission"
+import ValueTrust from "../components/affiliates/valueTrust"
 
 export interface XCMprops {
   data: InitialData
@@ -20,13 +18,11 @@ export default function Affiliates({ data }: XCMprops): ReactElement {
   return (
     <Box>
       <Header data={data} />
-      <WhatXcmCard />
-      <EcoSystem />
-      <PriceStatistics />
-      <HowXcm />
-      <WhyXcm />
-      <TrustXcm />
-      <StartEarning />
+      <HowWorks />
+      <Reward />
+      <Commission />
+      <TrackCommission />
+      <ValueTrust />
       <Footer data={data} hideTopCurve />
     </Box>
   )
