@@ -33,6 +33,7 @@ export function BuyCurrencyCard() {
     console.log(result)
     if (result.status === 200) {
       setCurrData(result.data)
+      setXcmValue(result.data.EUR)
     }
   }
   useEffect(() => {
