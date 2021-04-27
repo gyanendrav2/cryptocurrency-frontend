@@ -21,7 +21,6 @@ export function WhatXcmCard() {
               pr: { _: 0, desktop: 24 },
               pt: { xsm: "2rem" },
               backgroundColor: "transparent",
-              zIndex: 2,
             }}
           >
             <Element cssx={classes.h2}>{data.what_title}</Element>

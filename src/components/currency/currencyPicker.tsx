@@ -101,6 +101,7 @@ export function CurrencyPicker({
                 w: "100%",
                 h: "100vh",
                 zIndex: "-1",
+                // bg: "red"
               }}
               onClick={() => setOpenCloseDropdown(false)}
             />
