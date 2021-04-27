@@ -7,7 +7,7 @@ interface WhatXcmStyleInterface {
   P: CssxObject
   coinIcon: CssxObject
   limitedContainer: CssxObject
-  diagramIcon:CssxObject
+  diagramIcon: CssxObject
 }
 
 export const whatXcmStyle: WhatXcmStyleInterface = {
@@ -29,23 +29,23 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     color: "purple.default",
     marginTop: "2.5rem",
     marginBottom: "2rem",
-    width:"100%",
-    textAlign:"center",
-    mx:"auto",
-    "@mq": {  
-    desktop: {
-    textAlign:"left",
-      }
+    width: "100%",
+    textAlign: "center",
+    mx: "auto",
+    "@mq": {
+      desktop: {
+        textAlign: "left",
+      },
     },
   },
   h2: {
     fontWeight: 800,
-    fontFamily:"Mulish",
+    fontFamily: "Mulish",
     color: "purple.default",
     mb: "2rem",
     fontSize: "2rem",
     lineHeight: "2.5rem",
-    width:"100%",
+    width: "100%",
     textAlign: "center",
     mx: "auto",
     "@mq": {
@@ -64,12 +64,12 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     fontWeight: 600,
     fontSize: "1rem",
     lineHeight: "2rem",
-     mx: "auto",
-     textAlign: "center",
-     width:"100%",
+    mx: "auto",
+    textAlign: "center",
+    width: "100%",
     "@mq": {
       desktop: {
-     textAlign: "left",
+        textAlign: "left",
       },
     },
   },
@@ -84,9 +84,9 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
       },
     },
   },
-  diagramIcon:{
-     mx: "auto",
-     mt:"2rem",
+  diagramIcon: {
+    mx: "auto",
+    mt: "2rem",
     "@mq": {
       xsm: {
         mx: "auto",
@@ -97,18 +97,18 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
     },
   },
   limitedContainer: {
-     pb: 16,
-     px:0,
+    pb: 16,
+    px: 0,
     backgroundColor: "transparent",
     // mt: { _: 0, desktop: 88 },
-    zIndex: 2,
+    zIndex: "-1",
     "@mq": {
       tablet: {
         paddingTop: 69,
       },
       desktop: {
         paddingTop: 433,
-        px:24,
+        px: 24,
       },
     },
   },

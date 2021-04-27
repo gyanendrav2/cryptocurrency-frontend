@@ -14,14 +14,14 @@ import { roundUpNumber } from "../../helper/roundUpNumber"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
-  const [currData, setCurrData] = useState({ XCM: "" })
+  const [currData, setCurrData] = useState({ XCM: "", EUR: "" })
   const [xcmValue, setXcmValue] = useState<any>("")
   const [totalXcm, setTotalXcm] = useState<any>("1")
-  const [coinmetro, setCoinmetro] = useState<CurrencyOptionsInterface>({
+  const coinmetro = {
     name: "XCM",
     currency: "coinmetro",
     flag: "xcmFlags/input-coinmetro-logo.svg",
-  })
+  }
   const [selectedCurrency, setSelectedCurrency] = useState<CurrencyOptionsInterface>({
     name: "EUR",
     currency: "EURO",
@@ -33,7 +33,9 @@ export function BuyCurrencyCard() {
     console.log(result)
     if (result.status === 200) {
       setCurrData(result.data)
-      setXcmValue(result.data.EUR)
+      const value = ((result.data.EUR as any) / (result.data.EUR as any)) * (result.data.XCM as any)
+      setXcmValue(value)
+      setPayWithValue(value)
     }
   }
   useEffect(() => {
@@ -42,18 +44,19 @@ export function BuyCurrencyCard() {
   const handleCurrency = (data: CurrencyOptionsInterface) => {
     setSelectedCurrency(data)
     if (currData[data.name]) {
-      setXcmValue(currData[data.name])
-      setPayWithValue(currData[data.name])
+      const value = ((currData.EUR as any) / currData[data.name]) * (currData.XCM as any)
+      setXcmValue(value)
+      setPayWithValue(value)
     }
   }
 
   const handleXcmCoin = (e: any) => {
     setTotalXcm(e.target.value)
-    setPayWithValue(roundUpNumber(xcmValue * e.target.value))
+    setPayWithValue((xcmValue * e.target.value))
   }
   const handleXcmMade = (e: any) => {
     setPayWithValue(e.target.value)
-    setTotalXcm(roundUpNumber(e.target.value / xcmValue))
+    setTotalXcm((e.target.value / xcmValue))
   }
 
   return (
@@ -80,7 +83,6 @@ export function BuyCurrencyCard() {
             <Element
               as="input"
               required
-              placeholder="0.212"
               cssx={classes.input1}
               value={totalXcm}
               onChange={handleXcmCoin}
@@ -111,7 +113,6 @@ export function BuyCurrencyCard() {
             <Element
               as="input"
               required
-              placeholder="100"
               cssx={classes.input1}
               value={payWithValue}
               onChange={handleXcmMade}
