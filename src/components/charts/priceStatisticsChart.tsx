@@ -1,5 +1,4 @@
 import { Element, Flex } from "@react-cssx/core"
-import axios from "axios"
 import React, { useEffect, useState } from "react"
 import {
   AreaChart,
@@ -48,14 +47,14 @@ export default function PriceStatisticsChart() {
   }
   return (
     <div className="price__chart">
-      <Flex align="center" justify="flex-end" cssx={{ pr: "2rem", mb: "2rem" }}>
+      <Flex align="center" justify="flex-end" wrap="wrap" cssx={{ pr: "2rem", mb: "2rem" }}>
         {filterOptions.map((item: { time: string; active: boolean }, i: number) => (
           <Element
             key={i}
             as="p"
             onClick={() => handleAcitve(i)}
             cssx={{
-              minWidth: "5rem",
+              p: "0 1rem",
               cursor: "pointer",
               textAlign: "center",
               color: "#a4a6b3",
@@ -66,13 +65,12 @@ export default function PriceStatisticsChart() {
                 xsm: {
                   fontSize: 10,
                   lineHeight: "1.5rem",
-                  width: "20%",
                   minWidth: "unset",
                 },
-                tablet: {
-                  minWidth: "5rem",
-                  width: "unset",
-                },
+                // tablet: {
+                //   minWidth: "5rem",
+                //   width: "unset",
+                // },
               },
             }}
           >

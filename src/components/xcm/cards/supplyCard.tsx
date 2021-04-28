@@ -4,6 +4,7 @@ import { xcmSupplyData, xcmOtherStats } from "../../../data/xcmSupplydata"
 import { InfoIcon } from "../../icons/infoIcon"
 import { ArrowdownIcon } from "../../icons/arrowdownIcon"
 import { vaultAmountAPIcall, xcmSupplyAPIcall, lockedWalletAPIcall } from "../../../API/xcmAPI"
+import { roundUpNumber } from "../../../helper/roundUpNumber"
 
 interface SupplyDataItem {
   icon: any
@@ -178,15 +179,15 @@ export default function SupplyCard() {
 
     if (totalResult.status === 200) {
       const tempData = [...card1Data]
-      tempData[0].price = totalResult.data.XCM.totalSupply
-      tempData[1].price = totalResult.data.XCM.circulatingSupply
-      tempData[2].price = totalResult.data.XCM.marketCap
+      tempData[0].price = roundUpNumber(totalResult.data.XCM.totalSupply) as any
+      tempData[1].price = roundUpNumber(totalResult.data.XCM.circulatingSupply) as any
+      tempData[2].price = roundUpNumber(totalResult.data.XCM.marketCap) as any
       setCard1Data(tempData)
     }
     if (totalResult.status === 200 && lockedWalletResult.status === 200) {
       const tempVaultData = [...vaultValue]
-      tempVaultData[0].price = lockedWalletResult.data.allTime
-      tempVaultData[1].price = vaultResult.data
+      tempVaultData[0].price = roundUpNumber(lockedWalletResult.data.allTime) as any
+      tempVaultData[1].price = roundUpNumber(vaultResult.data) as any
       setVaultValue(tempVaultData)
     }
   }
