@@ -1,6 +1,8 @@
 import { API } from "../util/api"
 import { endpoints } from "../util/endpoints"
 
+export const fetcher = (url) => API.get(url).then((res) => res.data)
+
 export const priceChartAPI = async (filter: string) => {
   try {
     const result = await API.get(endpoints.exchangePriceSeriesXCMEUR + filter)

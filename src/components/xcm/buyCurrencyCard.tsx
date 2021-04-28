@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react"
+import useSWR from "swr"
 import { Box, Element, Flex } from "@react-cssx/core"
 import { Button } from "../../ui/Button"
 import { buyCurrencyCardStyle } from "./cssxStyle/buyCurrencyCard"
 import { CurrencyPicker } from "../currency/currencyPicker"
 import { CurrencyOptionsInterface } from "../../interfaces/currencyOptionsInterface"
 import { CurrMarketCard } from "./currMarketCard"
-import { xcmRatesAPIcall } from "../../API/xcmAPI"
+import { fetcher } from "../../API/xcmAPI"
+import { endpoints } from "../../util/endpoints"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
-  const [currData, setCurrData] = useState({ XCM: "", EUR: "" })
+  const [currData, setCurrData] = useState<any>({ XCM: "", EUR: "" })
   const [xcmValue, setXcmValue] = useState<any>("")
   const [totalXcm, setTotalXcm] = useState<any>("1")
+  const xcmRatesData = useSWR(endpoints.xcmRates, fetcher)
+
   const coinmetro = {
     name: "XCM",
     currency: "coinmetro",
@@ -24,18 +28,18 @@ export function BuyCurrencyCard() {
   })
   const [payWithValue, setPayWithValue] = useState<any>("")
 
-  const handleAPIcall = async () => {
-    const result = await xcmRatesAPIcall()
-    if (result.status === 200) {
-      setCurrData(result.data)
-      const value = ((result.data.EUR as any) / (result.data.EUR as any)) * (result.data.XCM as any)
+  const handleAPIcall = () => {
+    if (xcmRatesData.data) {
+      setCurrData(xcmRatesData.data)
+      const value = (((xcmRatesData.data as any).EUR as any) / ((xcmRatesData.data as any).EUR as any))
+       * ((xcmRatesData.data as any).XCM as any)
       setXcmValue(value)
       setPayWithValue(value)
     }
   }
   useEffect(() => {
     handleAPIcall()
-  }, [])
+  }, [xcmRatesData])
 
   const handleCurrency = (data: CurrencyOptionsInterface) => {
     setSelectedCurrency(data)
@@ -48,11 +52,11 @@ export function BuyCurrencyCard() {
 
   const handleXcmCoin = (e: any) => {
     setTotalXcm(e.target.value)
-    setPayWithValue((xcmValue * e.target.value))
+    setPayWithValue(xcmValue * e.target.value)
   }
   const handleXcmMade = (e: any) => {
     setPayWithValue(e.target.value)
-    setTotalXcm((e.target.value / xcmValue))
+    setTotalXcm(e.target.value / xcmValue)
   }
 
   return (
