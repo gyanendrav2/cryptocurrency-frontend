@@ -8,6 +8,7 @@ export default function TrackCommission() {
   return (
     <>
       <Box cssx={{ bg: "grey.bg" }}>
+        <Element as="img" src="affiliates/comBgCurveTop.svg" alt="top curve" />
         <Box
           cssx={{
             bg: "grey.dark",
@@ -72,6 +73,12 @@ export default function TrackCommission() {
           </Container>
         </Box>
       </Box>
+      <Element
+        as="img"
+        src="affiliates/comBgCurveBottom.svg"
+        cssx={{ ml: "auto", mt: "-2px" }}
+        alt="top curve"
+      />
     </>
   )
 }

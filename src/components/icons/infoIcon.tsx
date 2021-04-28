@@ -1,5 +1,5 @@
 import { Box } from "@react-cssx/core"
-import React, { FC } from "react"
+import React from "react"
 // import { IconInterface } from "../../interfaces/icon"
 
 export const InfoIcon = (props) => (

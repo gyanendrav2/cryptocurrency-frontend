@@ -6,11 +6,6 @@ import { CurrencyPicker } from "../currency/currencyPicker"
 import { CurrencyOptionsInterface } from "../../interfaces/currencyOptionsInterface"
 import { CurrMarketCard } from "./currMarketCard"
 import { xcmRatesAPIcall } from "../../API/xcmAPI"
-import { roundUpNumber } from "../../helper/roundUpNumber"
-// import Logo from "../../../public/logo.svg"
-// import Inputcoinmetrologo from "../../../public/inputcoinmetrologo.svg"
-
-// import { formStyle } from "./cssxStyle/form"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
@@ -28,9 +23,9 @@ export function BuyCurrencyCard() {
     flag: "xcmFlags/europeFlag.png",
   })
   const [payWithValue, setPayWithValue] = useState<any>("")
+
   const handleAPIcall = async () => {
     const result = await xcmRatesAPIcall()
-    console.log(result)
     if (result.status === 200) {
       setCurrData(result.data)
       const value = ((result.data.EUR as any) / (result.data.EUR as any)) * (result.data.XCM as any)
@@ -41,12 +36,13 @@ export function BuyCurrencyCard() {
   useEffect(() => {
     handleAPIcall()
   }, [])
+
   const handleCurrency = (data: CurrencyOptionsInterface) => {
     setSelectedCurrency(data)
     if (currData[data.name]) {
       const value = ((currData.EUR as any) / currData[data.name]) * (currData.XCM as any)
       setXcmValue(value)
-      setPayWithValue(value)
+      setPayWithValue(totalXcm * value)
     }
   }
 

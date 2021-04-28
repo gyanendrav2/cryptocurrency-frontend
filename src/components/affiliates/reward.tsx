@@ -1,4 +1,4 @@
-import { Box, Element, Flex } from "@react-cssx/core"
+import { Box, Element, Flex, Grid } from "@react-cssx/core"
 import React from "react"
 import { Container } from "../../ui/Container"
 import { rewardStyle } from "./cssxStyle/rewardStyle"
@@ -18,7 +18,7 @@ export default function Reward() {
           <Element as="p" cssx={classes.heading}>
             Our rewards
           </Element>
-          <Flex align="center" justify="center">
+          <Grid columns={{ _: 1, tablet: 2, desktop: 3 }} columnGap={20}>
             <Box>
               <Element as="img" src="affiliates/40percent.png" cssx={classes.img} alt="" />
               <Element as="p" cssx={classes.p}>
@@ -37,7 +37,7 @@ export default function Reward() {
                 Earn 10% of your referrals referrals net fees
               </Element>
             </Box>
-          </Flex>
+          </Grid>
         </Container>
       </Box>
       <Box cssx={{ mt: "-2px", bg: "grey.bg" }}>

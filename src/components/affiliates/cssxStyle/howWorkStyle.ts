@@ -6,6 +6,11 @@ interface HowWorksStyleInterface {
   img: CssxObject
   TabImg: CssxObject
   mobImg: CssxObject
+  listContainer: CssxObject
+  cicle: CssxObject
+  stepHeading: CssxObject
+  stepDes: CssxObject
+  cicleLast: CssxObject
 }
 
 export const HowWorksStyle: HowWorksStyleInterface = {
@@ -56,5 +61,48 @@ export const HowWorksStyle: HowWorksStyleInterface = {
         display: "none",
       },
     },
+  },
+  listContainer: {
+    "& ul": {
+      mt: "18rem",
+    },
+  },
+  cicle: {
+    w: 32,
+    height: 32,
+    bg: "grey.light",
+    borderRadius: "50%",
+    mr: 24,
+    pos: "relative",
+    "&::after": {
+      content: "''",
+      pos: "absolute",
+      top: "5rem",
+      left: "1rem",
+      width: "1px",
+      height: "6rem",
+      bg: "grey.light",
+    },
+  },
+  cicleLast: {
+    w: 32,
+    height: 32,
+    bg: "grey.light",
+    borderRadius: "50%",
+    mr: 24,
+    pos: "relative",
+  },
+  stepHeading: {
+    fontSize: 24,
+    lineHeight: "32px",
+    fontWeight: 800,
+    color: "purple.default",
+    mb: 12,
+  },
+  stepDes: {
+    fontSize: 20,
+    lineHeight: "32px",
+    fontWeight: 600,
+    mb: 104,
   },
 }

@@ -1,16 +1,19 @@
-import { Box, Element } from "@react-cssx/core"
-import React from "react"
+import { Box, Element, Flex } from "@react-cssx/core"
+import React, { useState } from "react"
+import { InfoIcon } from "../icons/infoIcon"
 import { CommissionStyle } from "./cssxStyle/commissionStyle"
+import LimitInfoCard from "./limitInfoCard"
 
 export default function CryptoTable() {
   const classes = CommissionStyle
+  const [showInfoCard, setShowInfoCard] = useState(false)
   return (
     <Box cssx={classes.tableWrapper}>
       <Element as="table" cssx={classes.table}>
         <tbody>
           <tr>
             <th>&nbsp;</th>
-            <th>
+            <th style={{ backgroundColor: "#F7F8FA" }}>
               <Element as="img" cssx={{ m: "auto" }} src="affiliates/coinmetroLogo.png" />
             </th>
             <th>
@@ -25,21 +28,32 @@ export default function CryptoTable() {
           </tr>
           <tr>
             <td>Commission rate</td>
-            <td>40%</td>
+            <td style={{ backgroundColor: "#F7F8FA" }}>40%</td>
             <td>20%-50%</td>
             <td>20%</td>
             <td>50%</td>
           </tr>
           <tr>
             <td>Sub-affiliate commission</td>
-            <td>10%</td>
+            <td style={{ backgroundColor: "#F7F8FA" }}>10%</td>
             <td>0%</td>
             <td>0%</td>
             <td>0%</td>
           </tr>
           <tr>
-            <td>Sub-affiliate commission</td>
-            <td>No limit</td>
+            <td>
+              <Flex align="center" cssx={{ pos: "relative" }}>
+                <Element as="p" cssx={{ mr: 8 }}>
+                  Limit
+                </Element>
+                <InfoIcon
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setShowInfoCard(! showInfoCard)}
+                />
+                {showInfoCard && <LimitInfoCard />}
+              </Flex>
+            </td>
+            <td style={{ backgroundColor: "#F7F8FA" }}>No limit</td>
             <td>No limit</td>
             <td>Up to $1000 per referral</td>
             <td>3 months</td>
