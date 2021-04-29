@@ -67,7 +67,7 @@ export const headerStyle: HeaderStyleInterface = {
     pt: 36,
     mt: 64,
     "@mq": {
-       desktop: {
+      desktop: {
         mt: "8.5rem",
       },
     },

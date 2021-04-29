@@ -9,7 +9,8 @@ import { whatXcmStyle } from "../cssxStyle/whatxcm"
 export function WhatXcmCard() {
   const classes = whatXcmStyle
   return (
-    <div className="whatxcm__wrapper">
+    <div className="whatxcm__wrapper" style={{ position: "relative" }}>
+      <Element as="img" src="xcmbg/hero_bottom.svg" cssx={{ pos: "absolute", top: 0, right: 0, transform: "translateY(-5px)" }} />
       <Container>
         <Grid columns={{ _: 1, desktop: 2 }}>
           <Flex
