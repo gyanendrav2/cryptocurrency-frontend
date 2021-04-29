@@ -27,7 +27,7 @@ const bgImage: CssxObject = {
   background: "url('affiliates/headerCurveMob.svg')",
   width: "100%",
   height: "100%",
-  top: 0,
+  top: 3,
   left: 0,
   right: 0,
   bottom: 0,
@@ -78,7 +78,7 @@ export const affiliatesHeaderStyle: AffiliatesHeaderStyleInterface = {
     paddingTop: 102,
     "@mq": {
       xsm: {
-        pt: 102,
+        pt: 132,
         fontSize: 42,
         lineHeight: "54px",
         textAlign: "center",

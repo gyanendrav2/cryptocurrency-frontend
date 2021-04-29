@@ -68,6 +68,17 @@ module.exports = {
       },
     ],
     "max-depth": ["warn", 4],
+    "space-unary-ops": [
+      2,
+      {
+        words: true,
+        nonwords: false,
+        overrides: {
+          new: false,
+          "++": true,
+        },
+      },
+    ],
   },
 }
 

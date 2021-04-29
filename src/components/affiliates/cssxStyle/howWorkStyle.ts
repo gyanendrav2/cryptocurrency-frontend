@@ -16,12 +16,20 @@ interface HowWorksStyleInterface {
 export const HowWorksStyle: HowWorksStyleInterface = {
   h1: {
     color: "purple.default",
-    fontSize: 48,
-    lineHeight: "56px",
+    fontSize: "32px",
+    lineHeight: "40px",
     fontWeight: 800,
     mt: 86,
+    textAlign:"center",
     "@mq": {
-      desktop: {},
+    tablet: {
+    fontSize: "48px",
+    lineHeight: "56px",
+      },
+      desktop:{
+        textAlign:"left",
+         mt: 86,
+      }
     },
   },
   p: {
@@ -30,6 +38,12 @@ export const HowWorksStyle: HowWorksStyleInterface = {
     fontWeight: 600,
     mt: 24,
     color: "grey.dark",
+    textAlign:"center",
+    "@mq": {
+    desktop: {
+    textAlign:"left"
+      },
+    },
   },
   img: {
     width: "100%",
@@ -64,7 +78,11 @@ export const HowWorksStyle: HowWorksStyleInterface = {
   },
   listContainer: {
     "& ul": {
-      mt: "18rem",
+      "@mq":{
+        desktop:{
+       mt: "18rem",
+        }
+      }
     },
   },
   cicle: {

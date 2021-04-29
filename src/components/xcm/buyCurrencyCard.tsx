@@ -8,6 +8,7 @@ import { CurrencyOptionsInterface } from "../../interfaces/currencyOptionsInterf
 import { CurrMarketCard } from "./currMarketCard"
 import { fetcher } from "../../API/xcmAPI"
 import { endpoints } from "../../util/endpoints"
+import { roundUpNumber } from "../../helper/roundUpNumber"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
@@ -32,7 +33,7 @@ export function BuyCurrencyCard() {
     if (xcmRatesData.data) {
       setCurrData(xcmRatesData.data)
       const value = (((xcmRatesData.data as any).EUR as any) / ((xcmRatesData.data as any).EUR as any))
-       * ((xcmRatesData.data as any).XCM as any)
+      * ((xcmRatesData.data as any).XCM as any)
       setXcmValue(value)
       setPayWithValue(value)
     }
@@ -45,18 +46,18 @@ export function BuyCurrencyCard() {
     setSelectedCurrency(data)
     if (currData[data.name]) {
       const value = ((currData.EUR as any) / currData[data.name]) * (currData.XCM as any)
-      setXcmValue(value)
-      setPayWithValue(totalXcm * value)
+      setXcmValue(roundUpNumber(value))
+      setPayWithValue(roundUpNumber(totalXcm * value))
     }
   }
 
   const handleXcmCoin = (e: any) => {
     setTotalXcm(e.target.value)
-    setPayWithValue(xcmValue * e.target.value)
+    setPayWithValue(roundUpNumber(xcmValue * e.target.value))
   }
   const handleXcmMade = (e: any) => {
     setPayWithValue(e.target.value)
-    setTotalXcm(e.target.value / xcmValue)
+    setTotalXcm(roundUpNumber(e.target.value / xcmValue))
   }
 
   return (
@@ -125,7 +126,6 @@ export function BuyCurrencyCard() {
           href="https://go.coinmetro.com/"
           variant="yellow"
           cssx={{
-            // px: 16,
             py: 20,
             my: "2rem",
             w: "100%",

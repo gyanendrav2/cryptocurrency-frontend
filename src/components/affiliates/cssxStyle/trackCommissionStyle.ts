@@ -1,11 +1,49 @@
 import { CssxObject } from "@react-cssx/core"
 
 export interface TrackCommissionStyleInterface {
+  heading: CssxObject
+  paragraph: CssxObject
   imgDesk: CssxObject
   imgTab: CssxObject
   imgMob: CssxObject
 }
 export const trackCommissionStyle: TrackCommissionStyleInterface = {
+  heading: {
+    fontSize: 32,
+    lineHeight: "40px",
+    maxWidth: 475,
+    mx: "auto",
+    textAlign: "center",
+    color: "indigo.light",
+    fontWeight: 800,
+    mb: 24,
+    "@mq": {
+      tablet: {
+        fontSize: 48,
+      },
+      desktop: {
+        mx: "unset",
+        mr: "auto",
+        textAlign: "left",
+      },
+    },
+  },
+  paragraph: {
+    fontSize: 20,
+    lineHeight: "32px",
+    fontWeight: 600,
+    color: "white",
+    mb: 32,
+    mx: "auto",
+    textAlign: "center",
+    "@mq": {
+      desktop: {
+        mx: "unset",
+        mr: "auto",
+        textAlign: "left",
+      },
+    },
+  },
   imgDesk: {
     pos: "absolute",
     right: 0,
@@ -22,14 +60,13 @@ export const trackCommissionStyle: TrackCommissionStyleInterface = {
   },
   imgTab: {
     pos: "absolute",
-    right: 0,
-    top: 120,
+    top: "28.5rem",
     zIndex: 2,
     display: "none",
+    textAlign: "center",
     "@mq": {
       tablet: {
         display: "block",
-        top: "22.5rem",
       },
       desktop: {
         display: "none",
@@ -39,15 +76,16 @@ export const trackCommissionStyle: TrackCommissionStyleInterface = {
   imgMob: {
     pos: "absolute",
     right: 0,
-    top: "22.5rem",
+    top: "30.5rem",
     zIndex: 2,
+    textAlign: "center",
     "@mq": {
       xsm: {
         display: "block",
       },
-      phablet: {
-        top: "18.5rem",
-      },
+      // phablet: {
+      //   top: "18.5rem",
+      // },
       tablet: {
         display: "none",
       },

@@ -1,0 +1,22 @@
+.accordion__heading {
+  .accordion__button {
+    position: relative;
+    border: none !important;
+    &:before {
+      position: absolute;
+      right: 0;
+      transform: rotate(45deg);
+      transition: all 0.1s;
+    }
+  }
+  .accordion__button[aria-expanded="true"]::before {
+    transform: rotate(-135deg);
+    transition: all 0.1s;
+  }
+}
+
+.accordion {
+  border: none !important;
+}
+
+

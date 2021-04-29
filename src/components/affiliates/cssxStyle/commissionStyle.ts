@@ -10,18 +10,30 @@ interface CommissionStyleInterface {
 
 export const CommissionStyle: CommissionStyleInterface = {
   wrapper: {
-    pt: 148,
-    pb: 169,
+    pt: 40,
+    pb: 40,
     backgroundColor: "grey.bg",
+    "@mq": {
+      desktop: {
+        pt: 148,
+        pb: 169,
+      },
+    },
   },
   heading: {
     color: "purple.default",
-    fontSize: 48,
+    fontSize: 32,
     fontWeight: 800,
-    lineHeight: "56px",
-    maxWidth: 680,
+    lineHeight: "40px",
     textAlign: "center",
     mx: "auto",
+    "@mq": {
+      tablet: {
+        fontSize: 48,
+        lineHeight: "56px",
+        maxWidth: 680,
+      },
+    },
   },
   p: {
     textAlign: "center",
@@ -30,6 +42,8 @@ export const CommissionStyle: CommissionStyleInterface = {
     color: "grey.dark",
     mt: 32,
     mb: 56,
+    fontSize: 20,
+    lineHeight: "32px",
   },
   table: {
     width: "100%",
@@ -40,6 +54,12 @@ export const CommissionStyle: CommissionStyleInterface = {
     borderColor: "grey.light",
     borderRadius: 4,
     px: 32,
+    display: "none",
+    "@mq": {
+      tablet: {
+        display: "block",
+      },
+    },
     "& th, td": {
       borderBottom: "1px solid",
       borderColor: "grey.light",

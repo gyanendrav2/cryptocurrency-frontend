@@ -9,6 +9,8 @@ import Reward from "../components/affiliates/reward"
 import Commission from "../components/affiliates/commission"
 import TrackCommission from "../components/affiliates/trackCommission"
 import ValueTrust from "../components/affiliates/valueTrust"
+import StartEarning from "../components/affiliates/startEarning"
+import Faq from "../components/affiliates/faq"
 
 export interface XCMprops {
   data: InitialData
@@ -23,6 +25,8 @@ export default function Affiliates({ data }: XCMprops): ReactElement {
       <Commission />
       <TrackCommission />
       <ValueTrust />
+      <StartEarning />
+      <Faq />
       <Footer data={data} hideTopCurve />
     </Box>
   )

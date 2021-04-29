@@ -12,22 +12,6 @@ export const priceChartAPI = async (filter: string) => {
   }
 }
 
-// export const circulatingSupplyAPIcall = async () => {
-//   try {
-//     const result = await axios.get("https://api.coinmetro.com/circulating-supply/XCM")
-//     return result
-//   } catch (err) {
-//     return err
-//   }
-// }
-// export const maxSupplyAPIcall = async () => {
-//   try {
-//     const result = await axios.get("https://api.coinmetro.com/total-supply/XCM")
-//     return result
-//   } catch (err) {
-//     return err
-//   }
-// }
 
 export const marketCapXCMAPIcall = async () => {
   try {
@@ -71,11 +55,11 @@ export const lockedWalletAPIcall = async () => {
   }
 }
 
-export const xcmRatesAPIcall = async () => {
-  try {
-    const result = await API.get(endpoints.xcmRates)
-    return result
-  } catch (err) {
-    return err
-  }
-}
+  // export const xcmRatesAPIcall = async () => {
+  //   try {
+  //     const result = await API.get(endpoints.xcmRates)
+  //     return result
+  //   } catch (err) {
+  //     return err
+  //   }
+  // }

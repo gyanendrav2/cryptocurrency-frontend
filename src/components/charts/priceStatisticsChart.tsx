@@ -107,9 +107,3 @@ export default function PriceStatisticsChart() {
     </div>
   )
 }
-
-// PriceStatisticsChart.getInitialProps = async () => {
-//   const result = await axios.get("https://api.coinmetro.com/exchange/price-series/XCMEUR/1M")
-//   const data = await result.data
-//   return { data: data }
-// }

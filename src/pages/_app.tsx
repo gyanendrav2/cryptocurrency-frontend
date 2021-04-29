@@ -9,6 +9,7 @@ import "./legal.scss"
 import "./mail.scss"
 import "./glossary.scss"
 import "../styles/xcm.scss"
+import "../styles/accordion.scss"
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (
