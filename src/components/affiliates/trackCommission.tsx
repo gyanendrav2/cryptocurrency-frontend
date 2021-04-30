@@ -34,9 +34,11 @@ export default function TrackCommission() {
               tablet: {
                 pt: "5.6875rem",
                 pb: "27rem",
+                overflow: "unset",
               },
               desktop: {
                 pt: "7.6875rem",
+                overflow: "hidden",
               },
             },
           }}

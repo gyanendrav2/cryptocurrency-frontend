@@ -75,7 +75,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     "@mq": {
       tablet: {
         display: "block",
-        marginBottom:"-8rem"
+        marginBottom: "-8rem",
       },
       desktop: {
         display: "none",
