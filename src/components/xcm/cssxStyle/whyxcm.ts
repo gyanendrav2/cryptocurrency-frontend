@@ -56,6 +56,7 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     position: "absolute",
     left: "-12rem",
     zIndex: "-2",
+    objectFit: "contain",
     "@mq": {
       xsm: {
         left: "-1rem",
@@ -70,6 +71,7 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     transform: "translate(47px,20px)",
     width: "26.875rem",
     height: "20.312rem",
+    objectFit: "contain",
     "@mq": {
       xsm: {
         mt: "4rem",
@@ -85,12 +87,13 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     lineHeight: "3.5rem",
     color: "purple.default",
     marginBottom: "1rem",
-    textAlign:"center",
+    textAlign: "center",
+    m: "auto",
     "@mq": {
       tablet: {
-    fontSize: "3rem",
-    marginBottom: "1.5rem",
-    textAlign:"left",
+        fontSize: "3rem",
+        marginBottom: "1.5rem",
+        textAlign: "left",
       },
     },
   },
@@ -100,6 +103,7 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
     lineHeight: "2rem",
     fontFamily: "Mulish",
     fontStyle: "normal",
+    textAlign: "center",
   },
   flexBox: {
     "@mq": {

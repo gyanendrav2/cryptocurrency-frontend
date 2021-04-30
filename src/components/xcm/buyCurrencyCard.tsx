@@ -9,6 +9,7 @@ import { CurrMarketCard } from "./currMarketCard"
 import { fetcher } from "../../API/xcmAPI"
 import { endpoints } from "../../util/endpoints"
 import { roundUpNumber } from "../../helper/roundUpNumber"
+import { currencySymbol } from "../../data/currency"
 
 export function BuyCurrencyCard() {
   const classes = buyCurrencyCardStyle
@@ -32,9 +33,11 @@ export function BuyCurrencyCard() {
   const handleAPIcall = () => {
     if (xcmRatesData.data) {
       setCurrData(xcmRatesData.data)
-      const value = (((xcmRatesData.data as any).EUR as any) / ((xcmRatesData.data as any).EUR as any))
-      * ((xcmRatesData.data as any).XCM as any)
+      const value =
+        (((xcmRatesData.data as any).EUR as any) / ((xcmRatesData.data as any).EUR as any)) *
+        ((xcmRatesData.data as any).XCM as any)
       setXcmValue(value)
+      localStorage.setItem("xcmValue", JSON.stringify({ symbol: "€", value }))
       setPayWithValue(value)
     }
   }
@@ -98,7 +101,7 @@ export function BuyCurrencyCard() {
             cssx={{ mb: 6 }}
           >
             <Element as="p" cssx={{ ml: 20, color: "white", mb: 24, fontSize: 12 }}>
-              Coinmetro price {xcmValue}
+              Coinmetro price {roundUpNumber(xcmValue)}
             </Element>
           </Flex>
           <Flex
@@ -115,7 +118,7 @@ export function BuyCurrencyCard() {
               as="input"
               required
               cssx={classes.input1}
-              value={payWithValue}
+              value={roundUpNumber(payWithValue)}
               onChange={handleXcmMade}
             />
             <CurrencyPicker handleOnChange={handleCurrency} value={selectedCurrency} />

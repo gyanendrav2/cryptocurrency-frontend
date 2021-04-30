@@ -18,7 +18,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     backgroundColor: "grey.dark2",
     borderRadius: 8,
     ml:0,
-    mb:0,
+    mb:24,
     zIndex: 2,
     pos: "relative",
     mt: "4.3rem",
@@ -97,8 +97,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     color: "purple.default",
   },
   img: {
-    zIndex: "-1",
-    // width: 631,
+    zIndex: "0",
     pos: "absolute",
     top: "0.375rem",
     right: "8%",

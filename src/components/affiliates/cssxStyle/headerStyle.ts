@@ -20,6 +20,7 @@ const absoluteImg: CssxObject = {
   width: "100%",
   height: "100%",
   zIndex: "-1",
+  objectFit: "cover",
 }
 
 const bgImage: CssxObject = {
@@ -56,6 +57,7 @@ export const affiliatesHeaderStyle: AffiliatesHeaderStyleInterface = {
         desktop: {
           ...bgImage,
           background: "url('affiliates/headerCurve.svg')",
+          backgroundSize: "100%",
         },
       },
     },

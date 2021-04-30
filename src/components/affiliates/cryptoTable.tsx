@@ -22,7 +22,7 @@ export default function CryptoTable() {
             <tr>
               <th>&nbsp;</th>
               <th style={{ backgroundColor: "#F7F8FA" }}>
-                <Element as="img" cssx={{ m: "auto" }} src="affiliates/coinmetroLogo.png" />
+                <Element as="img" cssx={{ m: "auto" }} src="affiliates/logo-horizontal.png" />
               </th>
               <th>
                 <Element as="img" cssx={{ m: "auto" }} src="affiliates/BinanceLogo.png" />
@@ -80,7 +80,7 @@ export default function CryptoTable() {
       >
         <CommissionMobCard
           bold
-          headerImg="affiliates/coinmetroLogo.png"
+          headerImg="affiliates/logo-horizontal.png"
           data={coinmetroCommision}
         />
         <CommissionMobCard

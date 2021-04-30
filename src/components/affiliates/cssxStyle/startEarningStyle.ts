@@ -27,26 +27,32 @@ export const StartEarningStyle: StartEarningStyleInterface = {
     pos: "relative",
     bg: "grey.dark",
     backgroundImage: "url('affiliates/planeMob.png')",
-    backgroundPosition: "100% 68%",
+    backgroundPosition: "100% 60%",
     pb: "10rem",
+    pt:"3rem",
     backgroundRepeat: "no-repeat",
     overflowX: "hidden",
     "@mq": {
       xsm: {
         backgroundImage: "url('affiliates/planeMob.png')",
-        // backgroundPosition: "100% 68%",
-        pb: "10rem",
+         backgroundPosition: "100% 72%",
+         pb: "14rem",
       },
       tablet: {
         backgroundImage: "url('affiliates/planeTab.png')",
         backgroundPosition: "100% 43%",
-        pb: "3rem",
+        pb: "10rem",
       },
       desktop: {
         backgroundImage: "url('affiliates/startEarningbg3.png')",
-        backgroundPosition: "270% 24%",
-        pb: "3rem",
+        backgroundPosition: "250% 15%",
+        pb: "10rem",
       },
+      xxl:{
+        backgroundImage: "url('affiliates/startEarningbg3.png')",
+        backgroundPosition: "210% 15%",
+        pb: "10rem",
+      }
     },
     "&::before": {
       content: "''",
@@ -55,17 +61,18 @@ export const StartEarningStyle: StartEarningStyleInterface = {
         xsm: {
           ...bgImage,
           background: "url('affiliates/startEarnBgMob.png')",
-          backgroundPosition: "right",
+            backgroundPosition: "100% 100%",
         },
         tablet: {
           ...bgImage,
           background: "url('affiliates/startEarnBgTab.png')",
-          backgroundPosition: "right",
+          backgroundPosition: "100% 100%",
         },
         desktop: {
           ...bgImage,
           background: "url('affiliates/startEarnDesk.png')",
-          backgroundPosition: "right",
+         backgroundPosition: "100% 100%",
+
         },
       },
     },
@@ -73,19 +80,20 @@ export const StartEarningStyle: StartEarningStyleInterface = {
   headingContainer: {
     display: "flex",
     alignItems: "center",
-    justifyItems: "flex-start",
+    justifyItems: "center",
     flexDirection: "column",
     zIndex: "2",
     "@mq": {
       tablet: {
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "flex-start",
-        flexDirection: "column",
+        justifyItems:"center",
+        alignContent:"center",
+        flexDirection: "column", 
       },
     },
   },
   heading: {
-    // paddingTop: "2rem",
     color: "indigo.light",
     fontSize: 32,
     fontWeight: 800,
@@ -102,16 +110,18 @@ export const StartEarningStyle: StartEarningStyleInterface = {
         fontWeight: 800,
         lineHeight: "56px",
         mx: "auto",
+        textAlign:"left"
       },
       desktop: {
         textAlign: "left",
-        paddingTop: "12.125rem",
+        maxWidth:"35rem",
+        paddingTop: "5rem",
         ml: "unset",
       },
     },
   },
   bigP: {
-    mx: "auto",
+    // mx: "auto",
     maxWidth: 592,
     color: "white",
     fontSize: "20px",
@@ -119,6 +129,9 @@ export const StartEarningStyle: StartEarningStyleInterface = {
     mb: 32,
     textAlign: "center",
     "@mq": {
+      tablet:{
+        textAlign:"left"
+      },
       desktop: {
         textAlign: "left",
         ml: "unset",

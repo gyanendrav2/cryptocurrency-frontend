@@ -78,6 +78,7 @@ export function Navbar({ data }: INavbarProps): ReactElement {
                 cssx={{ mr: 12 }}
                 width="31"
                 height="30"
+                // @ts-ignore
                 viewBox="0 0 31 30"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -197,6 +198,7 @@ export function Navbar({ data }: INavbarProps): ReactElement {
                           cssx={{ mr: 12 }}
                           width="31"
                           height="30"
+                          // @ts-ignore
                           viewBox="0 0 31 30"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"

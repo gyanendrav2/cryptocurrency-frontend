@@ -2,9 +2,11 @@
   .accordion__button {
     position: relative;
     border: none !important;
+    border-radius: 4px;
     &:before {
       position: absolute;
       right: 0;
+      top: 1.5rem;
       transform: rotate(45deg);
       transition: all 0.1s;
     }
@@ -15,8 +17,17 @@
   }
 }
 
-.accordion {
+div.accordion {
   border: none !important;
+  background-color: #fff !important;
 }
-
-
+.accordion__item {
+  margin-bottom: 8px;
+  border-top: none !important;
+  background-color: #f7f8fa;
+}
+.accordion__panel {
+  margin: 20px;
+  margin-top: 0;
+  border-top: 1px solid #CACFE3;
+}

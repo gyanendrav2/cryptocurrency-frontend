@@ -67,10 +67,6 @@ export default function PriceStatisticsChart() {
                   lineHeight: "1.5rem",
                   minWidth: "unset",
                 },
-                // tablet: {
-                //   minWidth: "5rem",
-                //   width: "unset",
-                // },
               },
             }}
           >

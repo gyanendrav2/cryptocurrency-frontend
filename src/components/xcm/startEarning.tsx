@@ -91,7 +91,7 @@ export default function StartEarning() {
         </Box>
       </Box>
       <Box cssx={{ bg: "grey.dark", pt: "1rem", pb: "1rem" }}>
-        <Container cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }} />
+        <Box cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }} />
       </Box>
     </>
   )

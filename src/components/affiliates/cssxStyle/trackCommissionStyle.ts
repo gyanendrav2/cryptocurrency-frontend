@@ -60,7 +60,7 @@ export const trackCommissionStyle: TrackCommissionStyleInterface = {
   },
   imgTab: {
     pos: "absolute",
-    top: "28.5rem",
+    top: "30rem",
     zIndex: 2,
     display: "none",
     textAlign: "center",
@@ -76,9 +76,11 @@ export const trackCommissionStyle: TrackCommissionStyleInterface = {
   imgMob: {
     pos: "absolute",
     right: 0,
+    left: 0,
     top: "30.5rem",
     zIndex: 2,
     textAlign: "center",
+    margin: "auto",
     "@mq": {
       xsm: {
         display: "block",

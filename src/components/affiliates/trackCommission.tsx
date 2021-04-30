@@ -24,6 +24,7 @@ export default function TrackCommission() {
           cssx={{
             bg: "grey.dark",
             position: "relative",
+            overflow: "hidden",
             pt: "2.5rem",
             pb: "20rem",
             "@mq": {
@@ -31,8 +32,11 @@ export default function TrackCommission() {
                 pb: "30rem",
               },
               tablet: {
-                pt: "7.6875rem",
+                pt: "5.6875rem",
                 pb: "27rem",
+              },
+              desktop: {
+                pt: "7.6875rem",
               },
             },
           }}
@@ -115,7 +119,20 @@ export default function TrackCommission() {
             <Element
               as="img"
               src="/xcmbg/lines.svg"
-              cssx={{ pos: "absolute", left: 0, bottom: 0, top: 0, right: 0 }}
+              cssx={{
+                pos: "absolute",
+                left: 0,
+                bottom: 0,
+                top: "8rem",
+                right: 0,
+                transform: "scale(2.5)",
+                "@mq": {
+                  tablet: {
+                    transform: "unset",
+                    top: "0",
+                  },
+                },
+              }}
             />
           </Container>
         </Box>

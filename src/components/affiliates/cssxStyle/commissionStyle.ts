@@ -41,9 +41,17 @@ export const CommissionStyle: CommissionStyleInterface = {
     maxWidth: 592,
     color: "grey.dark",
     mt: 32,
-    mb: 56,
+    mb: 24,
     fontSize: 20,
     lineHeight: "32px",
+    "@mq": {
+      tablet: {
+        mb: 32,
+      },
+      desktop: {
+        mb: 56,
+      },
+    },
   },
   table: {
     width: "100%",
@@ -65,6 +73,7 @@ export const CommissionStyle: CommissionStyleInterface = {
       borderColor: "grey.light",
       textAlign: "center",
       py: 40,
+      px: 10,
     },
     "& th": {
       pt: 20,

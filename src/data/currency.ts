@@ -1,4 +1,4 @@
-import { CurrencyOptionsInterface } from "../interfaces/currencyOptionsInterface";
+import { CurrencyOptionsInterface, CurrencySymbolInterface } from "../interfaces/currencyOptionsInterface"
 
 export const currencyOptions: CurrencyOptionsInterface[] = [
   { name: "EUR", currency: "EURO", flag: "xcmFlags/europeFlag.png" },
@@ -6,3 +6,10 @@ export const currencyOptions: CurrencyOptionsInterface[] = [
   { name: "GBP", currency: "GBP", flag: "xcmFlags/gbpFlag.png" },
   { name: "AUD", currency: "AUD", flag: "xcmFlags/audFlag.png" },
 ]
+
+export const currencySymbol: CurrencySymbolInterface = {
+  EUR: "€",
+  USD: "$",
+  GBP: "£",
+  AUD: "A$",
+}

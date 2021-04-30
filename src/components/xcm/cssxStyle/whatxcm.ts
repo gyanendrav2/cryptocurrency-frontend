@@ -107,7 +107,7 @@ export const whatXcmStyle: WhatXcmStyleInterface = {
         paddingTop: 69,
       },
       desktop: {
-        paddingTop: 433,
+        transform: "translateY(266px)",
         px: 24,
       },
     },

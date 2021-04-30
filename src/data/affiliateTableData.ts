@@ -1,3 +1,6 @@
+// import React from "react"
+// import { InfoIcon } from "../components/icons/infoIcon"
+
 export const coinmetroCommision = [
   { key: "Commission rate", value: "40%" },
   { key: "Sub-affiliate commission", value: "10%" },

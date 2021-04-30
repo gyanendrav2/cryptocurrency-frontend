@@ -6,12 +6,12 @@ import { rewardStyle } from "./cssxStyle/rewardStyle"
 export default function Reward() {
   const classes = rewardStyle
   return (
-    <Box>
+    <Box cssx={{ mt: "-4rem" }}>
       <Element
         as="img"
         src="affiliates/rewardCurveTop.svg"
         cssx={{ w: "100%", mb: "-2px" }}
-        alt=""
+        alt="reward-top-curve"
       />
       <Box cssx={classes.wrapper}>
         <Container>
@@ -40,8 +40,13 @@ export default function Reward() {
           </Grid>
         </Container>
       </Box>
-      <Box cssx={{ transform: "translateY(-2px)", bg: "grey.bg" }}>
-        <Element as="img" src="affiliates/rewardCurveBottom.svg" cssx={{ ml: "auto", transform: "translateY(-2px)" }} alt="" />
+      <Box cssx={{ transform: "translateY(2px)", bg: "grey.bg" }}>
+        <Element
+          as="img"
+          src="affiliates/rewardCurveBottom.svg"
+          cssx={{ ml: "auto", transform: "translateY(-3px)" }}
+          alt=""
+        />
       </Box>
     </Box>
   )

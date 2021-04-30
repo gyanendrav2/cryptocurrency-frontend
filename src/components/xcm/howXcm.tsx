@@ -24,13 +24,59 @@ export function HowXcm() {
 
   return (
     <>
+      <Element
+        as="img"
+        src="xcmbg/howxcm_topcurve.svg"
+        cssx={{
+          bg: "#f7f8fa",
+          "@mq": {
+            desktop: {
+              display: "none",
+            },
+          },
+        }}
+      />
       <Box cssx={classes.wrapper}>
-        <Container cssx={{ pb: 80 }}>
+        <Element
+          as="img"
+          src="xcmbg/howBgstars.svg"
+          cssx={{
+            pos: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            w: "100%",
+            height: "100%",
+          }}
+        />
+        <Box cssx={{ pos: "absolute", top: 0, left: 0, right: 0, w: "100%", height: "5rem" }} />
+        <Container
+          cssx={{
+            pb: 32,
+            "@mq": {
+              tablet: { pb: 80 },
+            },
+          }}
+        >
           <Element as="h2" cssx={classes.heading}>
             How is XCM used?
           </Element>
           <Container cssx={{ m: "auto" }}>
-            <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
+            <Grid
+              columns={{ _: 1, desktop: 2 }}
+              columnGap={112}
+              cssx={{
+                maxWidth: 336,
+                mx: "auto",
+                "@mq": {
+                  desktop: {
+                    maxWidth: "unset!important",
+                    mx: "unset",
+                  },
+                },
+              }}
+            >
               <Box>
                 {howXcmDataLeft.splice(0, 3).map((item) => (
                   <Flex
@@ -47,11 +93,6 @@ export function HowXcm() {
                     <Element
                       cssx={{
                         mr: 17,
-                        // "@mq": {
-                        //   xsm: {
-                        //     mt: "0.5rem",
-                        //   },
-                        // },
                       }}
                     >
                       <item.icon />
@@ -105,7 +146,17 @@ export function HowXcm() {
             </Grid>
           </Container>
         </Container>
-        <Box cssx={{ pos: "relative" }}>
+        <Box
+          cssx={{
+            pos: "relative",
+            top: "-2rem",
+            "@mq": {
+              tablet: {
+                top: "unset",
+              },
+            },
+          }}
+        >
           <Element
             as="img"
             cssx={classes.img}

@@ -20,16 +20,19 @@ export const HowWorksStyle: HowWorksStyleInterface = {
     lineHeight: "40px",
     fontWeight: 800,
     mt: 86,
-    textAlign:"center",
+    textAlign: "center",
     "@mq": {
-    tablet: {
-    fontSize: "48px",
-    lineHeight: "56px",
+      xsm: {
+        mt: "3rem",
       },
-      desktop:{
-        textAlign:"left",
-         mt: 86,
-      }
+      tablet: {
+        fontSize: "48px",
+        lineHeight: "56px",
+      },
+      desktop: {
+        textAlign: "left",
+        mt: 86,
+      },
     },
   },
   p: {
@@ -38,10 +41,10 @@ export const HowWorksStyle: HowWorksStyleInterface = {
     fontWeight: 600,
     mt: 24,
     color: "grey.dark",
-    textAlign:"center",
+    textAlign: "center",
     "@mq": {
-    desktop: {
-    textAlign:"left"
+      desktop: {
+        textAlign: "left",
       },
     },
   },
@@ -77,12 +80,15 @@ export const HowWorksStyle: HowWorksStyleInterface = {
     },
   },
   listContainer: {
+    maxWidth: 400,
+    m: "auto",
     "& ul": {
-      "@mq":{
-        desktop:{
-       mt: "18rem",
-        }
-      }
+      "@mq": {
+        desktop: {
+          mt: "18rem",
+          ml: "unset",
+        },
+      },
     },
   },
   cicle: {
