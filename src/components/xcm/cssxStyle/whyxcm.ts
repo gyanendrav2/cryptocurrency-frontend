@@ -22,7 +22,7 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
       position: "absolute",
       left: 0,
       right: 0,
-      top: 0,
+      top: "14%",
       bottom: 0,
       width: "100%",
       height: "100%",
@@ -37,7 +37,10 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
           background: "url('xcmbg/whybgMob.svg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
-          top: "40%",
+          top: "25%",
+        },
+        tablet: {
+          top: "20%",
         },
         desktop: {
           background: "url('xcmbg/whyxcmbg.svg')",
@@ -50,34 +53,53 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
   },
   leftWrapper: {
     position: "relative",
+    mt: "-7rem",
+    "@mq": {
+      tablet: {
+        mt: "unset",
+      },
+    },
   },
   rightWrapper: {},
   horseBig: {
     position: "absolute",
-    left: "-12rem",
-    zIndex: "-2",
+    zIndex: 1,
     objectFit: "contain",
     "@mq": {
       xsm: {
         left: "-1rem",
+        top: "6rem",
+      },
+      tablet: {
+        left: "-6rem",
       },
       desktop: {
-        left: "-12rem",
+        left: "-5rem",
+        top: 0,
       },
     },
   },
   horseSmall: {
     mt: "10rem",
-    transform: "translate(47px,20px)",
-    width: "26.875rem",
+    transform: "translate(35%, 20px)",
+    w: 206,
+    zIndex: 1,
     height: "20.312rem",
     objectFit: "contain",
     "@mq": {
       xsm: {
         mt: "4rem",
       },
+      tablet: {
+        w: 318,
+        top: "4rem",
+        left: "-5rem",
+      },
       desktop: {
         mt: "10rem!important",
+        transform: "translate(18%, 0)",
+        top: 0,
+        w: 430,
       },
     },
   },

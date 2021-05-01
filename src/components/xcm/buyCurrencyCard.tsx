@@ -9,9 +9,12 @@ import { CurrMarketCard } from "./currMarketCard"
 import { fetcher } from "../../API/xcmAPI"
 import { endpoints } from "../../util/endpoints"
 import { roundUpNumber } from "../../helper/roundUpNumber"
-import { currencySymbol } from "../../data/currency"
 
-export function BuyCurrencyCard() {
+export function BuyCurrencyCard({
+  getCurrencyType,
+}: {
+  getCurrencyType: (value: boolean) => void
+}) {
   const classes = buyCurrencyCardStyle
   const [currData, setCurrData] = useState<any>({ XCM: "", EUR: "" })
   const [xcmValue, setXcmValue] = useState<any>("")
@@ -29,6 +32,7 @@ export function BuyCurrencyCard() {
     flag: "xcmFlags/europeFlag.png",
   })
   const [payWithValue, setPayWithValue] = useState<any>("")
+  const [isEuroCurrency, setIsEuroCurrency] = useState<any>(true)
 
   const handleAPIcall = () => {
     if (xcmRatesData.data) {
@@ -51,6 +55,14 @@ export function BuyCurrencyCard() {
       const value = ((currData.EUR as any) / currData[data.name]) * (currData.XCM as any)
       setXcmValue(roundUpNumber(value))
       setPayWithValue(roundUpNumber(totalXcm * value))
+      if (data.name === "USD") {
+        getCurrencyType(false)
+        setIsEuroCurrency(false)
+      }
+      if (data.name === "EUR") {
+        getCurrencyType(true)
+        setIsEuroCurrency(true)
+      }
     }
   }
 
@@ -98,7 +110,7 @@ export function BuyCurrencyCard() {
             justify="space-between"
             wrap="nowrap"
             direction="row"
-            cssx={{ mb: 6 }}
+            // cssx={{ mb: 6 }}
           >
             <Element as="p" cssx={{ ml: 20, color: "white", mb: 24, fontSize: 12 }}>
               Coinmetro price {roundUpNumber(xcmValue)}
@@ -140,7 +152,7 @@ export function BuyCurrencyCard() {
         </Button>
       </Flex>
       <Box cssx={classes.mobileTabletShow}>
-        <CurrMarketCard />
+        <CurrMarketCard isEuroCurrency={isEuroCurrency} />
       </Box>
       <Element as="img" cssx={classes.img} src="xcmbg/earthflag.png" alt="earth top flag" />
     </Box>

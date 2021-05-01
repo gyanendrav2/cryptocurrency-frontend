@@ -24,6 +24,7 @@ export const headerStyle: HeaderStyleInterface = {
         lineHeight: "72px",
         maxWidth: 504,
         mx: "auto",
+        mt: "4rem",
       },
       desktop: {
         mt: 0,
@@ -36,7 +37,7 @@ export const headerStyle: HeaderStyleInterface = {
   },
   bigP: {
     fontSize: "1.25rem",
-    lineHeight: "20px",
+    lineHeight: "32px",
     mt: 16,
     fontFamily: "Mulish",
     color: "white",
@@ -78,6 +79,8 @@ export const headerStyle: HeaderStyleInterface = {
     borderRadius: 8,
     width: "100%",
     mt: 16,
+    pos: "relative",
+    zIndex: 3,
     "@mq": {
       pahblet: {
         mt: 16,
@@ -86,7 +89,7 @@ export const headerStyle: HeaderStyleInterface = {
         borderRadius: 8,
       },
       desktop: {
-        mt: 110,
+        mt: 89,
       },
     },
   },

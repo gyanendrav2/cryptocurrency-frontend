@@ -1,12 +1,12 @@
 import { CssxObject } from "@react-cssx/core"
 
-interface trustXcmStyleInterface {
+interface TrustXcmStyleInterface {
   wrapper: CssxObject
   h2: CssxObject
   P: CssxObject
 }
 
-export const TrustXcmStyle: trustXcmStyleInterface = {
+export const TrustXcmStyle: TrustXcmStyleInterface = {
   wrapper: {
     zIndex: 1,
   },
@@ -20,9 +20,9 @@ export const TrustXcmStyle: trustXcmStyleInterface = {
       tablet: {
         lineHeight: "3.5rem",
         fontSize: "3.2rem",
-        marginBottom:"3.5rem"
-      }
-    }
+        marginBottom: "3.5rem",
+      },
+    },
   },
   P: {
     fontWeight: 600,

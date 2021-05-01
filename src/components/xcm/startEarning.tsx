@@ -85,13 +85,29 @@ export default function StartEarning() {
             <Element
               as="img"
               src="/xcmbg/lines.svg"
-              cssx={{ pos: "absolute", left: 0, bottom: 0, top: 0, right: 0 }}
+              cssx={{
+                pos: "absolute",
+                left: 0,
+                bottom: 0,
+                top: 0,
+                right: 0,
+                "@mq": {
+                  xsm: {
+                    top: "8rem",
+                  },
+                  phablet: {
+                    top: 0,
+                  },
+                },
+              }}
             />
           </Container>
         </Box>
       </Box>
       <Box cssx={{ bg: "grey.dark", pt: "1rem", pb: "1rem" }}>
-        <Box cssx={{ borderBottom: "1px solid", borderColor: "teal.light" }} />
+        <Box
+          cssx={{ borderBottom: "1px solid", borderColor: "teal.light", width: "90%", mx: "auto" }}
+        />
       </Box>
     </>
   )

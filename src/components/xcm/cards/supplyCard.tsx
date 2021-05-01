@@ -13,18 +13,27 @@ interface SupplyDataItem {
   priceChange: string
 }
 
-function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem[] }) {
+function SupplyCardRowOne({
+  title,
+  data,
+  mw,
+}: {
+  title: string
+  data: SupplyDataItem[]
+  mw: string
+}) {
   return (
     <Box
       cssx={{
         borderRadius: 8,
-        p: 24,
-        pl: 48,
+        p: 16,
+        px: 0,
         bg: "white",
         mb: 16,
         "@mq": {
-          xsm: {
-            p: 16,
+          tablet: {
+            p: 24,
+            pl: 48,
           },
         },
       }}
@@ -46,13 +55,13 @@ function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem
         {title}
       </Element>
       {data.map((item: SupplyDataItem, i: number) => (
-        <Flex align="center" justify="center">
+        <Flex align="baseline" justify="center">
           <item.icon />
           <Flex
-            align="center"
+            align="baseline"
             justify="space-between"
             cssx={{
-              ml: 25,
+              ml: 8,
               py: 20,
               borderBottom: i !== data.length - 1 ? "1px solid" : "none",
               borderColor: i !== data.length - 1 ? "grey.light" : "none",
@@ -60,7 +69,7 @@ function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem
               w: "100%",
               "@mq": {
                 xsm: {
-                  ml: 10,
+                  ml: 8,
                   w: "84%",
                 },
                 tablet: {
@@ -70,91 +79,31 @@ function SupplyCardRowOne({ title, data }: { title: string; data: SupplyDataItem
               },
             }}
           >
-            <Flex as="P" cssx={{ mr: 24, color: "purple.default", w: "50%" }}>
-              {item.name} &nbsp; <InfoIcon cssx={{ mt: "0.4rem" }} />
+            <Flex wrap="nowrap" cssx={{ w: "100%" }}>
+              <Element
+                as="p"
+                cssx={{
+                  color: "purple.default",
+                  mr: 8,
+                  maxWidth: mw,
+                  "@mq": {
+                    tablet: {
+                      maxWidth: "100%",
+                    },
+                  },
+                }}
+              >
+                {item.name}
+              </Element>
+              <InfoIcon cssx={{ mt: "0.4rem" }} />
             </Flex>
-            <Flex align="center" justify="space-between" wrap="wrap" cssx={{ w: "50%" }}>
-              <Element as="p" cssx={{ color: "grey.dark", mr: 24 }}>
+            <Flex align="center" justify="flex-end" wrap="wrap">
+              <Element as="p" cssx={{ color: "grey.dark" }}>
                 {item.price}
               </Element>
               {item.priceChange !== "" && (
                 <Flex align="center">
                   <ArrowdownIcon color="#C85839" />
-                  <Element as="p" cssx={{ color: "red", ml: 8 }}>
-                    {item.priceChange}
-                  </Element>
-                </Flex>
-              )}
-            </Flex>
-          </Flex>
-        </Flex>
-      ))}
-    </Box>
-  )
-}
-function SupplyCardRowTwo({ title, data }: { title: string; data: SupplyDataItem[] }) {
-  return (
-    <Box
-      cssx={{
-        borderRadius: 8,
-        p: 24,
-        pl: 48,
-        bg: "white",
-        mb: 16,
-        "@mq": {
-          xsm: {
-            p: 16,
-          },
-        },
-      }}
-    >
-      <Element
-        as="p"
-        cssx={{
-          color: "teal.dark",
-          fontFamily: "Mulish",
-          fontStyle: "normal",
-          fontWeight: "bold",
-          fontSize: 12,
-          textTransform: "uppercase",
-          borderBottom: "1px solid #CACFE3",
-          py: 20,
-          ml: 36,
-        }}
-      >
-        {title}
-      </Element>
-      {data.map((item: SupplyDataItem, i: number) => (
-        <Flex align="center" justify="center">
-          <item.icon />
-          <Flex
-            align="center"
-            justify="center"
-            cssx={{
-              ml: 25,
-              py: 20,
-              borderBottom: i !== data.length - 1 ? "1px solid" : "none",
-              borderColor: i !== data.length - 1 ? "grey.light" : "none",
-              pb: i !== data.length - 1 ? 20 : 0,
-              w: "100%",
-            }}
-          >
-            <Flex as="P" cssx={{ mr: 24, color: "purple.default", w: "50%" }}>
-              {item.name} &nbsp; <InfoIcon cssx={{ mt: "0.4rem" }} />
-            </Flex>
-            <Flex
-              align="center"
-              justify="space-between"
-              wrap="wrap"
-              cssx={{
-                w: "50%",
-              }}
-            >
-              <Element as="p" cssx={{ color: "grey.dark", mr: 24 }}>
-                {item.price}
-              </Element>
-              {item.priceChange !== "" && (
-                <Flex align="center">
                   <Element as="p" cssx={{ color: "red", ml: 8 }}>
                     {item.priceChange}
                   </Element>
@@ -197,8 +146,10 @@ export default function SupplyCard() {
 
   return (
     <Box>
-      <SupplyCardRowOne title="xcm supply" data={card1Data} />
-      <SupplyCardRowTwo title="other stats" data={vaultValue} />
+      <SupplyCardRowOne title="xcm supply" mw="100%" data={card1Data} />
+      <SupplyCardRowOne title="xcm supply" mw="63%" data={vaultValue} />
+
+      {/* <SupplyCardRowTwo title="other stats" data={vaultValue} /> */}
     </Box>
   )
 }

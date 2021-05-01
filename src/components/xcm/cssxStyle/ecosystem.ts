@@ -16,6 +16,14 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     overflow: "hidden",
     backgroundColor: "grey.dark",
     backgroundImage: "url(xcmbg/starsbg.svg)",
+    "@mq": {
+      tablet: {
+        pb: "10rem",
+      },
+      desktop: {
+        pb: "2rem",
+      },
+    },
   },
   wrapper2: {
     pos: "relative",
@@ -48,7 +56,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     textAlign: "center",
     mt: "4rem",
     mb: "2rem",
-    mx: "auto",
+    px: "1.5rem",
     maxWidth: 680,
     "& span": {
       color: "indigo.light",
@@ -57,6 +65,9 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
       tablet: {
         fontSize: "3rem",
         lineHeight: "56px",
+      },
+      desktop: {
+        mx: "auto",
       },
     },
   },
@@ -103,7 +114,7 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
     lineHeight: "2rem",
     fontWeight: 600,
     textAlign: "center",
-    px: 16,
+    px: 24,
     margin: "auto",
     maxWidth: 502,
     color: "white",

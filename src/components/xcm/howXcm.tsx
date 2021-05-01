@@ -24,18 +24,10 @@ export function HowXcm() {
 
   return (
     <>
-      <Element
-        as="img"
-        src="xcmbg/howxcm_topcurve.svg"
-        cssx={{
-          bg: "#f7f8fa",
-          "@mq": {
-            desktop: {
-              display: "none",
-            },
-          },
-        }}
-      />
+      <Box cssx={{ bg: "grey.bg" }}>
+        <Element as="img" src="xcmbg/how_top.png" alt="howused top bg" />
+      </Box>
+
       <Box cssx={classes.wrapper}>
         <Element
           as="img"
@@ -77,12 +69,23 @@ export function HowXcm() {
                 },
               }}
             >
-              <Box>
+              <Box
+                cssx={{
+                  "@mq": {
+                    xsm: {
+                      ml: -20,
+                    },
+                    phablet: {
+                      ml: "unset",
+                    },
+                  },
+                }}
+              >
                 {howXcmDataLeft.splice(0, 3).map((item) => (
                   <Flex
                     cssx={{
                       mb: 24,
-                      alignItems: "flex-start",
+                      alignItems: "baseline",
                       "@mq": {
                         tablet: {
                           alignItems: "center",
@@ -111,7 +114,18 @@ export function HowXcm() {
                   </Flex>
                 ))}
               </Box>
-              <Box>
+              <Box
+                cssx={{
+                  "@mq": {
+                    xsm: {
+                      ml: -20,
+                    },
+                    phablet: {
+                      ml: "unset",
+                    },
+                  },
+                }}
+              >
                 {howXcmDataRight.map((item) => (
                   <Flex
                     align="flex-start"
@@ -149,7 +163,7 @@ export function HowXcm() {
         <Box
           cssx={{
             pos: "relative",
-            top: "-2rem",
+            top: 0,
             "@mq": {
               tablet: {
                 top: "unset",

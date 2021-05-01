@@ -71,7 +71,9 @@ export default function CommissionMobCard({
           </Flex>
         </Box>
       ))}
-      {showLimitCard && <LimitInfoCard top="15rem" left="4rem" hide={() => setShowLimitCard(!showLimitCard)} />}
+      {showLimitCard && (
+        <LimitInfoCard top="15rem" left="4rem" hide={() => setShowLimitCard(!showLimitCard)} />
+      )}
     </Box>
   )
 }

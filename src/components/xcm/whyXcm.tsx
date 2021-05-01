@@ -18,10 +18,18 @@ export function WhyXcm() {
       <Container cssx={{ m: "auto" }}>
         <Grid columns={{ _: 1, desktop: 2 }} cssx={classes.flexBox}>
           <Box cssx={classes.leftWrapper}>
-            <Element as="img" cssx={classes.horseBig} src="xcmbg/horseBig.svg" alt="Horse" />
-            <Element as="img" cssx={classes.horseSmall} src="xcmbg/horseSmall.svg" alt="Horse" />
+            <Element as="img" cssx={classes.horseBig} src="xcmbg/horseBig.png" alt="Horse" />
+            <Element as="img" cssx={classes.horseSmall} src="xcmbg/horseSmall.png" alt="Horse" />
           </Box>
-          <Box>
+          <Box
+            cssx={{
+              "@mq": {
+                desktop: {
+                  mt: "-12rem",
+                },
+              },
+            }}
+          >
             {whyXcmData.map((item) => (
               <Flex
                 align="flex-start"

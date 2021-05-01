@@ -5,7 +5,8 @@ import { InfoIcon } from "../icons/infoIcon"
 import { headerStyle } from "./cssxStyle/header"
 import { priceVariationAPIcall, marketCapXCMAPIcall } from "../../API/xcmAPI"
 
-export function CurrMarketCard() {
+export function CurrMarketCard({ isEuroCurrency }: { isEuroCurrency: boolean }) {
+  const [marketCapData, setMarketCapData] = useState({ EUR: "", USD: "" })
   const [currentmarketCap, setCurrentmarketCap] = useState<any>("")
   const [pricevariation, setPricevariation] = useState<any>("")
 
@@ -16,13 +17,23 @@ export function CurrMarketCard() {
       setPricevariation(Number(priceVarResult.data["24hInfo"][0].delta * 100).toFixed(2))
     }
     if (marketCapResult.status === 200) {
-      setCurrentmarketCap(marketCapResult.data.EUR)
+      setCurrentmarketCap(`€${marketCapResult.data.EUR}`)
+      setMarketCapData(marketCapResult.data)
     }
   }
 
   useEffect(() => {
     handleAPIcall()
   }, [])
+
+  useEffect(() => {
+    if (isEuroCurrency) {
+      setCurrentmarketCap(`€${marketCapData.EUR}`)
+    } else {
+      setCurrentmarketCap(`$${marketCapData.USD}`)
+    }
+  }, [isEuroCurrency, marketCapData])
+
 
   const classes = headerStyle
   return (
@@ -33,7 +44,6 @@ export function CurrMarketCard() {
         wrap="nowrap"
         direction={{ base: "column", tablet: "row" }}
         cssx={{
-          zIndex: "3",
           "@mq": { _: { flexDirection: "column" }, tablet: { flexDirection: "row" } },
         }}
       >
@@ -44,7 +54,7 @@ export function CurrMarketCard() {
           </Element>
         </Flex>
         <Element as="p" cssx={{ color: "white", ml: 16 }}>
-          €{currentmarketCap}
+          {currentmarketCap}
         </Element>
       </Flex>
 

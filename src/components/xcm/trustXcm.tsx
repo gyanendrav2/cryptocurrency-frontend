@@ -20,10 +20,12 @@ export function TrustXcm() {
         bg: "grey.bg",
         pt: "4rem",
         pb: "5.875rem",
+        mt: "-4rem",
         "@mq": {
           tablet: {
             pt: 144,
             pb: 158,
+            mt: "unset!important",
           },
         },
       }}

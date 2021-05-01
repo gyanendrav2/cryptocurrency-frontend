@@ -35,6 +35,7 @@ export const howXcmStyle: HowXcmStyleInterface = {
     "@mq": {
       xsm: {
         // backgroundPosition: "unset",
+        pb: "3.5rem",
       },
       tablet: {
         // backgroundPosition:"unset"
@@ -76,9 +77,9 @@ export const howXcmStyle: HowXcmStyleInterface = {
     zIndex: "-1",
     "@mq": {
       xsm: {
-        top: "-2vw",
+        top: "-11vw",
         right: "15vw",
-        width: "7rem",
+        width: "8rem",
       },
       phablet: {
         top: "-2vw",

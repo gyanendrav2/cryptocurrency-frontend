@@ -10,6 +10,6 @@ export const xcmSupplyData = [
   { icon: CapIcon, name: "Market cap", price: "", priceChange: "121" },
 ]
 export const xcmOtherStats = [
-  { icon: LockedIcon, name: "Amount locked in tiers", price: "-", priceChange: " " },
-  { icon: VaultIcon, name: "Amount vaulted", price: "-", priceChange: " " },
+  { icon: LockedIcon, name: "Amount locked in tiers", price: "", priceChange: "" },
+  { icon: VaultIcon, name: "Amount vaulted", price: "", priceChange: "" },
 ]

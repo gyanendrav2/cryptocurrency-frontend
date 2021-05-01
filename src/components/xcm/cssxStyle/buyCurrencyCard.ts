@@ -34,15 +34,6 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
         mb:140,
       }
     },
-    // "&::after": {
-    //   content: "''",
-    //   position: "absolute",
-    //   backgroundImage: "url('xcmbg/earthflag.png')",
-    //   width: "100%",
-    //   height: "100%",
-    //   backgroundRepeat: "no-repeat",
-    //   zIndex: -1,
-    // },
   },
   input2: {
     height: "4rem",
@@ -80,9 +71,10 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
   h4: {
     color: "white",
     fontSize: 24,
+    ml:"6",
     fontWeight: 800,
     lineHeight: "32px",
-    marginBottom: "2rem",
+    marginBottom: "1rem",
   },
   h6: {
     fontWeight: 800,
@@ -99,12 +91,13 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
   img: {
     zIndex: "0",
     pos: "absolute",
-    top: "0.375rem",
+    top: "-0.5rem",
     right: "8%",
     "@mq": {
       tablet: {
         top: "6.625rem",
         right: "-12.937rem",
+        // zIndex:"-1"
       },
       desktop: {
         top: "6.625rem",

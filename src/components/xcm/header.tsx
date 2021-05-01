@@ -14,6 +14,7 @@ interface HeaderProps {
 export function Header({ data }: HeaderProps): ReactElement {
   const classes = headerStyle
   const [NavOptions, setNavOptions] = useState<undefined | InitialData>()
+  const [isEuro, setIsEuro] = useState(true)
 
   useEffect(() => {
     if (data) {
@@ -28,6 +29,8 @@ export function Header({ data }: HeaderProps): ReactElement {
       setNavOptions(tempData)
     }
   }, [data])
+
+  console.log("data", isEuro)
 
   return (
     <>
@@ -46,10 +49,10 @@ export function Header({ data }: HeaderProps): ReactElement {
                 XCM is the native utility token that powers the CoinMetro ecosystem.
               </Element>
               <Box cssx={classes.showonlyDesktop}>
-                <CurrMarketCard />
+                <CurrMarketCard isEuroCurrency={isEuro} />
               </Box>
             </Box>
-            <BuyCurrencyCard />
+            <BuyCurrencyCard getCurrencyType={(value) => setIsEuro(value)} />
           </Grid>
         </Container>
       </div>
