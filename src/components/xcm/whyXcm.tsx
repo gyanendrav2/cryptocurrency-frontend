@@ -14,37 +14,39 @@ const whyXcmData = [
 export function WhyXcm() {
   const classes = WhyXcmStyle
   return (
-    <Box cssx={classes.wrapper}>
-      <Container cssx={{ m: "auto" }}>
-        <Grid columns={{ _: 1, desktop: 2 }} cssx={classes.flexBox}>
-          <Box cssx={classes.leftWrapper}>
-            <Element as="img" cssx={classes.horseBig} src="xcmbg/horseBig.png" alt="Horse" />
-            <Element as="img" cssx={classes.horseSmall} src="xcmbg/horseSmall.png" alt="Horse" />
-          </Box>
-          <Box
-            cssx={{
-              "@mq": {
-                desktop: {
-                  mt: "-12rem",
+    <>
+      <Box cssx={classes.wrapper}>
+        <Container cssx={{ m: "auto" }}>
+          <Grid columns={{ _: 1, desktop: 2 }} cssx={classes.flexBox}>
+            <Box cssx={classes.leftWrapper}>
+              <Element as="img" cssx={classes.horseBig} src="xcmbg/horseBig.png" alt="Horse" />
+              <Element as="img" cssx={classes.horseSmall} src="xcmbg/horseSmall.png" alt="Horse" />
+            </Box>
+            <Box
+              cssx={{
+                "@mq": {
+                  desktop: {
+                    mt: "-12rem",
+                  },
                 },
-              },
-            }}
-          >
-            {whyXcmData.map((item) => (
-              <Flex
-                align="flex-start"
-                justify="center"
-                wrap="nowrap"
-                direction="column"
-                cssx={{ mb: 24, textAlign: "left" }}
-              >
-                <Element cssx={classes.h2}>{item.title}</Element>
-                <Element cssx={classes.P}>{item.description}</Element>
-              </Flex>
-            ))}
-          </Box>
-        </Grid>
-      </Container>
-    </Box>
+              }}
+            >
+              {whyXcmData.map((item) => (
+                <Flex
+                  align="flex-start"
+                  justify="center"
+                  wrap="nowrap"
+                  direction="column"
+                  cssx={{ mb: 24, textAlign: "left" }}
+                >
+                  <Element cssx={classes.h2}>{item.title}</Element>
+                  <Element cssx={classes.P}>{item.description}</Element>
+                </Flex>
+              ))}
+            </Box>
+          </Grid>
+        </Container>
+      </Box>
+    </>
   )
 }

@@ -28,10 +28,10 @@ export default function LimitInfoCard({
         cssx={{ pos: "fixed", top: 0, left: 0, right: 0, bottom: 0, w: "100%", height: "100vh" }}
         onClick={hide}
       />
-      <Element as="p" cssx={{ fontSize: 8, lineHeight: "18px", fontWeight: 700 }}>
+      <Element as="p" cssx={{ fontSize: 12, lineHeight: "20px", fontWeight: 700 }}>
         Limits include such things like:
       </Element>
-      <Element as="p" cssx={{ fontSize: 8, lineHeight: "18px", fontWeight: 400 }}>
+      <Element as="p" cssx={{ fontSize: 12, lineHeight: "20px", fontWeight: 400 }}>
         <ol>
           <li>1. Cookie store for X timeframe</li>
           <li>2. X length earning period</li>
@@ -41,8 +41,8 @@ export default function LimitInfoCard({
       <Element
         as="p"
         cssx={{
-          fontSize: 8,
-          lineHeight: "18px",
+          fontSize: 12,
+          lineHeight: "20px",
           fontWeight: 400,
           color: "purple.default",
           pt: 8,
@@ -53,7 +53,7 @@ export default function LimitInfoCard({
       >
         * Coinmetro is limitless:
       </Element>
-      <Element as="p" cssx={{ fontSize: 8, lineHeight: "18px", fontWeight: 400 }}>
+      <Element as="p" cssx={{ fontSize: 12, lineHeight: "20px", fontWeight: 400 }}>
         <ol>
           <li>1. Cookie last 30 day</li>
           <li>2. Referrals are there for lifetime</li>

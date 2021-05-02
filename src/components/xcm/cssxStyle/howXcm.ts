@@ -41,7 +41,7 @@ export const howXcmStyle: HowXcmStyleInterface = {
         // backgroundPosition:"unset"
       },
       desktop: {
-        marginTop: "-2rem",
+        // marginTop: "-2rem",
       },
     },
   },
@@ -69,6 +69,14 @@ export const howXcmStyle: HowXcmStyleInterface = {
     margin: "0 auto",
     zIndex: 0,
     position: "relative",
+    "@mq":{
+      tablet:{
+        top:"2rem"
+      },
+      desktop:{
+        top:"6rem"
+      }
+    }
   },
   globeImg: {
     position: "absolute",
@@ -87,20 +95,20 @@ export const howXcmStyle: HowXcmStyleInterface = {
         width: "10rem",
       },
       tablet: {
-        top: "-1vw",
+        top: "1vw",
         right: "15vw",
         width: "10rem",
       },
       desktop: {
-        top: "-3.5vw",
+        top: "3.5vw",
         right: "32vw",
         width: "auto",
       },
-      xxl: {
-        top: "-1vw",
-        right: "32vw",
-        width: "auto",
-      },
+      // xxl: {
+      //   top: "3.5vw",
+      //   right: "32vw",
+      //   width: "auto",
+      // },
     },
   },
   title: {

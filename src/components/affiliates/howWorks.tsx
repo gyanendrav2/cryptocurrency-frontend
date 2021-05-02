@@ -6,7 +6,7 @@ import { HowWorksStyle } from "./cssxStyle/howWorkStyle"
 export default function HowWorks() {
   const classes = HowWorksStyle
   return (
-    <>
+    <Box cssx={{ bg: "white" }}>
       <Container>
         <Grid columns={{ _: 1, desktop: 2 }} columnGap={62}>
           <Box>
@@ -73,6 +73,6 @@ export default function HowWorks() {
           </Box>
         </Grid>
       </Container>
-    </>
+    </Box>
   )
 }

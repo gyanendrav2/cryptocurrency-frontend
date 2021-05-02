@@ -31,6 +31,7 @@ export function Header({ data }: HeaderProps): ReactElement {
   return (
     <>
       <Box cssx={classes.wrapper}>
+        <Box cssx={classes.bgimage} />
         {NavOptions && <Navbar data={NavOptions} />}
         <Container cssx={classes.container}>
           <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
@@ -47,9 +48,9 @@ export function Header({ data }: HeaderProps): ReactElement {
             </Box>
           </Grid>
         </Container>
-        <Element as="img" src="affiliates/headerBgMob.png" cssx={classes.mobImg} alt="bg" />
+        {/* <Element as="img" src="affiliates/headerBgMob.png" cssx={classes.mobImg} alt="bg" />
         <Element as="img" src="affiliates/headerBgTab.png" cssx={classes.TabImg} alt="bg" />
-        <Element as="img" src="affiliates/affiliatesHeaderbg.png" cssx={classes.img} alt="bg" />
+        <Element as="img" src="affiliates/affiliatesHeaderbg.png" cssx={classes.img} alt="bg" /> */}
       </Box>
     </>
   )

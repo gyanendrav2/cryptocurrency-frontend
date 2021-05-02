@@ -9,6 +9,7 @@ export interface AffiliatesHeaderStyleInterface {
   btn: CssxObject
   TabImg: CssxObject
   mobImg: CssxObject
+  bgimage: CssxObject
 }
 
 const absoluteImg: CssxObject = {
@@ -20,7 +21,7 @@ const absoluteImg: CssxObject = {
   width: "100%",
   height: "100%",
   zIndex: "-1",
-  objectFit: "cover",
+  // objectFit: "cover",
 }
 
 const bgImage: CssxObject = {
@@ -37,6 +38,18 @@ const bgImage: CssxObject = {
   zIndex: 1,
   backgroundPosition: "bottom",
   backgroundSize: "100%",
+}
+
+const earthBgImage: CssxObject = {
+  pos: "absolute",
+  top: 0,
+  left: 0,
+  backgroundImage: "url('affiliates/headerBgMob.png')",
+  backgroundSize: "cover",
+  backgroundPosition: "100% 40%",
+  w: "100%",
+  height: "100%",
+  zIndex: "-1",
 }
 
 export const affiliatesHeaderStyle: AffiliatesHeaderStyleInterface = {
@@ -59,6 +72,19 @@ export const affiliatesHeaderStyle: AffiliatesHeaderStyleInterface = {
           background: "url('affiliates/headerCurve.svg')",
           backgroundSize: "100%",
         },
+      },
+    },
+  },
+  bgimage: {
+    ...earthBgImage,
+    "@mq": {
+      tablet: {
+        ...earthBgImage,
+        backgroundImage: "url('affiliates/headerBgTab.png')",
+      },
+      desktop: {
+        ...earthBgImage,
+        backgroundImage: "url('affiliates/affiliatesHeaderbg.png')",
       },
     },
   },
@@ -131,6 +157,7 @@ export const affiliatesHeaderStyle: AffiliatesHeaderStyleInterface = {
         mx: "auto",
       },
       desktop: {
+        mb: 135,
         mx: "unset",
       },
     },

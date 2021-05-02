@@ -20,6 +20,7 @@ export const trackCommissionStyle: TrackCommissionStyleInterface = {
     "@mq": {
       tablet: {
         fontSize: 48,
+        lineHeight: "54px",
       },
       desktop: {
         mx: "unset",

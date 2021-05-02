@@ -13,25 +13,25 @@ export default function ValueTrust() {
         </Element>
         <Flex align="center" justify="center">
           <Grid columns={{ _: 1, tablet: 2, desktop: 4 }} columnGap={116}>
-            <Box>
+            <Box cssx={classes.imgContainer}>
               <Element as="img" src="affiliates/safeSecure.png" />
               <Element as="p" cssx={classes.p}>
                 Licensed & secure
               </Element>
             </Box>
-            <Box>
+            <Box cssx={classes.imgContainer}>
               <Element as="img" src="affiliates/trusted.png" />
               <Element as="p" cssx={classes.p}>
                 Transparent
               </Element>
             </Box>
-            <Box>
+            <Box cssx={classes.imgContainer}>
               <Element as="img" src="affiliates/instantPayment.png" />
               <Element as="p" cssx={classes.p}>
                 Instant payments
               </Element>
             </Box>
-            <Box>
+            <Box cssx={classes.imgContainer}>
               <Element as="img" src="affiliates/safeSecure.png" />
               <Element as="p" cssx={classes.p}>
                 Trusted by thousands

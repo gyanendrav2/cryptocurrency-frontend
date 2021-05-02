@@ -4,6 +4,7 @@ interface ValueTrustStyleInterface {
   wrapper: CssxObject
   heading: CssxObject
   p: CssxObject
+  imgContainer:CssxObject
 }
 
 export const valueTrustStyle: ValueTrustStyleInterface = {
@@ -42,11 +43,19 @@ export const valueTrustStyle: ValueTrustStyleInterface = {
     color: "purple.default",
     mt: 32,
     mb:32,
+    fontFamily:"Mulish",
     textAlign: "center",
+    fontSize:"22px",
+    lineHeight:"32px",
+    fontWeight:800,
     "@mq":{
       desktop:{
         mt:56,
       }
     }
   },
+  imgContainer:{
+    mx:"auto",
+    maxWidth:"100%"
+  }
 }

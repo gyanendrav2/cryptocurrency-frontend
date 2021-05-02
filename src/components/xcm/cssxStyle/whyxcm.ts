@@ -40,7 +40,10 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
           top: "25%",
         },
         tablet: {
-          top: "20%",
+           background: "url('xcmbg/whybgTab.svg')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          // top: "20%",
         },
         desktop: {
           background: "url('xcmbg/whyxcmbg.svg')",

@@ -30,7 +30,7 @@ export function Header({ data }: HeaderProps): ReactElement {
     }
   }, [data])
 
-  console.log("data", isEuro)
+  // console.log("data", isEuro)
 
   return (
     <>

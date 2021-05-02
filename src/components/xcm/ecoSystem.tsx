@@ -109,7 +109,6 @@ export function EcoSystem() {
           }}
         />
       </Box>
-      {/* <Box cssx={classes.wrapper2} /> */}
     </>
   )
 }

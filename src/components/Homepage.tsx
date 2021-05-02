@@ -27,7 +27,7 @@ export function Homepage({ data }: IHomepageProps): ReactElement {
       <Support data={data} />
       <Footer data={data} />
 
-      <BondCta data={data}/>
+      <BondCta data={data} />
     </>
   )
 }

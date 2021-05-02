@@ -63,7 +63,7 @@ export default function PriceStatisticsChart() {
 
               "@mq": {
                 xsm: {
-                  fontSize: 10,
+                  fontSize: 12,
                   lineHeight: "1.5rem",
                   minWidth: "unset",
                 },

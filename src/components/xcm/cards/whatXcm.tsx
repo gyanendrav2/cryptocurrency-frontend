@@ -19,7 +19,7 @@ export function WhatXcmCard() {
         cssx={{
           "@mq": {
             desktop: {
-              pb: "10rem",
+              pb: "16rem",
             },
           },
         }}

@@ -16,12 +16,10 @@ export default function StartEarning() {
           maxWidth: "100%",
           height: "auto",
           marginRight: "auto",
-          // transform: "translateY(2px)"
         }}
       />
       <Box cssx={classes.wrapper}>
         <Container>
-          {/* <Grid columns={{ _: 1, tablet: 2, desktop: 2 }} columnGap={116}> */}
           <Box cssx={classes.headingContainer}>
             <Element as="h1" cssx={classes.heading}>
               Start earning crypto with CoinMetro!
@@ -45,7 +43,6 @@ export default function StartEarning() {
               Start Earning
             </Button>
           </Box>
-          {/* </Grid> */}
         </Container>
       </Box>
       <Element

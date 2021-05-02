@@ -16,6 +16,9 @@ export function PriceStatistics() {
         zIndex: "-2",
         "@mq": {
           tablet: {
+            pt: 80,
+          },
+          desktop: {
             pt: 135,
           },
         },
@@ -58,8 +61,11 @@ export function PriceStatistics() {
             mb: "4rem",
             "@mq": {
               tablet: {
-                mb: 190,
+                mb: 85,
                 mt: 40,
+              },
+              desktop: {
+                mb: 190,
               },
             },
           }}

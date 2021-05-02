@@ -30,7 +30,7 @@ export default function CommissionMobCard({
       }}
     >
       <Box cssx={{ borderBottom: "1px solid", borderColor: "grey.light", py: 8, pb: 16 }}>
-        <Element as="img" src={headerImg} alt={headerImg} cssx={{ width: "12rem" }} />
+        <Element as="img" src={headerImg} alt={headerImg} cssx={{ width: "11rem" }} />
       </Box>
       {data.map((item: DataType, i: number) => (
         <Box

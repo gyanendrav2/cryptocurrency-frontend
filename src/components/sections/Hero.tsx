@@ -1,7 +1,5 @@
 import React, { ReactElement, useEffect, useLayoutEffect } from "react"
-import {
-  AspectRatioBox, Box, CssxObject, Element, Flex,
-} from "@react-cssx/core"
+import { AspectRatioBox, Box, CssxObject, Element, Flex } from "@react-cssx/core"
 import { H2 } from "../../ui/Typography"
 import { Text } from "../../ui/Text"
 import { Button } from "../../ui/Button"
@@ -11,7 +9,7 @@ export interface IHeroProps {
   data: any
 }
 
-const Content = ({ data, mobile = false }: { data: any, mobile: boolean }) => (
+const Content = ({ data, mobile = false }: { data: any; mobile: boolean }) => (
   <>
     <Box cssx={{ pos: "absolute", inset: 0, zIndex: 10 }}>
       <Container cssx={{ pos: "relative", color: "white", pt: 150 }}>
@@ -19,7 +17,7 @@ const Content = ({ data, mobile = false }: { data: any, mobile: boolean }) => (
           {mobile && (
             <H2 cssx={{ mt: { tablet: 40 }, color: "white" }}>{data.hero_title[0].text}</H2>
           )}
-          {! mobile && (
+          {!mobile && (
             <H2 cssx={{ mt: { tablet: 40 }, color: "white" }} richText>
               {data.hero_title}
             </H2>
@@ -65,7 +63,12 @@ const makeSrcSet = (imgId): CssxObject => ({
 })
 
 const cssxFlexBox: CssxObject = {
-  pos: "relative", display: { _: "none", phablet: "flex" }, overflow: "hidden", height: "50vw", width: "100%", minHeight: "850px",
+  pos: "relative",
+  display: { _: "none", phablet: "flex" },
+  overflow: "hidden",
+  height: "50vw",
+  width: "100%",
+  minHeight: "850px",
 }
 const cssxBlob1 = { ...baseCssX, ...makeSrcSet("01") }
 const cssxBlob2 = { ...baseCssX, ...makeSrcSet("02") }

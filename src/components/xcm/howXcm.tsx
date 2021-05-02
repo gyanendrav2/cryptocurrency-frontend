@@ -25,7 +25,24 @@ export function HowXcm() {
   return (
     <>
       <Box cssx={{ bg: "grey.bg" }}>
-        <Element as="img" src="xcmbg/how_top.png" alt="howused top bg" />
+        <Element
+          as="img"
+          src="xcmbg/how_top.png"
+          alt="howused top bg"
+          cssx={{
+            maxWidth: "100%",
+            height: "auto",
+            marginRight: "auto",
+            "@mq": {
+              xsm: {
+                transform: "translateY(-2px)",
+              },
+              tablet: {
+                transform: "translateY(6px)",
+              },
+            },
+          }}
+        />
       </Box>
 
       <Box cssx={classes.wrapper}>
@@ -48,6 +65,7 @@ export function HowXcm() {
             pb: 32,
             "@mq": {
               tablet: { pb: 80 },
+              desktop: { pb: 0 },
             },
           }}
         >
