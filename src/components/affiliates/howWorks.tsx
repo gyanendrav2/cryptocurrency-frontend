@@ -33,7 +33,11 @@ export default function HowWorks() {
                       Get your link
                     </Element>
                     <Element as="p" cssx={classes.stepDes}>
-                      Dash over to our dashboard and get your affiliate link
+                      Dash over to our &nbsp;
+                      <span style={{ cursor: "pointer", textDecoration: "underline" }}>
+                        dashboard
+                      </span>
+                      &nbsp; and get your affiliate link
                     </Element>
                   </Box>
                 </Flex>

@@ -11,14 +11,16 @@ export interface HowXcmStyleInterface {
 export const howXcmStyle: HowXcmStyleInterface = {
   wrapper: {
     pos: "relative",
-    top: 0,
+    top: "1.8rem",
     right: 0,
     overflow: "hidden",
     zIndex: "2",
     transform: "translateY(-30px)",
+    pb: "4%",
     "&::before": {
       content: "''",
-      backgroundImage: "url(xcmbg/union.png)",
+      // backgroundImage: "url(xcmbg/union.png)",
+      backgroundColor: "#1c2544",
       position: "absolute",
       left: 0,
       right: 0,
@@ -27,21 +29,25 @@ export const howXcmStyle: HowXcmStyleInterface = {
       height: "100%",
       zIndex: "-2",
       overflowX: "hidden",
-      backgroundSize: "cover",
-      backgroundPosition: "100%, 100%",
-      backgroundRepeat: "no-repeat",
-      transform: "scale(1)",
+      // backgroundSize: "cover",
+      // backgroundPosition: "100%, 100%",
+      // backgroundRepeat: "no-repeat",
+      // transform: "scale(1)",
     },
     "@mq": {
       xsm: {
         // backgroundPosition: "unset",
-        pb: "3.5rem",
+        pb: "8.5rem",
+      },
+      phablet: {
+        pb: "11.5rem",
       },
       tablet: {
         // backgroundPosition:"unset"
+        pb: "14.5rem",
       },
       desktop: {
-        // marginTop: "-2rem",
+        pb: "23.5rem",
       },
     },
   },
@@ -60,7 +66,7 @@ export const howXcmStyle: HowXcmStyleInterface = {
       tablet: {
         fontSize: "3rem",
         lineHeight: "4rem",
-        paddingTop: "8.5rem",
+        paddingTop: "2.5rem",
         marginBottom: "3.5rem",
       },
     },
@@ -69,14 +75,14 @@ export const howXcmStyle: HowXcmStyleInterface = {
     margin: "0 auto",
     zIndex: 0,
     position: "relative",
-    "@mq":{
-      tablet:{
-        top:"2rem"
+    "@mq": {
+      tablet: {
+        top: "2rem",
       },
-      desktop:{
-        top:"6rem"
-      }
-    }
+      desktop: {
+        top: "6rem",
+      },
+    },
   },
   globeImg: {
     position: "absolute",

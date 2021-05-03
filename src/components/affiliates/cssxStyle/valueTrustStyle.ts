@@ -4,20 +4,20 @@ interface ValueTrustStyleInterface {
   wrapper: CssxObject
   heading: CssxObject
   p: CssxObject
-  imgContainer:CssxObject
+  imgContainer: CssxObject
 }
 
 export const valueTrustStyle: ValueTrustStyleInterface = {
   wrapper: {
-    py:"2.5rem",
-    "@mq":{
-      tablet:{
-     py: "5rem",
+    py: "2.5rem",
+    "@mq": {
+      tablet: {
+        py: "5rem",
       },
-      desktop:{
-        py:160,
-      }
-    }
+      desktop: {
+        py: 160,
+      },
+    },
   },
   heading: {
     color: "purple.default",
@@ -27,35 +27,38 @@ export const valueTrustStyle: ValueTrustStyleInterface = {
     mx: "auto",
     textAlign: "center",
     mb: 32,
-    "@mq":{
-      tablet:{
-    fontSize: 48,
-    lineHeight: "56px",
-    fontWeight: 800,
-    mb: 80,
-      },
-      desktop:{
+    "@mq": {
+      tablet: {
+        fontSize: 48,
+        lineHeight: "56px",
+        fontWeight: 800,
         mb: 80,
-      }
-    }
+      },
+      desktop: {
+        mb: 80,
+      },
+    },
   },
   p: {
     color: "purple.default",
     mt: 32,
-    mb:32,
-    fontFamily:"Mulish",
+    mb: 32,
+    fontFamily: "Mulish",
     textAlign: "center",
-    fontSize:"22px",
-    lineHeight:"32px",
-    fontWeight:800,
-    "@mq":{
-      desktop:{
-        mt:56,
-      }
-    }
+    fontSize: "22px",
+    lineHeight: "32px",
+    fontWeight: 800,
+    "@mq": {
+      desktop: {
+        mt: 56,
+      },
+    },
   },
-  imgContainer:{
-    mx:"auto",
-    maxWidth:"100%"
-  }
+  imgContainer: {
+    mx: "auto",
+    "& img": {
+      mx: "auto",
+    },
+    // maxWidth:"100%"
+  },
 }

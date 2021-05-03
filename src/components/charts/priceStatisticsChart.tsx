@@ -1,4 +1,4 @@
-import { Element, Flex } from "@react-cssx/core"
+import { Box, Element, Flex } from "@react-cssx/core"
 import React, { useEffect, useState } from "react"
 import {
   AreaChart,
@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts"
 import { priceChartAPI } from "../../API/xcmAPI"
+import { roundUpNumber } from "../../helper/roundUpNumber"
 
 const filterRange = [
   { time: "1 day", active: true, shortTime: "1D" },
@@ -25,12 +26,15 @@ export default function PriceStatisticsChart() {
   const [filterOptions, setFilterOptions] = useState(filterRange)
   const [graphData, setGraphData] = useState([])
   const [activeTime, setActiveTime] = useState("1D")
+  const [minMaxValues, setMinMaxValues] = useState({ max: "", vol: "" })
 
   const handlePriceAPI = async (timePeriod) => {
     const result = await priceChartAPI(timePeriod)
+    console.log(result)
     if (result.status === 200) {
       const priceData = result.data.prices.map((item: string) => ({ price: item }))
       setGraphData(priceData)
+      setMinMaxValues({ max: result.data.max, vol: result.data.vol })
     }
   }
   useEffect(() => {
@@ -74,6 +78,17 @@ export default function PriceStatisticsChart() {
           </Element>
         ))}
       </Flex>
+      <Box cssx={{ pr: "2rem" }}>
+        <Flex
+          align="center"
+          justify="space-between"
+          wrap="nowrap"
+          cssx={{ maxWidth: "12.25rem", ml: "auto" }}
+        >
+          <Element as="p">€{roundUpNumber(+minMaxValues.vol)}</Element>
+          <Element as="p">€{roundUpNumber(+minMaxValues.max)}</Element>
+        </Flex>
+      </Box>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           width={730}
