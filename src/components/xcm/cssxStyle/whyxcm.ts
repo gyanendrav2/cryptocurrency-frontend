@@ -49,7 +49,7 @@ export const WhyXcmStyle: WhyXcmStyleInterface = {
           background: "url('xcmbg/whyxcmbg.svg')",
           backgroundRepeat: "no-repeat",
           top: "1rem",
-          backgroundPosition: "100% 100%",
+          backgroundPosition: "left 100%",
         },
       },
     },
