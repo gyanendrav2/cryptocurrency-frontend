@@ -1,7 +1,8 @@
-import React, { ReactElement, useEffect, useState } from "react"
+import React, { ReactElement, useState } from "react"
 import { Box, Element, Grid } from "@react-cssx/core"
+import { useIntl } from "react-intl"
 import { Navbar } from "../Navbar"
-import { InitialData, Menu } from "../../interfaces/initial"
+import { InitialData } from "../../interfaces/initial"
 import { Container } from "../../ui/Container"
 import { headerStyle } from "./cssxStyle/header"
 import { CurrMarketCard } from "./currMarketCard"
@@ -13,29 +14,13 @@ interface HeaderProps {
 
 export function Header({ data }: HeaderProps): ReactElement {
   const classes = headerStyle
-  const [NavOptions, setNavOptions] = useState<undefined | InitialData>()
   const [isEuro, setIsEuro] = useState(true)
-
-  useEffect(() => {
-    if (data) {
-      const tempData = { ...data }
-      const menus: Menu[] = []
-      data.menu.forEach((item: Menu) => {
-        if (["Markets", "Exchange"].includes(item.title)) {
-          menus.push(item)
-        }
-      })
-      tempData.menu = menus
-      setNavOptions(tempData)
-    }
-  }, [data])
-
-  // console.log("data", isEuro)
+  const { formatMessage: f } = useIntl()
 
   return (
     <>
       <div className="header__wrapper">
-        {NavOptions && <Navbar data={NavOptions} />}
+        <Navbar data={data} />
         <Container cssx={classes.container}>
           <Grid columns={{ _: 1, desktop: 2 }} columnGap={112}>
             <Box>
@@ -43,10 +28,10 @@ export function Header({ data }: HeaderProps): ReactElement {
                 <Element as="span" cssx={{ color: "indigo.light" }}>
                   XCM
                 </Element>
-                , the token of the future
+                , {f({ id: "headerHeading" })}
               </Element>
               <Element as="p" cssx={classes.bigP}>
-                XCM is the native utility token that powers the CoinMetro ecosystem.
+                {f({ id: "headerSubTitle" })}
               </Element>
               <Box cssx={classes.showonlyDesktop}>
                 <CurrMarketCard isEuroCurrency={isEuro} />

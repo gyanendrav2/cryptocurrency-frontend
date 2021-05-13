@@ -1,4 +1,5 @@
 import { Element, Flex } from "@react-cssx/core"
+import { useIntl } from "react-intl"
 import React, { useEffect, useState } from "react"
 import { ArrowdownIcon } from "../icons/arrowdownIcon"
 import { InfoIcon } from "../icons/infoIcon"
@@ -9,6 +10,7 @@ export function CurrMarketCard({ isEuroCurrency }: { isEuroCurrency: boolean }) 
   const [marketCapData, setMarketCapData] = useState({ EUR: "", USD: "" })
   const [currentmarketCap, setCurrentmarketCap] = useState<any>("")
   const [pricevariation, setPricevariation] = useState<any>("")
+  const { formatMessage: f } = useIntl()
 
   const handleAPIcall = async () => {
     const priceVarResult = await priceVariationAPIcall()
@@ -34,7 +36,6 @@ export function CurrMarketCard({ isEuroCurrency }: { isEuroCurrency: boolean }) 
     }
   }, [isEuroCurrency, marketCapData])
 
-
   const classes = headerStyle
   return (
     <Flex align="center" justify="space-between" wrap="nowrap" cssx={classes.cardWrapper}>
@@ -50,7 +51,7 @@ export function CurrMarketCard({ isEuroCurrency }: { isEuroCurrency: boolean }) 
         <Flex align="center" justify="space-between" wrap="nowrap">
           <InfoIcon />
           <Element as="p" cssx={{ ml: 16, color: "grey.light" }}>
-            Current Market Cap
+            {f({ id: "hmarketCap" })}
           </Element>
         </Flex>
         <Element as="p" cssx={{ color: "white", ml: 16 }}>

@@ -6,6 +6,7 @@ import { Button } from "../ui/Button"
 import CloseIcon from "../../public/close.svg"
 import { Container } from "../ui/Container"
 import { IntersectionObserver } from "./IntersectionObserver"
+import { LanguagePicker } from "./languagePicker"
 
 export interface INavbarProps {
   data: any
@@ -93,6 +94,7 @@ export function Navbar({ data }: INavbarProps): ReactElement {
               <Box cssx={{ color: hasScrolled ? "grey.dark" : "white" }}>Telegram</Box>
             </Flex>
           </Flex>
+          <LanguagePicker />
           <Box>
             <Button
               as="a"
