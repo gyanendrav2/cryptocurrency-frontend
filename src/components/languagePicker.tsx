@@ -21,6 +21,7 @@ export function LanguagePicker(): ReactElement {
   const [openCloseDropdown, setOpenCloseDropdown] = useState(false)
   const [language, setLangulage] = useState("Eng")
   const { pathname } = useRouter()
+  console.log(useRouter())
   return (
     <Flex
       align="center"
