@@ -26,9 +26,9 @@ export default function Reward() {
               </Element>
             </Box>
             <Box cssx={classes.imgContainer}>
-              <Element as="img" src="affiliates/5euro.png" cssx={classes.img} alt="" />
+              <Element as="img" src="affiliates/infintiy.png" cssx={classes.img} alt="" />
               <Element as="p" cssx={classes.p}>
-                Get €5 when your ref signs up and makes a deposit
+                There is no cap to your earnings, earn for life.
               </Element>
             </Box>
             <Box cssx={classes.imgContainer}>

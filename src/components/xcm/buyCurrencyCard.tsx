@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import useSWR from "swr"
-import { useIntl } from "react-intl"
 import { Box, Element, Flex } from "@react-cssx/core"
 import { Button } from "../../ui/Button"
 import { buyCurrencyCardStyle } from "./cssxStyle/buyCurrencyCard"
@@ -21,7 +20,6 @@ export function BuyCurrencyCard({
   const [xcmValue, setXcmValue] = useState<any>("")
   const [totalXcm, setTotalXcm] = useState<any>("1")
   const xcmRatesData = useSWR(endpoints.xcmRates, fetcher)
-  const { formatMessage: f } = useIntl()
 
   const coinmetro = {
     name: "XCM",
@@ -86,7 +84,7 @@ export function BuyCurrencyCard({
         direction="column"
         cssx={classes.wrapper}
       >
-        <Element cssx={classes.h4}>{f({ id: "buyXCM" })}</Element>
+        <Element cssx={classes.h4}>Buy XCM</Element>
         <form style={{ width: "100%" }}>
           <Flex
             align="center"
@@ -96,7 +94,7 @@ export function BuyCurrencyCard({
             cssx={{ mb: 6, pos: "relative" }}
           >
             <Element as="p" cssx={classes.inputLabel}>
-              {f({ id: "buy" })}
+              BUY
             </Element>
             <Element
               as="input"
@@ -115,7 +113,7 @@ export function BuyCurrencyCard({
             // cssx={{ mb: 6 }}
           >
             <Element as="p" cssx={{ ml: 20, color: "white", mb: 24, fontSize: 12 }}>
-              {f({ id: "cmPrice" })} {roundUpNumber(xcmValue)}
+              Coinmetro price {roundUpNumber(xcmValue)}
             </Element>
           </Flex>
           <Flex
@@ -126,7 +124,7 @@ export function BuyCurrencyCard({
             cssx={{ pos: "relative" }}
           >
             <Element as="p" cssx={classes.inputLabel}>
-              {f({ id: "payWith" })}
+              PAY WITH
             </Element>
             <Element
               as="input"
@@ -150,7 +148,7 @@ export function BuyCurrencyCard({
             verticalAlign: "middle",
           }}
         >
-          {f({ id: "buyNow" })}
+          Buy Now
         </Button>
       </Flex>
       <Box cssx={classes.mobileTabletShow}>

@@ -17,8 +17,8 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
   wrapper: {
     backgroundColor: "grey.dark2",
     borderRadius: 8,
-    ml: 0,
-    mb: 24,
+    ml:0,
+    mb:24,
     zIndex: 2,
     pos: "relative",
     mt: "4.3rem",
@@ -30,9 +30,9 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
       desktop: {
         maxWidth: 416,
         mx: "auto",
-        ml: 32,
-        mb: 140,
-      },
+        ml:32,
+        mb:140,
+      }
     },
   },
   input2: {
@@ -71,7 +71,7 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
   h4: {
     color: "white",
     fontSize: 24,
-    ml: "6",
+    ml:"6",
     fontWeight: 800,
     lineHeight: "32px",
     marginBottom: "1rem",
@@ -111,7 +111,6 @@ export const buyCurrencyCardStyle: BuyCurrencyCard = {
     left: "1rem",
     fontSize: 12,
     color: "teal.light",
-    textTransform: "capitalize",
   },
   mobileTabletShow: {
     "@mq": {

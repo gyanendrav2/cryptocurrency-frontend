@@ -1,6 +1,7 @@
 import { Box, Element, Flex, Grid } from "@react-cssx/core"
 import React from "react"
 import { Container } from "../../ui/Container"
+import { Text } from "../../ui/Text"
 import { HowWorksStyle } from "./cssxStyle/howWorkStyle"
 
 export default function HowWorks() {
@@ -34,9 +35,14 @@ export default function HowWorks() {
                     </Element>
                     <Element as="p" cssx={classes.stepDes}>
                       Dash over to our &nbsp;
-                      <span style={{ cursor: "pointer", textDecoration: "underline" }}>
+                      <Text
+                        as="a"
+                        href="https://go.coinmetro.com/affiliate/start"
+                        target="_blank"
+                        style={{ cursor: "pointer", textDecoration: "underline" }}
+                      >
                         dashboard
-                      </span>
+                      </Text>
                       &nbsp; and get your affiliate link
                     </Element>
                   </Box>

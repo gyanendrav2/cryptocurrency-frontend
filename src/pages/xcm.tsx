@@ -16,8 +16,7 @@ export interface XCMprops {
   data: InitialData
 }
 
-export default function XCM({ data, ...props }: XCMprops): ReactElement {
-  console.log("props", props)
+export default function XCM({ data }: XCMprops): ReactElement {
   return (
     <Box>
       <Header data={data} />
@@ -41,9 +40,7 @@ export const getStaticProps = async () => {
   })
 
   return {
-    props: {
-      data: prismic.data.allHomepages.edges[0].node,
-    },
+    props: { data: prismic.data.allHomepages.edges[0].node },
     revalidate: 10, // Revalidate at most once every 10 secs
   }
 }

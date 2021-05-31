@@ -25,35 +25,55 @@ export function HowXcm() {
   return (
     <>
       <Element
-        as="img"
-        src="xcmbg/howxcmTopCurveDesk.svg"
-        alt="howused top bg"
+        as="div"
         cssx={{
-          marginRight: "auto",
-          display: "none",
-          "@mq": {
-            xsm: {
-              // transform: "translateY(-2px)",
-            },
-            tablet: {
-              display: "block",
-            },
+          pos: "relative",
+          "&::before": {
+            content: "''",
+            pos: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "grey.bg",
+            zIndex: "-1",
           },
         }}
-      />
-      <Element
-        as="img"
-        src="xcmbg/howXcmTopCurveMob.svg"
-        alt="howused top bg"
-        cssx={{
-          marginRight: "auto",
-          "@mq": {
-            tablet: {
-              display: "none",
+      >
+        <Element
+          as="img"
+          src="xcmbg/howxcmTopCurveDesk.svg"
+          alt="howused top bg"
+          cssx={{
+            marginRight: "auto",
+            display: "none",
+            "@mq": {
+              xsm: {
+                // transform: "translateY(-2px)",
+              },
+              tablet: {
+                display: "block",
+              },
             },
-          },
-        }}
-      />
+          }}
+        />
+
+        <Element
+          as="img"
+          src="xcmbg/howXcmTopCurveMob.svg"
+          alt="howused top bg"
+          cssx={{
+            marginRight: "auto",
+            "@mq": {
+              tablet: {
+                display: "none",
+              },
+            },
+          }}
+        />
+      </Element>
       <Box cssx={{ pos: "relative" }}>
         <Box cssx={classes.wrapper}>
           <Element
