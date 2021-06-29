@@ -9,9 +9,21 @@ import { IntersectionObserver } from "./IntersectionObserver"
 
 export interface INavbarProps {
   data: any
+  bgColor?: string
+  defaultBgColor?: string
+  defaultTextColor?: string
+  telTextColor?: string
+  defaultPading?: number
 }
 
-export function Navbar({ data }: INavbarProps): ReactElement {
+export function Navbar({
+  data,
+  bgColor,
+  defaultBgColor,
+  defaultTextColor,
+  telTextColor,
+  defaultPading,
+}: INavbarProps): ReactElement {
   const [hasScrolled, setHasScrolled] = useState<boolean>()
 
   const [toggle, setToggle] = React.useState(false)
@@ -26,14 +38,14 @@ export function Navbar({ data }: INavbarProps): ReactElement {
         align="center"
         cssx={{
           px: { _: 20, tablet: 40 },
-          py: hasScrolled ? 20 : 40,
+          py: hasScrolled ? 20 : defaultPading,
           pos: "fixed",
           zIndex: 1000,
           top: 0,
           left: 0,
           right: 0,
-          bg: hasScrolled ? "white" : "transparent",
-          color: hasScrolled ? "purple" : "white",
+          bg: hasScrolled ? bgColor : defaultBgColor,
+          color: hasScrolled ? defaultTextColor : "white",
           transition: "all 250ms ease-in-out",
         }}
       >
@@ -64,7 +76,7 @@ export function Navbar({ data }: INavbarProps): ReactElement {
                 my: "auto",
                 mr: 30,
                 color: "#CACFE3",
-                ":hover": { color: hasScrolled ? "grey.dark" : "white" },
+                ":hover": { color: hasScrolled ? telTextColor : "white" },
               }}
               href="https://t.me/CoinMetro"
               target="_blank"
@@ -90,7 +102,7 @@ export function Navbar({ data }: INavbarProps): ReactElement {
                   fill="currentColor"
                 />
               </Element>
-              <Box cssx={{ color: hasScrolled ? "grey.dark" : "white" }}>Telegram</Box>
+              <Box cssx={{ color: hasScrolled ? telTextColor : "white" }}>Telegram</Box>
             </Flex>
           </Flex>
           <Box>
@@ -253,4 +265,12 @@ export function Navbar({ data }: INavbarProps): ReactElement {
       </Flex>
     </>
   )
+}
+
+Navbar.defaultProps = {
+  bgColor: "white",
+  defaultBgColor: "transparent",
+  defaultTextColor: "purple",
+  telTextColor: "grey.dark",
+  defaultPading: 40,
 }

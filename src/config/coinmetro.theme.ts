@@ -27,6 +27,10 @@ const colors: ITheme["colors"] = {
     dark2: "#2E3654",
     bg: "#F7F8FA",
     light: "#CACFE3",
+    dark3: "#293566",
+    light2: "#69D5DD",
+    light3: "#475BAE",
+    light4: "#D9DCE7",
   },
 
   // darkGrey: "#111930",
