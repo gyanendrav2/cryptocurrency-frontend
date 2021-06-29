@@ -29,14 +29,14 @@ export const StartEarningStyle: StartEarningStyleInterface = {
     backgroundImage: "url('affiliates/planeMob.png')",
     backgroundPosition: "100% 60%",
     pb: "10rem",
-    pt:"3rem",
+    pt: "3rem",
     backgroundRepeat: "no-repeat",
     overflowX: "hidden",
     "@mq": {
       xsm: {
         backgroundImage: "url('affiliates/planeMob.png')",
-         backgroundPosition: "100% 72%",
-         pb: "14rem",
+        backgroundPosition: "100% 72%",
+        pb: "14rem",
       },
       tablet: {
         backgroundImage: "url('affiliates/planeTab.png')",
@@ -48,11 +48,11 @@ export const StartEarningStyle: StartEarningStyleInterface = {
         backgroundPosition: "250% 15%",
         pb: "10rem",
       },
-      xxl:{
+      xxl: {
         backgroundImage: "url('affiliates/startEarningbg3.png')",
         backgroundPosition: "210% 15%",
         pb: "10rem",
-      }
+      },
     },
     "&::before": {
       content: "''",
@@ -61,7 +61,7 @@ export const StartEarningStyle: StartEarningStyleInterface = {
         xsm: {
           ...bgImage,
           background: "url('affiliates/startEarnBgMob.png')",
-            backgroundPosition: "100% 100%",
+          backgroundPosition: "100% 100%",
         },
         tablet: {
           ...bgImage,
@@ -71,8 +71,7 @@ export const StartEarningStyle: StartEarningStyleInterface = {
         desktop: {
           ...bgImage,
           background: "url('affiliates/startEarnDesk.png')",
-         backgroundPosition: "100% 100%",
-
+          backgroundPosition: "100% 100%",
         },
       },
     },
@@ -87,9 +86,9 @@ export const StartEarningStyle: StartEarningStyleInterface = {
       tablet: {
         alignItems: "flex-start",
         justifyContent: "flex-start",
-        justifyItems:"center",
-        alignContent:"center",
-        flexDirection: "column", 
+        justifyItems: "center",
+        alignContent: "center",
+        flexDirection: "column",
       },
     },
   },
@@ -110,11 +109,11 @@ export const StartEarningStyle: StartEarningStyleInterface = {
         fontWeight: 800,
         lineHeight: "56px",
         mx: "auto",
-        textAlign:"left"
+        textAlign: "left",
       },
       desktop: {
         textAlign: "left",
-        maxWidth:"35rem",
+        maxWidth: "35rem",
         paddingTop: "5rem",
         ml: "unset",
       },
@@ -129,8 +128,8 @@ export const StartEarningStyle: StartEarningStyleInterface = {
     mb: 32,
     textAlign: "center",
     "@mq": {
-      tablet:{
-        textAlign:"left"
+      tablet: {
+        textAlign: "left",
       },
       desktop: {
         textAlign: "left",

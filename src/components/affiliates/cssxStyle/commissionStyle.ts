@@ -73,7 +73,16 @@ export const CommissionStyle: CommissionStyleInterface = {
       borderColor: "grey.light",
       textAlign: "center",
       py: 40,
-      px: 10,
+      "@mq": {
+        tablet: {
+          width: "132px",
+          px: 8,
+        },
+        desktop: {
+          width: "160px",
+          px: 10,
+        },
+      },
     },
     "& th": {
       pt: 20,

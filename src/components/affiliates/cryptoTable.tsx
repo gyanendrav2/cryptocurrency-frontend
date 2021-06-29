@@ -21,35 +21,45 @@ export default function CryptoTable() {
           <tbody>
             <tr>
               <th>&nbsp;</th>
-              <th style={{ backgroundColor: "#F7F8FA" }}>
-                <Element as="img" cssx={{ m: "auto" }} src="affiliates/logo-horizontal.png" />
+              <th
+                style={{
+                  backgroundColor: "#F7F8FA",
+                  paddingTop: "1.875rem",
+                  paddingBottom: "1.875rem",
+                }}
+              >
+                <Element
+                  as="img"
+                  cssx={{ m: "auto" }}
+                  src="affiliates/logo_1/logo-horizontal.svg"
+                />
               </th>
-              <th>
-                <Element as="img" cssx={{ m: "auto" }} src="affiliates/BinanceLogo.png" />
+              <th style={{ paddingTop: "1.875rem", paddingBottom: "1.875rem" }}>
+                <Element as="img" cssx={{ m: "auto" }} src="affiliates/logo_1/BinanceLogo.svg" />
               </th>
-              <th>
-                <Element as="img" cssx={{ m: "auto" }} src="affiliates/krakenLogo.png" />
+              <th style={{ paddingTop: "1.875rem", paddingBottom: "1.875rem" }}>
+                <Element as="img" cssx={{ m: "auto" }} src="affiliates/logo_1/krakenLogo.svg" />
               </th>
-              <th>
-                <Element as="img" cssx={{ m: "auto" }} src="affiliates/CoinbaseLogo.png" />
+              <th style={{ paddingTop: "1.875rem", paddingBottom: "1.875rem" }}>
+                <Element as="img" cssx={{ m: "auto" }} src="affiliates/logo_1/CoinbaseLogo.svg" />
               </th>
             </tr>
             <tr>
-              <td>Commission rate</td>
+              <td style={{ width: "264px" }}>Commission rate</td>
               <td style={{ backgroundColor: "#F7F8FA" }}>40%</td>
               <td>20%-50%</td>
               <td>20%</td>
               <td>50%</td>
             </tr>
             <tr>
-              <td>Sub-affiliate commission</td>
+              <td style={{ width: "264px" }}>Sub-affiliate commission</td>
               <td style={{ backgroundColor: "#F7F8FA" }}>10%</td>
               <td>0%</td>
               <td>0%</td>
               <td>0%</td>
             </tr>
             <tr>
-              <td>
+              <td style={{ width: "264px" }}>
                 <Flex align="center" cssx={{ pos: "relative" }}>
                   <Element as="p" cssx={{ mr: 8 }}>
                     Limit
@@ -80,22 +90,22 @@ export default function CryptoTable() {
       >
         <CommissionMobCard
           bold
-          headerImg="affiliates/logo-horizontal.png"
+          headerImg="affiliates/logo_1/logo-horizontal.svg"
           data={coinmetroCommision}
         />
         <CommissionMobCard
           bold={false}
-          headerImg="affiliates/BinanceLogo.png"
+          headerImg="affiliates/logo_1/BinanceLogo.svg"
           data={binanceCommission}
         />
         <CommissionMobCard
           bold={false}
-          headerImg="affiliates/krakenLogo.png"
+          headerImg="affiliates/logo_1/krakenLogo.svg"
           data={krakenCommission}
         />
         <CommissionMobCard
           bold={false}
-          headerImg="affiliates/CoinbaseLogo.png"
+          headerImg="affiliates/logo_1/CoinbaseLogo.svg"
           data={coinBaseCommission}
         />
       </Box>

@@ -129,6 +129,9 @@ export default function TrackCommission() {
                 right: 0,
                 transform: "scale(2.5)",
                 "@mq": {
+                  phablet: {
+                    top: "3rem",
+                  },
                   tablet: {
                     transform: "unset",
                     top: "0",

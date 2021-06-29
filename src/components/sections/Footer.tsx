@@ -46,7 +46,7 @@ export function Footer({ data, hideTopCurve }: IFooterProps): ReactElement {
         />
       </Flex>
       <Box cssx={{ pos: "relative", bg: "grey.dark" }}>
-        <Container cssx={{ position: "relative", pt: 40 }}>
+        <Container cssx={{ position: "relative", pt: 24 }}>
           <Grid columns={{ _: 2, desktop: 4 }} cssx={{ rowGap: 40 }}>
             <Column title={data.string_products} list={data.footer_products} />
             <Column title={data.string_learn} list={data.footer_learn} />

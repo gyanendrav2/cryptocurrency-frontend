@@ -2,7 +2,7 @@ import { ITheme } from "@react-cssx/core"
 
 // Must use ems (divide pixels by 16)
 const breakpoints: ITheme["breakpoints"] = {
-  xsm: "20rem", //320px
+  xsm: "20rem", // 320px
   phablet: "30em", // 480px
   tablet: "48em", // 768px
   desktop: "75em", // 1200px

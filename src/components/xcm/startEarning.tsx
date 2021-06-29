@@ -15,7 +15,7 @@ export default function StartEarning() {
             bg: "grey.dark",
             position: "relative",
             pt: "3.5rem",
-            pb: "20rem",
+            pb: "21rem",
             "@mq": {
               phablet: {
                 pb: "30rem",
@@ -96,7 +96,7 @@ export default function StartEarning() {
                     top: "8rem",
                   },
                   phablet: {
-                    top: 0,
+                    top: "4rem",
                   },
                 },
               }}
@@ -104,10 +104,31 @@ export default function StartEarning() {
           </Container>
         </Box>
       </Box>
-      <Box cssx={{ bg: "grey.dark", pt: "1rem", pb: "1rem" }}>
-        <Box
-          cssx={{ borderBottom: "1px solid", borderColor: "teal.light", width: "90%", mx: "auto" }}
+      <Box cssx={{ bg: "grey.dark", pt: "1rem", pb: "1rem", my: "auto" }}>
+        <Element
+          as="hr"
+          cssx={{
+            color: "teal.light",
+            mx: "auto",
+            "@mq": {
+              xsm: {
+                width: "90%",
+              },
+              phablet: {
+                width: "95%",
+              },
+              tablet: {
+                maxWidth: "720px",
+              },
+              desktop: {
+                maxWidth: "1040px",
+              },
+            },
+          }}
         />
+        {/* <Box
+          cssx={{ borderBottom: "1px solid", borderColor: "teal.light", width: "1000px", mx: "auto" }}
+        /> */}
       </Box>
     </>
   )

@@ -1,29 +1,35 @@
 import { CssxObject } from "@react-cssx/core"
 
-export interface startEarningStyleInterface {
-  imgDesk: CssxObject,
-  imgTab: CssxObject,
+export interface StartEarningStyleInterface {
+  imgDesk: CssxObject
+  imgTab: CssxObject
   imgMob: CssxObject
 }
-export const startEarningStyle: startEarningStyleInterface = {
+export const startEarningStyle: StartEarningStyleInterface = {
   imgDesk: {
-    pos: "absolute", right: 0, top: "24.5rem", zIndex: 2, display: "none",
+    pos: "absolute",
+    right: 0,
+    top: "24.5rem",
+    zIndex: 2,
+    display: "none",
     "@mq": {
       desktop: {
         display: "block",
-        top: 120
+        top: 120,
       },
-      xxl:{
-        
-      }
+      xxl: {},
     },
   },
   imgTab: {
-    pos: "absolute", right: 0, top: 120, zIndex: 2, display:"none",
+    pos: "absolute",
+    right: 0,
+    top: 120,
+    zIndex: 2,
+    display: "none",
     "@mq": {
       tablet: {
         display: "block",
-        top:"22.5rem",
+        top: "22.5rem",
       },
       desktop: {
         display: "none",
@@ -31,13 +37,16 @@ export const startEarningStyle: startEarningStyleInterface = {
     },
   },
   imgMob: {
-    pos: "absolute", right: 0, top: "22.5rem", zIndex: 2, 
+    pos: "absolute",
+    right: 0,
+    top: "22.5rem",
+    zIndex: 2,
     "@mq": {
       xsm: {
         display: "block",
       },
-      phablet:{
-        top:"18.5rem",
+      phablet: {
+        top: "21.5rem",
       },
       tablet: {
         display: "none",
