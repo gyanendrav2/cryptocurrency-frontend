@@ -41,6 +41,11 @@ export const vacanciesStyle: CareervacanciesStyle = {
     },
     "& tr.dataRow": {
       backgroundColor: "white",
+      cursor: "pointer",
+      "&:hover td": {
+        background:
+          "linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #69D5DD",
+      },
       "& td:first-child": {
         borderTopLeftRadius: 9,
         borderBottomLeftRadius: 9,
@@ -57,6 +62,7 @@ export const vacanciesStyle: CareervacanciesStyle = {
         padding: "2.25rem",
         color: "grey.dark",
         fontWeight: 800,
+        verticalAlign: "middle",
       },
     },
   },

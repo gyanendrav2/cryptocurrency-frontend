@@ -7,6 +7,8 @@ import { Navbar } from "../components/Navbar"
 import CareerHeader from "../components/career/header"
 import CareerAbout from "../components/career/about"
 import Vacancies from "../components/career/vacancies"
+import CareerKnow from "../components/career/know"
+import CareerJoin from "../components/career/join"
 
 export interface XCMprops {
   data: InitialData
@@ -22,10 +24,13 @@ export default function Career({ data }: XCMprops): ReactElement {
         defaultTextColor="white"
         telTextColor="white"
         defaultPading={20}
+        careerPage
       />
       <CareerHeader />
       <CareerAbout />
-      <Vacancies />
+      <Vacancies heading="Current vacancies" />
+      <CareerKnow />
+      <CareerJoin />
       <Footer data={data} hideTopCurve />
     </Box>
   )

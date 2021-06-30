@@ -1,6 +1,6 @@
 import { CssxObject } from "@react-cssx/core"
 
-export interface CareerHeaderStyle {
+export interface AboutStyle {
   aboutWrapper: CssxObject
   image: CssxObject
   heading: CssxObject
@@ -10,11 +10,26 @@ export interface CareerHeaderStyle {
   mcn: CssxObject
 }
 
-export const aboutStyle: CareerHeaderStyle = {
+export const aboutStyle: AboutStyle = {
   aboutWrapper: {
     bg: "grey.light3",
     pos: "relative",
     transform: "translateY(-2px)",
+    "&::before": {
+      content: "''",
+      background: "url('career/aboutStars.svg')",
+      width: "100%",
+      height: "100%",
+      top: -2,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      position: "absolute",
+      backgroundRepeat: "no-repeat",
+      zIndex: 1,
+      backgroundPosition: "bottom",
+      backgroundSize: "100%",
+    },
   },
   image: {
     position: "absolute",

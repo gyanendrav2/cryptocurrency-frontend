@@ -14,6 +14,7 @@ export interface INavbarProps {
   defaultTextColor?: string
   telTextColor?: string
   defaultPading?: number
+  careerPage?:boolean
 }
 
 export function Navbar({
@@ -23,6 +24,7 @@ export function Navbar({
   defaultTextColor,
   telTextColor,
   defaultPading,
+  careerPage,
 }: INavbarProps): ReactElement {
   const [hasScrolled, setHasScrolled] = useState<boolean>()
 
@@ -52,7 +54,8 @@ export function Navbar({
         <Element
           as={Logo}
           cssx={{
-            color: hasScrolled ? "teal.dark" : "white",
+            // eslint-disable-next-line no-nested-ternary
+            color: hasScrolled ? (careerPage ? defaultTextColor : "teal.dark") : "white",
             pos: "relative",
             zIndex: 2,
             w: { _: 200, tablet: 260 },
@@ -270,7 +273,8 @@ export function Navbar({
 Navbar.defaultProps = {
   bgColor: "white",
   defaultBgColor: "transparent",
-  defaultTextColor: "purple",
+  defaultTextColor: "white",
   telTextColor: "grey.dark",
   defaultPading: 40,
+  careerPage: false,
 }

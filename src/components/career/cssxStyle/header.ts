@@ -9,7 +9,7 @@ export interface CareerHeaderStyle {
 export const headerStyle: CareerHeaderStyle = {
   headerWrapper: {
     bg: "grey.dark3",
-    height: "100vh",
+    height: "105vh",
     pos: "relative",
   },
   image: {
@@ -22,11 +22,17 @@ export const headerStyle: CareerHeaderStyle = {
     width: "100%",
   },
   heading: {
-    bottom: "14.875rem",
-    pos: "absolute",
-    left: "12.812rem",
-    color: "grey.light2",
-    fontSize: "3rem",
-    fontWeight: 800,
+    display: "none",
+    "@mq": {
+      tablet: {
+        display: "flex",
+        top: "65%",
+        pos: "absolute",
+        left: "16%",
+        color: "grey.light2",
+        fontSize: "3rem",
+        fontWeight: 800,
+      },
+    },
   },
 }

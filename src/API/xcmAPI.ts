@@ -11,8 +11,6 @@ export const priceChartAPI = async (filter: string) => {
     return err
   }
 }
-
-
 export const marketCapXCMAPIcall = async () => {
   try {
     const result = await API.get(endpoints.marketcapXCM)
@@ -54,12 +52,3 @@ export const lockedWalletAPIcall = async () => {
     return err
   }
 }
-
-  // export const xcmRatesAPIcall = async () => {
-  //   try {
-  //     const result = await API.get(endpoints.xcmRates)
-  //     return result
-  //   } catch (err) {
-  //     return err
-  //   }
-  // }
