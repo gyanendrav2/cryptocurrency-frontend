@@ -1,25 +1,34 @@
 import { Box, Element, Flex } from "@react-cssx/core"
-import React, { ReactElement } from "react"
+import React, { ReactElement, useState } from "react"
 import { useRouter } from "next/dist/client/router"
 import { Container } from "../../ui/Container"
 import { vacanciesStyle } from "./cssxStyle/vacancies"
 import { Button } from "../../ui/Button"
 import Modal from "./modal"
-import { useState } from "react"
 
 interface VacanciesProps {
   heading: string
   hidePosBtn?: boolean
+  postionHeading?: boolean
+  showBtnCurve?: boolean
 }
 
-export default function Vacancies({ heading, hidePosBtn }: VacanciesProps): ReactElement {
+export default function Vacancies({
+  heading,
+  hidePosBtn,
+  postionHeading,
+  showBtnCurve,
+}: VacanciesProps): ReactElement {
   const route = useRouter()
   const [modal, setModal] = useState(false)
   return (
     <>
       <Box cssx={vacanciesStyle.wrapper}>
         <Flex align="center" justify="center">
-          <Element as="h1" cssx={vacanciesStyle.heading}>
+          <Element
+            as="h1"
+            cssx={postionHeading ? vacanciesStyle.postionHeading : vacanciesStyle.heading}
+          >
             {heading}
           </Element>
         </Flex>
@@ -133,12 +142,28 @@ export default function Vacancies({ heading, hidePosBtn }: VacanciesProps): Reac
             )}
           </Flex>
         </Container>
+        {showBtnCurve && (
+          <Element
+            as="img"
+            src="/career/rightJob_topCurve.svg"
+            cssx={{
+              pos: "absolute",
+              bottom: -5,
+              left: 0,
+              right: 0,
+              width: "100%",
+            }}
+            alt="rightJob-top-curve"
+          />
+        )}
       </Box>
-      {modal && <Modal onClose={() => setModal(false)} />}
+      {!modal && <Modal onClose={() => setModal(false)} />}
     </>
   )
 }
 
 Vacancies.defaultProps = {
   hidePosBtn: false,
+  postionHeading: false,
+  showBtnCurve: false,
 }

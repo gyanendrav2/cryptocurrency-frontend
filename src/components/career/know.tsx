@@ -48,13 +48,20 @@ function CareerKnow() {
         </Flex>
         <Box cssx={{ height: "11.875rem" }} />
       </Container>
-      <Element as="img" src="career/know_city.svg" cssx={careerKnowStyle.deskCityImg} alt="city" />
-      <Element
-        as="img"
-        src="/career/know_bottom_curve.svg"
-        cssx={careerKnowStyle.knowBottomcurve}
-        alt="career bottom curve"
-      />
+      <Box cssx={{ pos: "relative" }}>
+        <Element
+          as="img"
+          src="career/know_city.svg"
+          cssx={careerKnowStyle.deskCityImg}
+          alt="city"
+        />
+        <Element
+          as="img"
+          src="/career/know_bottom_curve.svg"
+          cssx={careerKnowStyle.knowBottomcurve}
+          alt="career bottom curve"
+        />
+      </Box>
     </Box>
   )
 }

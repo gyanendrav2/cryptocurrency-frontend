@@ -11,8 +11,11 @@ export const modalStyle: ModalInterface = {
     w: "37rem",
     border: "1px solid rgba(116, 110, 164, 0.5)",
     borderRadius: 12,
+    px: 89,
     bg: "white",
     pos: "relative",
+    overflow: "auto",
+    maxHeight: "100vh",
   },
   heading: {
     fontWeight: 800,

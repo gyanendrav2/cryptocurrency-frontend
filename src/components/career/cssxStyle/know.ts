@@ -14,7 +14,6 @@ export const careerKnowStyle: CareerKnowStyle = {
   careerWrapper: {
     bg: "#F2F3F8",
     pos: "relative",
-    // transform: "translateY(-2px)",
   },
   curve: {
     position: "absolute",
@@ -27,12 +26,20 @@ export const careerKnowStyle: CareerKnowStyle = {
   },
   knowBottomcurve: {
     position: "absolute",
-    bottom: "-12rem",
+    bottom: "-3rem",
     left: 0,
     right: 0,
     zIndex: 0,
     objectFit: "contain",
     width: "100%",
+    "@mq": {
+      tablet: {
+        bottom: "-5rem",
+      },
+      desktop: {
+        bottom: "-10rem",
+      },
+    },
   },
   heading: {
     color: "grey.dark3",

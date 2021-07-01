@@ -1,17 +1,16 @@
 import { CssxObject } from "@react-cssx/core"
 
-export interface JoinStyle {
+export interface RightjobStyle {
   joinWrapper: CssxObject
   heading: CssxObject
   image: CssxObject
-  trustBottomcurve: CssxObject
-  jointopCurve: CssxObject
+  topCurve: CssxObject
 }
 
-export const joinStyle: JoinStyle = {
+export const rightjobStyle: RightjobStyle = {
   joinWrapper: {
     bg: "grey.dark3",
-    position: "relative",
+    pos: "relative",
     transform: "translateY(-2px)",
     "&::before": {
       content: "''",
@@ -28,6 +27,15 @@ export const joinStyle: JoinStyle = {
       backgroundSize: "100%",
     },
   },
+  topCurve: {
+    position: "absolute",
+    top: "-14rem",
+    left: 0,
+    // right: 0,
+    zIndex: 1,
+    objectFit: "contain",
+    width: "100%",
+  },
   heading: {
     color: "white",
     fontSize: "2.5rem",
@@ -36,33 +44,14 @@ export const joinStyle: JoinStyle = {
     mb: "6rem",
     letterSpacing: "0.01em",
     zIndex: 1,
+    textAlign: "center",
   },
   image: {
     position: "absolute",
-    left: "3%",
+    // left: "3%",
     right: 0,
     top: "7%",
     zIndex: 0,
     objectFit: "contain",
-  },
-  trustBottomcurve: {
-    position: "absolute",
-    top: "100%",
-    left: 0,
-    bottom: "10rem",
-    right: 0,
-    zIndex: 0,
-    objectFit: "contain",
-    width: "100%",
-  },
-  jointopCurve: {
-    position: "absolute",
-    // bottom: "-12rem",
-    top: "-95%",
-    left: 0,
-    right: 0,
-    zIndex: 1,
-    objectFit: "contain",
-    width: "100%",
   },
 }

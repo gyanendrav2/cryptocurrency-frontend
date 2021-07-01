@@ -12,8 +12,18 @@ function CareerAbout() {
         </Element>
       </Flex>
       <Container>
-        <Flex align="center">
-          <Box cssx={{ maxWidth: "37.062rem" }}>
+        <Flex
+          align="center"
+          cssx={{
+            flexDirection: "column-reverse",
+            "@mq": {
+              tablet: {
+                flexDirection: "row",
+              },
+            },
+          }}
+        >
+          <Box cssx={aboutStyle.contentWrapper}>
             <Element as="p" cssx={aboutStyle.boldText}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, neque iaculis morbi
               diam commodo scelerisque.
@@ -29,9 +39,21 @@ function CareerAbout() {
           <Element as="img" src="/career/mcn.svg" alt="mcn" cssx={aboutStyle.mcn} />
         </Flex>
 
-        <Flex align="center">
+        <Flex
+          align="center"
+          cssx={{
+            flexDirection: "column",
+            mt: "3rem",
+            "@mq": {
+              tablet: {
+                mt: "unset",
+                flexDirection: "row",
+              },
+            },
+          }}
+        >
           <Element as="img" src="/career/globe.svg" alt="globe" cssx={aboutStyle.globe} />
-          <Box cssx={{ maxWidth: "37.062rem" }}>
+          <Box cssx={{ ...aboutStyle.contentWrapper, marginLeft: "auto" }}>
             <Element as="p" cssx={aboutStyle.boldText}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, neque iaculis morbi
               diam commodo scelerisque. Semper sapien quis id nunc risus diam, in.

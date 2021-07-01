@@ -8,6 +8,7 @@ export interface AboutStyle {
   slimText: CssxObject
   globe: CssxObject
   mcn: CssxObject
+  contentWrapper: CssxObject
 }
 
 export const aboutStyle: AboutStyle = {
@@ -58,16 +59,40 @@ export const aboutStyle: AboutStyle = {
     color: "white",
   },
   globe: {
+    maxWidth: 147,
     "@mq": {
+      tablet: {
+        maxWidth: 211,
+      },
       desktop: {
+        maxWidth: 293,
         transform: "translateX(-140px)",
       },
     },
   },
   mcn: {
+    maxWidth: 195,
     "@mq": {
+      tablet: {
+        maxWidth: 287,
+        ml: "auto",
+      },
       desktop: {
+        maxWidth: 490,
         transform: "translateX(83px)",
+      },
+    },
+  },
+  contentWrapper: {
+    maxWidth: "100%",
+    "@mq": {
+      tablet: {
+        maxWidth: "21.437rem",
+        mt: "2rem",
+      },
+      desktop: {
+        maxWidth: "37.062rem",
+        mt: "1rem",
       },
     },
   },

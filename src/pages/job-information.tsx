@@ -3,6 +3,10 @@ import Vacancies from "../components/career/vacancies"
 import { Navbar } from "../components/Navbar"
 import { InitialData } from "../interfaces/initial"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
+import JobInfo from "../components/job-information/jobInfo"
+import CareerTrust from "../components/career/trust"
+import CareerAbout from "../components/career/about"
+import RightJob from "../components/positions/rightjob"
 
 export interface JobInformationProps {
   data: InitialData
@@ -20,7 +24,11 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
         defaultPading={20}
         careerPage
       />
-      <Vacancies heading="Available JobInformation" hidePosBtn />
+      <JobInfo />
+      <Vacancies heading="Similar jobs" hidePosBtn />
+      <CareerAbout />
+      <RightJob />
+      <CareerTrust />
     </div>
   )
 }

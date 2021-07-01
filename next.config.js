@@ -15,13 +15,4 @@ module.exports = {
     })
     return config
   },
-  async redirects() {
-    return [
-      {
-        source: "/careers",
-        destination: "/",
-        permanent: true,
-      },
-    ]
-  },
 }

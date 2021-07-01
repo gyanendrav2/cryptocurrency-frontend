@@ -8,16 +8,19 @@ export interface CareerHeaderStyle {
 
 export const headerStyle: CareerHeaderStyle = {
   headerWrapper: {
-    bg: "grey.dark3",
-    height: "105vh",
-    pos: "relative",
+    backgroundImage: "url('career/career_hero.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "100% 100%",
+    w: "100%",
+    height: "calc(100vh - 6.5rem)",
+    zIndex: "1",
   },
   image: {
     position: "absolute",
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 2,
+    zIndex: 1,
     objectFit: "contain",
     width: "100%",
   },
@@ -26,12 +29,13 @@ export const headerStyle: CareerHeaderStyle = {
     "@mq": {
       tablet: {
         display: "flex",
-        top: "65%",
+        top: "39%",
         pos: "absolute",
         left: "16%",
-        color: "grey.light2",
+        color: "white",
         fontSize: "3rem",
         fontWeight: 800,
+        letterSpacing: "0.01em",
       },
     },
   },

@@ -3,6 +3,9 @@ import Vacancies from "../components/career/vacancies"
 import { Navbar } from "../components/Navbar"
 import { InitialData } from "../interfaces/initial"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
+import RightJob from "../components/positions/rightjob"
+import { Footer } from "../components/sections/Footer"
+import WeCare from "../components/positions/wecare"
 
 export interface PositionsProps {
   data: InitialData
@@ -20,7 +23,10 @@ function Positions({ data }: PositionsProps): React.ReactElement {
         defaultPading={20}
         careerPage
       />
-      <Vacancies heading="Available positions" />
+      <Vacancies heading="Available positions" hidePosBtn postionHeading showBtnCurve />
+      <RightJob />
+      <WeCare />
+      <Footer data={data} hideTopCurve />
     </div>
   )
 }

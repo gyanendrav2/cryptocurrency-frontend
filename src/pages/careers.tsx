@@ -9,6 +9,7 @@ import CareerAbout from "../components/career/about"
 import Vacancies from "../components/career/vacancies"
 import CareerKnow from "../components/career/know"
 import CareerJoin from "../components/career/join"
+import CareerTrust from "../components/career/trust"
 
 export interface XCMprops {
   data: InitialData
@@ -31,6 +32,7 @@ export default function Career({ data }: XCMprops): ReactElement {
       <Vacancies heading="Current vacancies" />
       <CareerKnow />
       <CareerJoin />
+      <CareerTrust />
       <Footer data={data} hideTopCurve />
     </Box>
   )
