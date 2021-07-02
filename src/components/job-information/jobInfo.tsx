@@ -1,15 +1,25 @@
-import React from "react"
+import React, { ReactElement } from "react"
 import { useRouter } from "next/dist/client/router"
 import { Box, Element, Flex, Grid } from "@react-cssx/core"
 import { jobinfoStyle } from "./cssxStyles/jobinfo"
 import { Container } from "../../ui/Container"
+import { Application } from "../career/application"
+import SocialShareCard from "./sharesocial"
 
-function JobInfo() {
+export interface JobInfoProps {
+  modal?: boolean
+}
+
+function JobInfo({ modal }: JobInfoProps): ReactElement {
   const route = useRouter()
   return (
     <Box cssx={jobinfoStyle.jobWrapper}>
       <Container>
-        <Element as="p" cssx={jobinfoStyle.backLink} onClick={() => route.push("./positions")}>
+        <Element
+          as="p"
+          cssx={jobinfoStyle.backLink}
+          onClick={() => route.push("./available-positions")}
+        >
           <span>&#60;</span> Back to positions
         </Element>
         <Element as="h1" cssx={jobinfoStyle.heading}>
@@ -41,8 +51,8 @@ function JobInfo() {
               <Element as="h1" cssx={jobinfoStyle.textHeading}>
                 What you’ll do:
               </Element>
-              <Element as="p" cssx={jobinfoStyle.listItemText}>
-                <ul style={{ listStyle: "unset" }}>
+              <Box cssx={jobinfoStyle.listItemText}>
+                <ul style={{ listStyle: "unset", marginLeft: "1.2rem" }}>
                   <li>
                     Sed cursus diam habitasse sodales ut purus cras. Mi egestas est eget dignissim.
                     Pulvinar orci iaculis sagittis eget nisl sed nulla nibh vestibulum.
@@ -58,14 +68,15 @@ function JobInfo() {
                   </li>
                   <li>Duis sem diam tellus elementum in blandit feugiat suspendisse.</li>
                 </ul>
-              </Element>
+                {/* </Element> */}
+              </Box>
             </Box>
             <Box>
               <Element as="h1" cssx={jobinfoStyle.textHeading}>
                 Who you are:
               </Element>
-              <Element as="p" cssx={jobinfoStyle.listItemText}>
-                <ul style={{ listStyle: "unset" }}>
+              <Box cssx={jobinfoStyle.listItemText}>
+                <ul style={{ listStyle: "unset", marginLeft: "1.2rem" }}>
                   <li>
                     Sed cursus diam habitasse sodales ut purus cras. Mi egestas est eget dignissim.
                     Pulvinar orci iaculis sagittis eget nisl sed nulla nibh vestibulum.
@@ -81,14 +92,14 @@ function JobInfo() {
                   </li>
                   <li>Duis sem diam tellus elementum in blandit feugiat suspendisse.</li>
                 </ul>
-              </Element>
+              </Box>
             </Box>
             <Box>
               <Element as="h1" cssx={jobinfoStyle.textHeading}>
                 Where you’ll be:
               </Element>
-              <Element as="p" cssx={jobinfoStyle.listItemText}>
-                <ul style={{ listStyle: "unset" }}>
+              <Box cssx={jobinfoStyle.listItemText}>
+                <ul style={{ listStyle: "unset", marginLeft: "1.2rem" }}>
                   <li>
                     Sed cursus diam habitasse sodales ut purus cras. Mi egestas est eget dignissim.
                     Pulvinar orci iaculis sagittis eget nisl sed nulla nibh vestibulum.
@@ -104,12 +115,13 @@ function JobInfo() {
                   </li>
                   <li>Duis sem diam tellus elementum in blandit feugiat suspendisse.</li>
                 </ul>
-              </Element>
+              </Box>
             </Box>
           </Flex>
-          <Flex>
-            <h1>Application</h1>
-            <Element as="img" src="/career/jobinfo_ship.svg" alt="trust-pilot" />
+          <Flex direction="column" cssx={jobinfoStyle.applicationContainer}>
+            <Application heading="Apply" modal={modal} />
+            <SocialShareCard />
+            <Box cssx={jobinfoStyle.imageContainer} />
           </Flex>
         </Grid>
       </Container>

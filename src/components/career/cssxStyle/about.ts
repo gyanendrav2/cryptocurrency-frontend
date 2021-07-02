@@ -16,20 +16,24 @@ export const aboutStyle: AboutStyle = {
     bg: "grey.light3",
     pos: "relative",
     transform: "translateY(-2px)",
-    "&::before": {
-      content: "''",
-      background: "url('career/aboutStars.svg')",
-      width: "100%",
-      height: "100%",
-      top: -2,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      position: "absolute",
-      backgroundRepeat: "no-repeat",
-      zIndex: 1,
-      backgroundPosition: "bottom",
-      backgroundSize: "100%",
+    "@mq": {
+      desktop: {
+        "&::before": {
+          content: "''",
+          background: "url('career/aboutStars.svg')",
+          width: "100%",
+          height: "100%",
+          top: -2,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          position: "absolute",
+          backgroundRepeat: "no-repeat",
+          zIndex: 1,
+          backgroundPosition: "bottom",
+          backgroundSize: "100%",
+        },
+      },
     },
   },
   image: {
@@ -43,15 +47,29 @@ export const aboutStyle: AboutStyle = {
   },
   heading: {
     color: "white",
-    fontSize: "3rem",
+    fontSize: "1.5rem",
     fontWeight: 800,
-    mt: "10.875rem",
+    mt: "2.5rem",
+    "@mq": {
+      tablet: {
+        mt: "4.5rem",
+        fontSize: "2.5rem",
+      },
+      desktop: {
+        mt: "10.875rem",
+        fontSize: "3rem",
+      },
+    },
   },
   boldText: {
-    fontSize: "1.25rem",
+    fontSize: "1.01rem",
     fontWeight: 800,
     color: "white",
     mb: "2rem",
+    "@mq": {
+      tablet: {},
+      desktop: {},
+    },
   },
   slimText: {
     fontSize: "1rem",

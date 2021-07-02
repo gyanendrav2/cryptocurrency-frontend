@@ -18,16 +18,22 @@ export const joinStyle: JoinStyle = {
       background: "url('career/join_stars.svg')",
       width: "100%",
       height: "100%",
-      top: "20%",
-      left: 0,
-      right: 0,
+      // top: "20%",
+      // left: 0,
+      // right: 0,
       position: "absolute",
       backgroundRepeat: "no-repeat",
       zIndex: 1,
       backgroundPosition: "bottom",
       backgroundSize: "100%",
     },
+    "@mq": {
+      desktop: {
+        backgroundPosition: "center",
+      },
+    },
   },
+
   heading: {
     color: "white",
     fontSize: "2.5rem",

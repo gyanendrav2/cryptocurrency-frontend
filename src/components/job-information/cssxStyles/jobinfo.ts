@@ -10,12 +10,14 @@ export interface JobinfoStyle {
   jobinfo: CssxObject
   jobinfoText: CssxObject
   listItemText: CssxObject
+  imageContainer: CssxObject
+  applicationContainer: CssxObject
 }
 
 export const jobinfoStyle: JobinfoStyle = {
   jobWrapper: {
     bg: "#F2F3F8",
-    py: "12.75rem",
+    pt: "12.75rem",
     "&::before": {
       content: "''",
     },
@@ -74,8 +76,18 @@ export const jobinfoStyle: JobinfoStyle = {
     fontSize: "1rem",
     color: "primary",
     fontWeight: 400,
-    // lineHeight: "150%",
     fontFamily: "Droid Sans",
     letterSpacing: "0.0275em",
+  },
+  imageContainer: {
+    background: "url(career/jobinfo_ship.svg)",
+    width: "100%",
+    height: "477px",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundSize: "100% 100%",
+  },
+  applicationContainer: {
+    width: "31.5rem",
   },
 }

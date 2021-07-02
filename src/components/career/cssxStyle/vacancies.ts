@@ -1,7 +1,7 @@
 import { CssxObject } from "@react-cssx/core"
 
 export interface CareervacanciesStyle {
-  wrapper: CssxObject
+  // wrapper: CssxObject
   table: CssxObject
   image: CssxObject
   heading: CssxObject
@@ -10,11 +10,11 @@ export interface CareervacanciesStyle {
 }
 
 export const vacanciesStyle: CareervacanciesStyle = {
-  wrapper: {
-    bg: "grey.light4",
-    pos: "relative",
-    transform: "translateY(-5px)",
-  },
+  // wrapper: {
+  // bg: {bg},
+  // pos: "relative",
+  // transform: "translateY(-5px)",
+  // },
   heading: {
     fontWeight: 800,
     color: "purple.dark",
@@ -44,7 +44,7 @@ export const vacanciesStyle: CareervacanciesStyle = {
       fontWeight: 700,
     },
     "& tr.tableSpacing": {
-      backgroundColor: "#D9DCE7",
+      backgroundColor: "transparent",
       "& td": {},
     },
     "& tr.dataRow": {

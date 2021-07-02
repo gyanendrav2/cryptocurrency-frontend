@@ -19,7 +19,7 @@ function TextAreaField({ placeholder, onChange }: Props): React.ReactElement {
           w: "100%",
           border: "1px solid rgba(116, 110, 164, 0.5)",
           px: 12,
-          py: 16,
+          py: 8,
           borderRadius: 4,
           mb: 24,
         }}

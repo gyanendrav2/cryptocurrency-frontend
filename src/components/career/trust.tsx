@@ -29,7 +29,7 @@ function CareerTrust() {
                   <Element
                     as="img"
                     src="/career/icon_facebook.svg"
-                    alt="mcn"
+                    alt="icon_facebook"
                     cssx={trustStyle.icon}
                   />
                 </Element>
@@ -37,7 +37,7 @@ function CareerTrust() {
                   <Element
                     as="img"
                     src="/career/icon_linkedin.svg"
-                    alt="mcn"
+                    alt="icon_linkedin"
                     cssx={trustStyle.icon}
                   />
                 </Element>
@@ -45,7 +45,7 @@ function CareerTrust() {
                   <Element
                     as="img"
                     src="/career/icon_telegram.svg"
-                    alt="mcn"
+                    alt="icon_telegram"
                     cssx={trustStyle.icon}
                   />
                 </Element>
@@ -53,7 +53,7 @@ function CareerTrust() {
                   <Element
                     as="img"
                     src="/career/icon_twitter.svg"
-                    alt="mcn"
+                    alt="icon_twitter"
                     cssx={trustStyle.icon}
                   />
                 </Element>
@@ -61,7 +61,7 @@ function CareerTrust() {
                   <Element
                     as="img"
                     src="/career/icon_youtube.svg"
-                    alt="mcn"
+                    alt="icon_youtube"
                     cssx={trustStyle.icon}
                   />
                 </Element>

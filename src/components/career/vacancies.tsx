@@ -1,16 +1,17 @@
 import { Box, Element, Flex } from "@react-cssx/core"
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement } from "react"
 import { useRouter } from "next/dist/client/router"
 import { Container } from "../../ui/Container"
 import { vacanciesStyle } from "./cssxStyle/vacancies"
 import { Button } from "../../ui/Button"
-import Modal from "./modal"
 
 interface VacanciesProps {
   heading: string
   hidePosBtn?: boolean
   postionHeading?: boolean
   showBtnCurve?: boolean
+  bg?: string
+  hideTopCurve?: boolean
 }
 
 export default function Vacancies({
@@ -18,12 +19,13 @@ export default function Vacancies({
   hidePosBtn,
   postionHeading,
   showBtnCurve,
+  bg,
+  hideTopCurve,
 }: VacanciesProps): ReactElement {
   const route = useRouter()
-  const [modal, setModal] = useState(false)
   return (
     <>
-      <Box cssx={vacanciesStyle.wrapper}>
+      <Box cssx={{ pos: "relative", transform: "translateY(-5px)", backgroundColor: bg }}>
         <Flex align="center" justify="center">
           <Element
             as="h1"
@@ -32,7 +34,11 @@ export default function Vacancies({
             {heading}
           </Element>
         </Flex>
-        <Element as="img" src="/career/aboutcurve.svg" cssx={vacanciesStyle.curve} alt="curve" />
+        {hideTopCurve ? (
+          " "
+        ) : (
+          <Element as="img" src="/career/aboutcurve.svg" cssx={vacanciesStyle.curve} alt="curve" />
+        )}
         <Container>
           <Box>
             <Element as="table" cssx={vacanciesStyle.table}>
@@ -125,9 +131,9 @@ export default function Vacancies({
               <Button
                 variant="purple"
                 cssx={{ bg: "purple.dark", w: "14.687rem", textAlign: "center", mt: 74, mb: 104 }}
-                onClick={() => {
-                  setModal(true)
-                }}
+                // onClick={() => {
+                //   setModal(true)
+                // }}
               >
                 Load more
               </Button>
@@ -135,7 +141,7 @@ export default function Vacancies({
               <Button
                 variant="purple"
                 cssx={{ bg: "purple.dark", w: "14.687rem", textAlign: "center", mt: 74, mb: 104 }}
-                onClick={() => route.push("/positions")}
+                onClick={() => route.push("/available-positions")}
               >
                 View all positions
               </Button>
@@ -157,7 +163,6 @@ export default function Vacancies({
           />
         )}
       </Box>
-      {!modal && <Modal onClose={() => setModal(false)} />}
     </>
   )
 }
@@ -166,4 +171,6 @@ Vacancies.defaultProps = {
   hidePosBtn: false,
   postionHeading: false,
   showBtnCurve: false,
+  bg: "grey.light4",
+  hideTopCurve: false,
 }

@@ -6,24 +6,23 @@ export interface ModalInterface {
   closeIcon: CssxObject
 }
 
-export const modalStyle: ModalInterface = {
+export const applicationStyle: ModalInterface = {
   wrapper: {
-    w: "37rem",
+    w: "100%",
     border: "1px solid rgba(116, 110, 164, 0.5)",
     borderRadius: 12,
-    px: 89,
+    px: "4.687rem",
     bg: "white",
-    pos: "relative",
-    overflow: "auto",
-    maxHeight: "100vh",
+    maxHeight: "57.187rem",
+    position: "relative",
   },
   heading: {
     fontWeight: 800,
     fontSize: 32,
     color: "purple.dark",
     textAlign: "center",
-    mt: 64,
-    mb: 48,
+    mt: 48,
+    mb: 40,
   },
   closeIcon: {
     pos: "absolute",

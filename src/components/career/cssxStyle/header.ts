@@ -10,10 +10,17 @@ export const headerStyle: CareerHeaderStyle = {
   headerWrapper: {
     backgroundImage: "url('career/career_hero.png')",
     backgroundSize: "cover",
-    backgroundPosition: "100% 100%",
+    backgroundPosition: "80% 80%",
     w: "100%",
     height: "calc(100vh - 6.5rem)",
     zIndex: "1",
+    mt: "5.5rem",
+    "@mq": {
+      tablet: {
+        mt: "6.55rem",
+        backgroundPosition: "center",
+      },
+    },
   },
   image: {
     position: "absolute",
@@ -29,7 +36,7 @@ export const headerStyle: CareerHeaderStyle = {
     "@mq": {
       tablet: {
         display: "flex",
-        top: "39%",
+        top: "55%",
         pos: "absolute",
         left: "16%",
         color: "white",

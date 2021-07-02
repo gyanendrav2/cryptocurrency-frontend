@@ -1,9 +1,11 @@
 import React from "react"
 import { Box, Element, Flex } from "@react-cssx/core"
+import { useRouter } from "next/dist/client/router"
 import { joinStyle } from "./cssxStyle/join"
 import { Button } from "../../ui/Button"
 
 function CareerJoin() {
+  const route = useRouter()
   return (
     <>
       <Box cssx={joinStyle.joinWrapper}>
@@ -23,6 +25,7 @@ function CareerJoin() {
               verticalAlign: "middle",
               zIndex: 5,
             }}
+            onClick={() => route.push("./available-positions")}
           >
             view all positions
           </Button>

@@ -2,8 +2,8 @@ import React, { ReactElement } from "react"
 import { Box } from "@react-cssx/core"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import { InitialData } from "../interfaces/initial"
-import { Footer } from "../components/sections/Footer"
 import { Navbar } from "../components/Navbar"
+import { Footer } from "../components/sections/Footer"
 import CareerHeader from "../components/career/header"
 import CareerAbout from "../components/career/about"
 import Vacancies from "../components/career/vacancies"
@@ -11,11 +11,11 @@ import CareerKnow from "../components/career/know"
 import CareerJoin from "../components/career/join"
 import CareerTrust from "../components/career/trust"
 
-export interface XCMprops {
+export interface Careerprops {
   data: InitialData
 }
 
-export default function Career({ data }: XCMprops): ReactElement {
+export default function Career({ data }: Careerprops): ReactElement {
   return (
     <Box>
       <Navbar
@@ -29,7 +29,7 @@ export default function Career({ data }: XCMprops): ReactElement {
       />
       <CareerHeader />
       <CareerAbout />
-      <Vacancies heading="Current vacancies" />
+      <Vacancies heading="Current vacancies" bg="grey.light4" />
       <CareerKnow />
       <CareerJoin />
       <CareerTrust />

@@ -61,25 +61,25 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
       color: "indigo.light",
     },
     "@mq": {
-      xsm:{
-    maxWidth: 680,
+      xsm: {
+        maxWidth: 680,
       },
       tablet: {
         fontSize: "3rem",
         lineHeight: "56px",
-        mx:"auto",
-        paddingTop:"2rem"
+        mx: "auto",
+        paddingTop: "2rem",
       },
       desktop: {
         mx: "auto",
-        paddingTop:"1.5rem"
+        paddingTop: "1.5rem",
       },
     },
   },
   imgDesk: {
     margin: "auto",
     display: "none",
-    paddingBottom:"1.5rem",
+    paddingBottom: "1.5rem",
     "@mq": {
       desktop: {
         display: "block",
@@ -102,11 +102,11 @@ export const ecoSyemStyle: EcosystemStyleInterface = {
   imgMob: {
     display: "block",
     margin: "auto",
-   padding: 40,
+    padding: 40,
     "@mq": {
       xsm: {
         display: "block",
-        p:"0 2.5rem 2.5rem 2.5rem"
+        p: "0 2.5rem 2.5rem 2.5rem",
       },
       tablet: {
         display: "none",

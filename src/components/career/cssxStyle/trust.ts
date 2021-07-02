@@ -40,6 +40,9 @@ export const trustStyle: TrustStyle = {
     height: "30px",
     width: "30px",
   },
+  // icon:nth-of-type(1): {
+  //   marginRight: "0",
+  // },
   imageContainer: {
     p: "4.25rem 2.5rem",
   },

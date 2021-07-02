@@ -23,7 +23,7 @@ function Positions({ data }: PositionsProps): React.ReactElement {
         defaultPading={20}
         careerPage
       />
-      <Vacancies heading="Available positions" hidePosBtn postionHeading showBtnCurve />
+      <Vacancies heading="Available positions" hidePosBtn postionHeading showBtnCurve bg="#F2F3F8" />
       <RightJob />
       <WeCare />
       <Footer data={data} hideTopCurve />
