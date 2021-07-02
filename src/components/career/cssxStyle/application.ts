@@ -15,6 +15,7 @@ export const applicationStyle: ModalInterface = {
     bg: "white",
     maxHeight: "57.187rem",
     position: "relative",
+    overflow: "auto",
   },
   heading: {
     fontWeight: 800,

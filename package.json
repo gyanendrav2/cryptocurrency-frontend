@@ -21,6 +21,7 @@
     "react": "^16.13.1",
     "react-accessible-accordion": "^3.3.4",
     "react-dom": "16.13.1",
+    "react-hook-form": "^7.9.0",
     "react-intl": "^5.17.5",
     "recharts": "^1.8.5",
     "sass": "^1.32.8",

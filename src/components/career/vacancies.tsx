@@ -1,4 +1,4 @@
-import { Box, Element, Flex } from "@react-cssx/core"
+import { Box, CssxObject, Element, Flex } from "@react-cssx/core"
 import React, { ReactElement } from "react"
 import { useRouter } from "next/dist/client/router"
 import { Container } from "../../ui/Container"
@@ -8,7 +8,7 @@ import { Button } from "../../ui/Button"
 interface VacanciesProps {
   heading: string
   hidePosBtn?: boolean
-  postionHeading?: boolean
+  postionHeading?: CssxObject
   showBtnCurve?: boolean
   bg?: string
   hideTopCurve?: boolean
@@ -27,10 +27,7 @@ export default function Vacancies({
     <>
       <Box cssx={{ pos: "relative", transform: "translateY(-5px)", backgroundColor: bg }}>
         <Flex align="center" justify="center">
-          <Element
-            as="h1"
-            cssx={postionHeading ? vacanciesStyle.postionHeading : vacanciesStyle.heading}
-          >
+          <Element as="h1" cssx={{ ...vacanciesStyle.heading, ...postionHeading }}>
             {heading}
           </Element>
         </Flex>
@@ -169,7 +166,7 @@ export default function Vacancies({
 
 Vacancies.defaultProps = {
   hidePosBtn: false,
-  postionHeading: false,
+  postionHeading: {},
   showBtnCurve: false,
   bg: "grey.light4",
   hideTopCurve: false,

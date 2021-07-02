@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Box } from "@react-cssx/core"
+import { Box, Element } from "@react-cssx/core"
 import Vacancies from "../components/career/vacancies"
 import { Navbar } from "../components/Navbar"
 import { InitialData } from "../interfaces/initial"
@@ -34,8 +34,28 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
         careerPage
       />
       <JobInfo modal={modal} />
-      <Vacancies heading="Similar jobs" hidePosBtn hideTopCurve bg="#F2F3F8" />
-      <CareerAbout />
+      <Vacancies
+        heading="Similar jobs"
+        hidePosBtn
+        hideTopCurve
+        bg="#F2F3F8"
+        postionHeading={{ color: "primary", mt: 0 }}
+      />
+      <Box cssx={{ pos: "relative" }}>
+        <Element
+          as="img"
+          src="/career/jobinfotopcurve.svg"
+          alt="svg"
+          cssx={{ pos: "absolute", top: -5, zIndex: 1 }}
+        />
+        <CareerAbout />
+        <Element
+          as="img"
+          src="/career/jobinfobtmcurve.svg"
+          alt="svg"
+          cssx={{ pos: "absolute", bottom: -5, zIndex: 1 }}
+        />
+      </Box>
       <RightJob />
       <CareerTrust />
       <Footer data={data} hideTopCurve />

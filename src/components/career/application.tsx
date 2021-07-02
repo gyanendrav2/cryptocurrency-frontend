@@ -10,9 +10,10 @@ interface Props {
   // eslint-disable-next-line react/require-default-props
   onClose?: () => void
   heading: string
+  closeBtn?: boolean
 }
 
-export function Application({ onClose, heading }: Props): React.ReactElement {
+export function Application({ onClose, heading, closeBtn }: Props): React.ReactElement {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -36,14 +37,14 @@ export function Application({ onClose, heading }: Props): React.ReactElement {
 
   return (
     <Flex cssx={applicationStyle.wrapper} direction="column" onSubmit={handleSubmit(onSubmit)}>
-      {/* {"modal" && (
+      {closeBtn && (
         <Element
           as="img"
           src="/career/close.svg"
           cssx={applicationStyle.closeIcon}
           onClick={onClose}
         />
-      )} */}
+      )}
       <Element as="h1" cssx={applicationStyle.heading}>
         {heading}
       </Element>
@@ -80,7 +81,6 @@ export function Application({ onClose, heading }: Props): React.ReactElement {
         <Button
           variant="purple"
           cssx={{ w: 235, textAlign: "center", bg: "purple.dark", mb: "3rem" }}
-          onClick={() => setModal(true)}
         >
           Apply Now
         </Button>
@@ -90,5 +90,6 @@ export function Application({ onClose, heading }: Props): React.ReactElement {
 }
 
 Application.defaultProps = {
-  // onClose: () => void
+  onClose: () => {},
+  closeBtn: false,
 }

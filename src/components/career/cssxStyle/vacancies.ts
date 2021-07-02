@@ -23,11 +23,7 @@ export const vacanciesStyle: CareervacanciesStyle = {
     mt: "10.812rem",
   },
   postionHeading: {
-    fontWeight: 800,
     color: "primary",
-    fontSize: "3rem",
-    mb: "6.5rem",
-    mt: "10.812rem",
   },
   curve: {
     pos: "absolute",

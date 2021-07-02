@@ -84,7 +84,7 @@ export const aboutStyle: AboutStyle = {
       },
       desktop: {
         maxWidth: 293,
-        transform: "translateX(-140px)",
+        transform: "translateX(-64px)",
       },
     },
   },
