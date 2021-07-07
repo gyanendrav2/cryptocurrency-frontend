@@ -45,10 +45,19 @@ export const rightjobStyle: RightjobStyle = {
     letterSpacing: "0.01em",
     zIndex: 1,
     textAlign: "center",
+    "@mq": {
+      tablet: {
+        mt: "4rem",
+        mb: "3rem",
+      },
+      desktop: {
+        mt: "12.187rem",
+      },
+    },
+
   },
   image: {
     position: "absolute",
-    // left: "3%",
     right: 0,
     top: "7%",
     zIndex: 0,

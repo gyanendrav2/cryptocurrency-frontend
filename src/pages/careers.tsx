@@ -8,8 +8,9 @@ import CareerHeader from "../components/career/header"
 import CareerAbout from "../components/career/about"
 import Vacancies from "../components/career/vacancies"
 import CareerKnow from "../components/career/know"
-import CareerJoin from "../components/career/join"
+// import CareerJoin from "../components/career/join"
 import CareerTrust from "../components/career/trust"
+import RightJob from "../components/positions/rightjob"
 
 export interface Careerprops {
   data: InitialData
@@ -29,9 +30,10 @@ export default function Career({ data }: Careerprops): ReactElement {
       />
       <CareerHeader />
       <CareerAbout />
-      <Vacancies heading="Current vacancies" bg="grey.light4" />
+      <Vacancies heading="Current vacancies" bg="grey.light4" buttonText="View all positions" />
       <CareerKnow />
-      <CareerJoin />
+      {/* <CareerJoin /> */}
+      <RightJob jobInfoPage title="Are you ready to join" />
       <CareerTrust />
       <Footer data={data} hideTopCurve />
     </Box>

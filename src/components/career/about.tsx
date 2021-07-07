@@ -48,6 +48,12 @@ function CareerAbout() {
               tablet: {
                 mt: "unset",
                 flexDirection: "row",
+                pb: "3rem",
+              },
+              desktop: {
+                mt: "unset",
+                flexDirection: "row",
+                pb: "11.875rem",
               },
             },
           }}
@@ -67,7 +73,7 @@ function CareerAbout() {
             </Element>
           </Box>
         </Flex>
-        <Box cssx={{ height: "11.875rem" }} />
+        {/* <Box cssx={{ height: "11.875rem" }} /> */}
       </Container>
     </Box>
   )

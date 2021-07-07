@@ -33,13 +33,13 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
         defaultPading={20}
         careerPage
       />
-      <JobInfo modal={modal} />
+      <JobInfo />
       <Vacancies
         heading="Similar jobs"
-        hidePosBtn
+        buttonText="View all positions"
         hideTopCurve
         bg="#F2F3F8"
-        postionHeading={{ color: "primary", mt: 0 }}
+        postionHeading={{ color: "primary", mt: "4.5rem" }}
       />
       <Box cssx={{ pos: "relative" }}>
         <Element
@@ -56,7 +56,7 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           cssx={{ pos: "absolute", bottom: -5, zIndex: 1 }}
         />
       </Box>
-      <RightJob />
+      <RightJob jobInfoPage title="Not the right position for you" />
       <CareerTrust />
       <Footer data={data} hideTopCurve />
     </div>

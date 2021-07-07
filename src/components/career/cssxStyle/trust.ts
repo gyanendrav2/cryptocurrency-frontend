@@ -32,8 +32,18 @@ export const trustStyle: TrustStyle = {
     width: "100%",
   },
   iconContainer: {
-    p: "4.25rem 2.5rem",
-    borderRight: "3px solid rgb(71, 91, 174, 0.5)",
+    p: "4.25rem 0.5rem",
+    borderBottom: "3px solid rgb(71, 91, 174, 0.5)",
+    "@mq": {
+      tablet: {
+        borderRight: "3px solid rgb(71, 91, 174, 0.5)",
+        borderBottom: "none",
+        p: "4.25rem 2.5rem",
+      },
+      desktop: {
+        maxWidth: 650,
+      },
+    },
   },
   icon: {
     marginRight: "1rem",

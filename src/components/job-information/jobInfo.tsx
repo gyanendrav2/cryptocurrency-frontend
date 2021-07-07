@@ -7,13 +7,14 @@ import { Application } from "../career/application"
 import SocialShareCard from "./sharesocial"
 
 export interface JobInfoProps {
-  modal?: boolean
+  // modal?: boolean
 }
 
-function JobInfo({ modal }: JobInfoProps): ReactElement {
+function JobInfo(): ReactElement {
   const route = useRouter()
   return (
     <Box cssx={jobinfoStyle.jobWrapper}>
+      <Box cssx={jobinfoStyle.TabimageContainer} />
       <Container>
         <Element
           as="p"
@@ -119,7 +120,7 @@ function JobInfo({ modal }: JobInfoProps): ReactElement {
             </Box>
           </Flex>
           <Flex direction="column" cssx={jobinfoStyle.applicationContainer}>
-            <Application heading="Apply" modal={modal} />
+            <Application heading="Apply" />
             <SocialShareCard />
             <Box cssx={jobinfoStyle.imageContainer} />
           </Flex>

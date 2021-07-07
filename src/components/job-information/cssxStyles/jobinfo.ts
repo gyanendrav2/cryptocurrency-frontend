@@ -12,14 +12,21 @@ export interface JobinfoStyle {
   listItemText: CssxObject
   imageContainer: CssxObject
   applicationContainer: CssxObject
+  TabimageContainer: CssxObject
 }
 
 export const jobinfoStyle: JobinfoStyle = {
   jobWrapper: {
     bg: "#F2F3F8",
     pt: "12.75rem",
-    "&::before": {
-      content: "''",
+    position: "relative",
+    "@mq": {
+      tablet: {
+        pt: "9.5rem",
+      },
+      desktop: {
+        pt: "12.75rem",
+      },
     },
   },
   backLink: {
@@ -38,6 +45,38 @@ export const jobinfoStyle: JobinfoStyle = {
     mb: "2rem",
     letterSpacing: "0.01em",
     zIndex: 1,
+    "@mq": {
+      tablet: {
+        fontSize: "2.5rem",
+        maxWidth: "25.625rem",
+        mt: "2rem",
+        mb: "1.5rem",
+        lineHeight: "120%",
+      },
+      desktop: {
+        maxWidth: "100%",
+        mt: "4.5rem",
+        mb: "2rem",
+        fontSize: "2.5rem",
+      },
+    },
+  },
+  TabimageContainer: {
+    position: "absolute",
+    top: "2%",
+    right: "0%",
+    display: "block",
+    background: "url(career/jobinfo_ship_tab.svg)",
+    width: "50%",
+    height: "477px",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundSize: "100% 100%",
+    "@mq": {
+      desktop: {
+        display: "none",
+      },
+    },
   },
   image: {
     position: "absolute",
@@ -58,11 +97,27 @@ export const jobinfoStyle: JobinfoStyle = {
     fontWeight: 800,
     fontSize: "2rem",
     color: "primary",
-    mt: "4.5rem",
+    mt: "1.5rem",
     mb: "2rem",
+    "@mq": {
+      tablet: {
+        mt: "2rem",
+      },
+      desktop: {
+        mt: "4.5rem",
+      },
+    },
   },
   jobinfo: {
-    mt: "5rem",
+    mt: "1rem",
+    "@mq": {
+      tablet: {
+        mt: "2.5rem",
+      },
+      desktop: {
+        mt: "5rem",
+      },
+    },
   },
   jobinfoText: {
     fontSize: "1rem",
@@ -80,14 +135,29 @@ export const jobinfoStyle: JobinfoStyle = {
     letterSpacing: "0.0275em",
   },
   imageContainer: {
-    background: "url(career/jobinfo_ship.svg)",
-    width: "100%",
-    height: "477px",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    backgroundSize: "100% 100%",
+    display: "none",
+    "@mq": {
+      desktop: {
+        display: "block",
+        background: "url(career/jobinfo_ship.svg)",
+        width: "100%",
+        height: "477px",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "100% 100%",
+      },
+    },
   },
   applicationContainer: {
-    width: "31.5rem",
+    width: "100%",
+    "@mq": {
+      tablet: {
+        mt: "4rem",
+      },
+      desktop: {
+        mt: "0",
+        width: "31.5rem",
+      },
+    },
   },
 }

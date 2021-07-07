@@ -12,9 +12,9 @@ export const vacanciesStyle: CareervacanciesStyle = {
   heading: {
     fontWeight: 800,
     color: "purple.dark",
-    fontSize: "1.5rem",
-    mb: "2rem",
-    mt: "2.5rem",
+    fontSize: "2.5rem",
+    mb: "1.5rem",
+    mt: "8.812rem",
     "@mq": {
       tablet: {
         mt: "5.812rem",

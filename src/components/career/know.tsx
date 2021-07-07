@@ -46,7 +46,16 @@ function CareerKnow() {
             </Box>
           </Grid>
         </Flex>
-        <Box cssx={{ height: "11.875rem" }} />
+        <Box
+          cssx={{
+            "@mq": {
+              tablet: {
+                // height: "11.875rem",
+                height: "4.875rem",
+              },
+            },
+          }}
+        />
       </Container>
       <Box cssx={{ pos: "relative" }}>
         <Element

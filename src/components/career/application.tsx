@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import { Flex, Element } from "@react-cssx/core"
+import { Flex, Element, Box } from "@react-cssx/core"
 import { useForm } from "react-hook-form"
 import { applicationStyle } from "./cssxStyle/application"
 import InputField from "../inputs/inputField"
 import TextAreaField from "../inputs/textAreaField"
 import { Button } from "../../ui/Button"
+import Modal from "./modal"
 
 interface Props {
   // eslint-disable-next-line react/require-default-props
@@ -23,7 +24,7 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm()
   const onSubmit = (data) => console.log(data)
 
@@ -33,10 +34,19 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
     setForm(data)
   }
 
-  // const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false)
 
   return (
     <Flex cssx={applicationStyle.wrapper} direction="column" onSubmit={handleSubmit(onSubmit)}>
+      {modal && (
+        <Modal>
+          <Box cssx={{ bg: "green", height: "100vh" }}>
+            <Element as="p" cssx={{ color: "something", ml: 16 }}>
+              Application sucessfully submitted!
+            </Element>
+          </Box>
+        </Modal>
+      )}
       {closeBtn && (
         <Element
           as="img"
@@ -81,6 +91,7 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
         <Button
           variant="purple"
           cssx={{ w: 235, textAlign: "center", bg: "purple.dark", mb: "3rem" }}
+          onClick={() => setModal(true)}
         >
           Apply Now
         </Button>

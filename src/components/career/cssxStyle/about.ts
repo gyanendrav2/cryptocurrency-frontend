@@ -78,9 +78,11 @@ export const aboutStyle: AboutStyle = {
   },
   globe: {
     maxWidth: 147,
+    paddingBottom: "2.5rem",
     "@mq": {
       tablet: {
         maxWidth: 211,
+        paddingBottom: "0rem",
       },
       desktop: {
         maxWidth: 293,

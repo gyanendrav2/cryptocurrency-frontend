@@ -4,10 +4,11 @@ import { useRouter } from "next/dist/client/router"
 import { Container } from "../../ui/Container"
 import { vacanciesStyle } from "./cssxStyle/vacancies"
 import { Button } from "../../ui/Button"
+import MobileVacancies from "./mobielvacancies"
 
 interface VacanciesProps {
   heading: string
-  hidePosBtn?: boolean
+  buttonText: string
   postionHeading?: CssxObject
   showBtnCurve?: boolean
   bg?: string
@@ -16,8 +17,8 @@ interface VacanciesProps {
 
 export default function Vacancies({
   heading,
-  hidePosBtn,
   postionHeading,
+  buttonText,
   showBtnCurve,
   bg,
   hideTopCurve,
@@ -25,7 +26,19 @@ export default function Vacancies({
   const route = useRouter()
   return (
     <>
-      <Box cssx={{ pos: "relative", transform: "translateY(-5px)", backgroundColor: bg }}>
+      <Box
+        cssx={{
+          pos: "relative",
+          transform: "translateY(-5px)",
+          backgroundColor: bg,
+          display: "none",
+          "@mq": {
+            tablet: {
+              display: "block",
+            },
+          },
+        }}
+      >
         <Flex align="center" justify="center">
           <Element as="h1" cssx={{ ...vacanciesStyle.heading, ...postionHeading }}>
             {heading}
@@ -124,25 +137,19 @@ export default function Vacancies({
             </Element>
           </Box>
           <Flex align="center" justify="center">
-            {hidePosBtn ? (
-              <Button
-                variant="purple"
-                cssx={{ bg: "purple.dark", w: "14.687rem", textAlign: "center", mt: 74, mb: 104 }}
-                // onClick={() => {
-                //   setModal(true)
-                // }}
-              >
-                Load more
-              </Button>
-            ) : (
-              <Button
-                variant="purple"
-                cssx={{ bg: "purple.dark", w: "14.687rem", textAlign: "center", mt: 74, mb: 104 }}
-                onClick={() => route.push("/available-positions")}
-              >
-                View all positions
-              </Button>
-            )}
+            <Button
+              variant="purple"
+              cssx={{
+                bg: "purple.dark",
+                w: "14.687rem",
+                textAlign: "center",
+                mt: { _: "1.5rem", tablet: "2rem", desktop: "4.625rem" },
+                mb: { _: "2rem", tablet: "2.5rem", desktop: "6.5rem" },
+                cursor: "pointer",
+              }}
+            >
+              {buttonText}
+            </Button>
           </Flex>
         </Container>
         {showBtnCurve && (
@@ -160,12 +167,12 @@ export default function Vacancies({
           />
         )}
       </Box>
+      <MobileVacancies buttonText="View All Positions" heading="current Vacancies" />
     </>
   )
 }
 
 Vacancies.defaultProps = {
-  hidePosBtn: false,
   postionHeading: {},
   showBtnCurve: false,
   bg: "grey.light4",
