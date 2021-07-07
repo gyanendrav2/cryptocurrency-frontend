@@ -6,6 +6,7 @@ import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import RightJob from "../components/positions/rightjob"
 import { Footer } from "../components/sections/Footer"
 import WeCare from "../components/positions/wecare"
+import { Box } from "@react-cssx/core"
 
 export interface PositionsProps {
   data: InitialData
@@ -24,7 +25,33 @@ function Positions({ data }: PositionsProps): React.ReactElement {
         careerPage
       />
       <Vacancies heading="Available positions" showBtnCurve bg="#F2F3F8" buttonText="Load More" />
-      <RightJob title="Did not find the right job?" />
+      <Box
+        cssx={{
+          display: "none",
+          "@mq": {
+            desktop: {
+              display: "block",
+            },
+          },
+        }}
+      >
+        <RightJob title="Did not find the right job?" img="/career/world_map.svg" />
+      </Box>
+      <Box
+        cssx={{
+          display: "none",
+          "@mq": {
+            tablet: {
+              display: "block",
+            },
+            desktop: {
+              display: "none",
+            },
+          },
+        }}
+      >
+        <RightJob title="Did not find the right job?" img="/career/world_map_tab.svg" />
+      </Box>
       <WeCare />
       <Footer data={data} hideTopCurve />
     </div>

@@ -13,6 +13,7 @@ interface VacanciesProps {
   showBtnCurve?: boolean
   bg?: string
   hideTopCurve?: boolean
+  link?: string
 }
 
 export default function Vacancies({
@@ -22,6 +23,7 @@ export default function Vacancies({
   showBtnCurve,
   bg,
   hideTopCurve,
+  link,
 }: VacanciesProps): ReactElement {
   const route = useRouter()
   return (
@@ -147,6 +149,7 @@ export default function Vacancies({
                 mb: { _: "2rem", tablet: "2.5rem", desktop: "6.5rem" },
                 cursor: "pointer",
               }}
+              onClick={() => route.push(link)}
             >
               {buttonText}
             </Button>
@@ -177,4 +180,5 @@ Vacancies.defaultProps = {
   showBtnCurve: false,
   bg: "grey.light4",
   hideTopCurve: false,
+  link: "",
 }

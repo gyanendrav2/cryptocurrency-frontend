@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.14",
+    "@hookform/resolvers": "^2.6.0",
     "@prismx/react-image": "^1.0.5",
     "@react-cssx/core": "^0.0.7",
     "apollo-link-prismic": "^1.0.8",
@@ -25,7 +26,8 @@
     "react-intl": "^5.17.5",
     "recharts": "^1.8.5",
     "sass": "^1.32.8",
-    "swr": "^0.5.5"
+    "swr": "^0.5.5",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",

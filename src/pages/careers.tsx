@@ -30,10 +30,32 @@ export default function Career({ data }: Careerprops): ReactElement {
       />
       <CareerHeader />
       <CareerAbout />
-      <Vacancies heading="Current vacancies" bg="grey.light4" buttonText="View all positions" />
+      <Vacancies
+        heading="Current vacancies"
+        bg="grey.light4"
+        buttonText="View all positions"
+        link="/available-positions"
+      />
       <CareerKnow />
       {/* <CareerJoin /> */}
-      <RightJob jobInfoPage title="Are you ready to join" />
+      <RightJob
+        jobInfoPage
+        title="Are you ready to join"
+        img="/career/light.png"
+        imgCssx={{
+          pos: "absolute",
+          "@mq": {
+            tablet: {
+              top: "-10%",
+              left: "-19%",
+            },
+            desktop: {
+              top: "10%",
+              left: 0,
+            },
+          },
+        }}
+      />
       <CareerTrust />
       <Footer data={data} hideTopCurve />
     </Box>

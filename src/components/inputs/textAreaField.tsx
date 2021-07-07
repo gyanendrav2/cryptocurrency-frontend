@@ -4,9 +4,11 @@ import React from "react"
 interface Props {
   placeholder?: string
   onChange?: (e: any) => void
+  name?: string
+  inputRef: any
 }
 
-function TextAreaField({ placeholder, onChange }: Props): React.ReactElement {
+function TextAreaField({ placeholder, onChange, name, inputRef }: Props): React.ReactElement {
   return (
     <div>
       <Element
@@ -14,6 +16,7 @@ function TextAreaField({ placeholder, onChange }: Props): React.ReactElement {
         type="text"
         rows={5}
         placeholder={placeholder}
+        {...inputRef(name)}
         onChange={onChange}
         cssx={{
           w: "100%",
@@ -31,6 +34,7 @@ function TextAreaField({ placeholder, onChange }: Props): React.ReactElement {
 TextAreaField.defaultProps = {
   placeholder: "",
   onChange: () => {},
+  name: "",
 }
 
 export default TextAreaField

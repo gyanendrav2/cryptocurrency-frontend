@@ -56,7 +56,33 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           cssx={{ pos: "absolute", bottom: -5, zIndex: 1 }}
         />
       </Box>
-      <RightJob jobInfoPage title="Not the right position for you" />
+      <Box
+        cssx={{
+          display: "none",
+          "@mq": {
+            desktop: {
+              display: "block",
+            },
+          },
+        }}
+      >
+        <RightJob jobInfoPage title="Not the right position for you" img="/career/planet.svg" />
+      </Box>
+      <Box
+        cssx={{
+          display: "none",
+          "@mq": {
+            tablet: {
+              display: "block",
+            },
+            desktop: {
+              display: "none",
+            },
+          },
+        }}
+      >
+        <RightJob jobInfoPage title="Not the right position for you" img="/career/planet_tab.png" />
+      </Box>
       <CareerTrust />
       <Footer data={data} hideTopCurve />
     </div>

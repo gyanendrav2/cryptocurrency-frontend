@@ -1,5 +1,5 @@
 import React, { useState, ReactElement } from "react"
-import { Box, Element, Flex } from "@react-cssx/core"
+import { Box, CssxObject, Element, Flex } from "@react-cssx/core"
 import { rightjobStyle } from "./cssxStyle/rightjobStyle"
 import { Button } from "../../ui/Button"
 import Modal from "../career/modal"
@@ -8,9 +8,11 @@ import { Application } from "../career/application"
 export interface RightjobProps {
   jobInfoPage?: boolean
   title: string
+  img: string
+  imgCssx?: CssxObject
 }
 
-function RightJob({ jobInfoPage, title }: RightjobProps): ReactElement {
+function RightJob({ jobInfoPage, title, img, imgCssx }: RightjobProps): ReactElement {
   const [modal, setModal] = useState(false)
   return (
     <>
@@ -40,10 +42,9 @@ function RightJob({ jobInfoPage, title }: RightjobProps): ReactElement {
           </Button>
           <Element
             as="img"
-            // src={`${jobInfoPage} ? /career/world_map.svg : /career/planet.svg`}
-            // src= {_:"/career/world_map_tab", tablet:"/career/world_map_tab", desktop:"/career/world_map.svg"}
-            src="/career/planet.svg"
+            src={img}
             style={rightjobStyle.image as any}
+            cssx={imgCssx}
             alt="World map"
           />
         </Flex>
@@ -54,6 +55,7 @@ function RightJob({ jobInfoPage, title }: RightjobProps): ReactElement {
 
 RightJob.defaultProps = {
   jobInfoPage: false,
+  imgCssx: {},
 }
 
 export default RightJob

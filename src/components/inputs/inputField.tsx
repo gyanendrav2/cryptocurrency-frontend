@@ -4,16 +4,30 @@ import React from "react"
 interface Props {
   placeholder?: string
   onChange?: (e: any) => void
+  name?: string
+  inputRef: any
+  required?: boolean
+  errorMsg?: string
 }
 
-function InputField({ placeholder, onChange }: Props): React.ReactElement {
+function InputField({
+  placeholder,
+  name,
+  inputRef,
+  required,
+  errorMsg,
+  ...rest
+}: Props): React.ReactElement {
+  console.log(errorMsg)
   return (
     <div>
       <Element
         as="input"
         type="text"
         placeholder={placeholder}
-        onChange={onChange}
+        name={name}
+        {...inputRef(name, { require: required })}
+        {...rest}
         cssx={{
           w: "100%",
           border: "1px solid rgba(116, 110, 164, 0.5)",
@@ -23,6 +37,11 @@ function InputField({ placeholder, onChange }: Props): React.ReactElement {
           mb: 20,
         }}
       />
+      {errorMsg !== "" && (
+        <Element as="p" cssx={{ color: "red", transform: "translateY(-10px)" }}>
+          {errorMsg}
+        </Element>
+      )}
     </div>
   )
 }
@@ -30,6 +49,9 @@ function InputField({ placeholder, onChange }: Props): React.ReactElement {
 InputField.defaultProps = {
   placeholder: "",
   onChange: () => {},
+  name: "",
+  required: false,
+  errorMsg: "",
 }
 
 export default InputField
