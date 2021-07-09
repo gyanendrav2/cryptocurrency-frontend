@@ -14,7 +14,12 @@ export const trustStyle: TrustStyle = {
     bg: "#F2F3F8",
     pos: "relative",
     transform: "translateY(-2px)",
-    py: "5.5rem",
+    py: "2rem",
+    "@mq": {
+      tablet: {
+        py: "5.5rem",
+      },
+    },
   },
   text: {
     fontWeight: "bold",
@@ -32,7 +37,7 @@ export const trustStyle: TrustStyle = {
     width: "100%",
   },
   iconContainer: {
-    p: "4.25rem 0.5rem",
+    p: "2rem 2.5rem",
     borderBottom: "3px solid rgb(71, 91, 174, 0.5)",
     "@mq": {
       tablet: {
@@ -50,10 +55,15 @@ export const trustStyle: TrustStyle = {
     height: "30px",
     width: "30px",
   },
-  // icon:nth-of-type(1): {
-  //   marginRight: "0",
-  // },
   imageContainer: {
-    p: "4.25rem 2.5rem",
+    p: "2rem 2.5rem",
+    "& img": {
+      m: "auto",
+    },
+    "@mq": {
+      tablet: {
+        p: "4.25rem 2.5rem",
+      },
+    },
   },
 }

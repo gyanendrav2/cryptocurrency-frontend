@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, createRef } from "react"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { Flex, Element, Box } from "@react-cssx/core"
+import { Flex, Element } from "@react-cssx/core"
 import { useForm } from "react-hook-form"
 import { applicationStyle } from "./cssxStyle/application"
 import InputField from "../inputs/inputField"
@@ -17,6 +17,7 @@ interface Props {
 }
 
 export function Application({ onClose, heading, closeBtn }: Props): React.ReactElement {
+  const input = createRef<any>()
   const {
     register,
     handleSubmit,
@@ -27,14 +28,25 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
     resolver: yupResolver(applicationFormValidation),
   })
   const [modal, setModal] = useState(false)
+  const [accepted, setAccepted] = useState(false)
+  const [document, setDocument] = useState()
+
+  const handleUpload = (e) => {
+    setDocument(e.target.files[0])
+  }
 
   const onSubmit = (data) => {
+    if (!accepted) {
+      return
+    }
     setModal(true)
     console.log(data)
     setTimeout(() => {
       setModal(false)
     }, 2000)
   }
+
+  console.log(document)
 
   return (
     <>
@@ -43,9 +55,25 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
           <Flex
             align="center"
             justify="center"
-            cssx={{ w: "20rem", borderRadius: 5, bg: "green", height: "10rem" }}
+            cssx={{
+              w: "20rem",
+              borderRadius: 5,
+              background:
+                "linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))",
+              backgroundColor: "#ACB1CB",
+              height: "50vh",
+            }}
           >
-            <Element as="p" cssx={{ color: "something", ml: 16 }}>
+            <Element
+              as="p"
+              cssx={{
+                color: "grey.light3",
+                fontSize: "2.5rem",
+                lineHeight: "120%",
+                textAlign: "center",
+                letterSpacing: "0.01em",
+              }}
+            >
               Application sucessfully submitted!
             </Element>
           </Flex>
@@ -92,9 +120,18 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
             name="teamJoinReson"
             inputRef={register}
           />
+          <Element
+            as="input"
+            type="file"
+            ref={input}
+            cssx={{ w: 0, height: 0, visibility: "hidden", overflow: "hidden" }}
+            onChange={handleUpload}
+          />
           <Button
             variant="purple"
             cssx={{ w: "100%", borderRadius: 4, textAlign: "center", mt: "1rem" }}
+            type="button"
+            onClick={() => input.current.click()}
           >
             Upload Your CV
             <Element
@@ -104,7 +141,13 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
             />
           </Button>
           <Flex align="center" wrap="nowrap" cssx={{ my: 32, ml: 16 }}>
-            <Element as="img" src="/career/checkbox.svg" alt="checkbox" />
+            {/* <Element as="img" src="/career/checkbox.svg" alt="checkbox" /> */}
+            <input
+              type="checkbox"
+              name="checkbox"
+              value=""
+              onClick={() => setAccepted(!accepted)}
+            />
             <Element as="p" cssx={{ color: "purple.default", ml: 16 }}>
               I agree to the recruitment policy
             </Element>

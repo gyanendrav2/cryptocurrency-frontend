@@ -66,7 +66,12 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           },
         }}
       >
-        <RightJob jobInfoPage title="Not the right position for you" img="/career/planet.svg" />
+        <RightJob
+          jobInfoPage
+          title="Not the right position for you"
+          img="/career/planet.svg"
+          btnText="Send us a message"
+        />
       </Box>
       <Box
         cssx={{
@@ -81,7 +86,12 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           },
         }}
       >
-        <RightJob jobInfoPage title="Not the right position for you" img="/career/planet_tab.png" />
+        <RightJob
+          jobInfoPage
+          title="Not the right position for you"
+          img="/career/planet_tab.png"
+          btnText="Send us a message"
+        />
       </Box>
       <CareerTrust />
       <Footer data={data} hideTopCurve />

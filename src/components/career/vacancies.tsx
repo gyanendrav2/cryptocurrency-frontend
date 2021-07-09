@@ -46,9 +46,7 @@ export default function Vacancies({
             {heading}
           </Element>
         </Flex>
-        {hideTopCurve ? (
-          " "
-        ) : (
+        {!hideTopCurve && (
           <Element as="img" src="/career/aboutcurve.svg" cssx={vacanciesStyle.curve} alt="curve" />
         )}
         <Container>
@@ -170,7 +168,13 @@ export default function Vacancies({
           />
         )}
       </Box>
-      <MobileVacancies buttonText="View All Positions" heading="current Vacancies" />
+      <MobileVacancies
+        buttonText="View All Positions"
+        bg={bg}
+        hideTopCurve
+        showBtnCurve={showBtnCurve}
+        heading="Available positions"
+      />
     </>
   )
 }

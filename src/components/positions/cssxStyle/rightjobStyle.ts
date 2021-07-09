@@ -11,20 +11,26 @@ export const rightjobStyle: RightjobStyle = {
   joinWrapper: {
     bg: "grey.dark3",
     pos: "relative",
-    transform: "translateY(-2px)",
+    mt: "-2px",
     "&::before": {
       content: "''",
       background: "url('career/join_stars.svg')",
       width: "100%",
       height: "100%",
-      top: "20%",
       left: 0,
       right: 0,
       position: "absolute",
       backgroundRepeat: "no-repeat",
       zIndex: 1,
       backgroundPosition: "bottom",
-      backgroundSize: "100%",
+      top: "-4%",
+      backgroundSize: "cover",
+      "@mq": {
+        tablet: {
+          top: "20%",
+          backgroundSize: "100%",
+        },
+      },
     },
   },
   topCurve: {
@@ -54,7 +60,6 @@ export const rightjobStyle: RightjobStyle = {
         mt: "12.187rem",
       },
     },
-
   },
   image: {
     position: "absolute",

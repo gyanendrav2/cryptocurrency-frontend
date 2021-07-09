@@ -24,7 +24,7 @@ function Modal({ children }: Props): React.ReactElement {
         pb: "1rem",
       }}
     >
-      <Box cssx={{ maxWidth: "30rem" }}>{children}</Box>
+      <Box cssx={{ maxWidth: "37.5rem" }}>{children}</Box>
     </Flex>
   )
 }

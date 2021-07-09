@@ -6,13 +6,14 @@ import Modal from "../career/modal"
 import { Application } from "../career/application"
 
 export interface RightjobProps {
-  jobInfoPage?: boolean
+  // jobInfoPage?: boolean
   title: string
   img: string
   imgCssx?: CssxObject
+  btnText: string
 }
 
-function RightJob({ jobInfoPage, title, img, imgCssx }: RightjobProps): ReactElement {
+function RightJob({ title, img, imgCssx, btnText }: RightjobProps): ReactElement {
   const [modal, setModal] = useState(false)
   return (
     <>
@@ -35,10 +36,20 @@ function RightJob({ jobInfoPage, title, img, imgCssx }: RightjobProps): ReactEle
               textAlign: "center",
               verticalAlign: "middle",
               zIndex: 5,
+              marginBottom: 68,
+              "@mq": {
+                tablet: {
+                  marginBottom: 80,
+                },
+                desktop: {
+                  marginBottom: 195,
+                },
+              },
             }}
             onClick={() => setModal(true)}
           >
-            {jobInfoPage ? "Send us a message" : "Apply anyway"}
+            {btnText}
+            {/* {jobInfoPage ? "Send us a message" : "Apply anyway"} */}
           </Button>
           <Element
             as="img"

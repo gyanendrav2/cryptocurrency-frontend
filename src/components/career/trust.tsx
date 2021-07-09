@@ -25,7 +25,7 @@ function CareerTrust() {
                 You can also find us on social media
               </Element>
               <Flex>
-                <Element as="a" href="#" target="_blank" rel="noopener noreferrer">
+                <Element as="a" href="#" target="_blank">
                   <Element
                     as="img"
                     src="/career/icon_facebook.svg"
@@ -33,7 +33,7 @@ function CareerTrust() {
                     cssx={trustStyle.icon}
                   />
                 </Element>
-                <Element as="a" href="#" target="_blank" rel="noopener noreferrer">
+                <Element as="a" href="#" target="_blank">
                   <Element
                     as="img"
                     src="/career/icon_linkedin.svg"
@@ -41,7 +41,7 @@ function CareerTrust() {
                     cssx={trustStyle.icon}
                   />
                 </Element>
-                <Element as="a" href="#" target="_blank" rel="noopener noreferrer">
+                <Element as="a" href="#" target="_blank">
                   <Element
                     as="img"
                     src="/career/icon_telegram.svg"
@@ -49,7 +49,7 @@ function CareerTrust() {
                     cssx={trustStyle.icon}
                   />
                 </Element>
-                <Element as="a" href="#" target="_blank" rel="noopener noreferrer">
+                <Element as="a" href="#" target="_blank">
                   <Element
                     as="img"
                     src="/career/icon_twitter.svg"
@@ -57,7 +57,7 @@ function CareerTrust() {
                     cssx={trustStyle.icon}
                   />
                 </Element>
-                <Element as="a" href="#" target="_blank" rel="noopener noreferrer">
+                <Element as="a" href="#" target="_blank">
                   <Element
                     as="img"
                     src="/career/icon_youtube.svg"

@@ -42,14 +42,18 @@ export default function Career({ data }: Careerprops): ReactElement {
         jobInfoPage
         title="Are you ready to join"
         img="/career/light.png"
+        btnText="view all positions"
         imgCssx={{
           pos: "absolute",
+          display: "none",
           "@mq": {
             tablet: {
+              display: "block",
               top: "-10%",
               left: "-19%",
             },
             desktop: {
+              display: "block",
               top: "10%",
               left: 0,
             },

@@ -42,9 +42,7 @@ export default function MobileVacancies({
             {heading}
           </Element>
         </Flex>
-        {hideTopCurve ? (
-          " "
-        ) : (
+        {!hideTopCurve && (
           <Element as="img" src="/career/aboutcurve.svg" cssx={vacanciesStyle.curve} alt="curve" />
         )}
         <Container>

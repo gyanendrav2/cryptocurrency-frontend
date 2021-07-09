@@ -43,7 +43,6 @@ function CareerAbout() {
           align="center"
           cssx={{
             flexDirection: "column",
-            mt: "3rem",
             "@mq": {
               tablet: {
                 mt: "unset",

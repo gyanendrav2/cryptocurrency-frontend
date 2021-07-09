@@ -1,4 +1,5 @@
 import React from "react"
+import { Box } from "@react-cssx/core"
 import Vacancies from "../components/career/vacancies"
 import { Navbar } from "../components/Navbar"
 import { InitialData } from "../interfaces/initial"
@@ -6,7 +7,6 @@ import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import RightJob from "../components/positions/rightjob"
 import { Footer } from "../components/sections/Footer"
 import WeCare from "../components/positions/wecare"
-import { Box } from "@react-cssx/core"
 
 export interface PositionsProps {
   data: InitialData
@@ -14,7 +14,7 @@ export interface PositionsProps {
 
 function Positions({ data }: PositionsProps): React.ReactElement {
   return (
-    <div>
+    <Box cssx={{ bg: "#F2F3F8" }}>
       <Navbar
         data={data}
         bgColor="#1D2544"
@@ -24,7 +24,14 @@ function Positions({ data }: PositionsProps): React.ReactElement {
         defaultPading={20}
         careerPage
       />
-      <Vacancies heading="Available positions" showBtnCurve bg="#F2F3F8" buttonText="Load More" />
+      <Box cssx={{ pt: 90 }} />
+      <Vacancies
+        heading="Available positions"
+        showBtnCurve
+        bg="#F2F3F8"
+        hideTopCurve
+        buttonText="Load More"
+      />
       <Box
         cssx={{
           display: "none",
@@ -35,11 +42,15 @@ function Positions({ data }: PositionsProps): React.ReactElement {
           },
         }}
       >
-        <RightJob title="Did not find the right job?" img="/career/world_map.svg" />
+        <RightJob
+          title="Did not find the right job?"
+          img="/career/world_map.svg"
+          btnText="Apply anyway"
+        />
       </Box>
       <Box
         cssx={{
-          display: "none",
+          display: "block",
           "@mq": {
             tablet: {
               display: "block",
@@ -50,11 +61,26 @@ function Positions({ data }: PositionsProps): React.ReactElement {
           },
         }}
       >
-        <RightJob title="Did not find the right job?" img="/career/world_map_tab.svg" />
+        <RightJob
+          title="Did not find the right job?"
+          img="/career/world_map_tab.svg"
+          btnText="Apply anyway"
+        />
       </Box>
-      <WeCare />
+      <Box
+        cssx={{
+          display: "none",
+          "@mq": {
+            tablet: {
+              display: "block",
+            },
+          },
+        }}
+      >
+        <WeCare />
+      </Box>
       <Footer data={data} hideTopCurve />
-    </div>
+    </Box>
   )
 }
 

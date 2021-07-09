@@ -66,6 +66,7 @@ export const aboutStyle: AboutStyle = {
     fontWeight: 800,
     color: "white",
     mb: "2rem",
+    letterSpacing: "0.01em",
     "@mq": {
       tablet: {},
       desktop: {},
@@ -75,6 +76,7 @@ export const aboutStyle: AboutStyle = {
     fontSize: "1rem",
     fontWeight: 400,
     color: "white",
+    letterSpacing: "0.01em",
   },
   globe: {
     maxWidth: 147,
@@ -105,10 +107,12 @@ export const aboutStyle: AboutStyle = {
   },
   contentWrapper: {
     maxWidth: "100%",
+    pb: "1.5rem",
     "@mq": {
       tablet: {
         maxWidth: "21.437rem",
         mt: "2rem",
+        pb: "0rem",
       },
       desktop: {
         maxWidth: "37.062rem",
