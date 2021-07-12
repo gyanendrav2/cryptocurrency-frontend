@@ -58,7 +58,22 @@ function CareerAbout() {
           }}
         >
           <Element as="img" src="/career/globe.svg" alt="globe" cssx={aboutStyle.globe} />
-          <Box cssx={{ ...aboutStyle.contentWrapper, marginLeft: "auto" }}>
+          <Box
+            cssx={{
+              ...aboutStyle.contentWrapper,
+              marginLeft: "auto",
+              pb: "4rem",
+              "@mq": {
+                tablet: {
+                  pb: "unset",
+                  maxWidth: 343,
+                },
+                desktop: {
+                  maxWidth: 590,
+                },
+              },
+            }}
+          >
             <Element as="p" cssx={aboutStyle.boldText}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, neque iaculis morbi
               diam commodo scelerisque. Semper sapien quis id nunc risus diam, in.

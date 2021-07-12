@@ -11,11 +11,16 @@ export const applicationStyle: ModalInterface = {
     w: "100%",
     border: "1px solid rgba(116, 110, 164, 0.5)",
     borderRadius: 12,
-    px: "4.687rem",
     bg: "white",
+    px: "3rem",
     maxHeight: "57.187rem",
     position: "relative",
     overflow: "auto",
+    "@mq": {
+      tablet: {
+        px: "4.687rem",
+      },
+    },
   },
   heading: {
     fontWeight: 800,

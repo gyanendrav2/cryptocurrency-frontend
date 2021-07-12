@@ -31,6 +31,7 @@ function Positions({ data }: PositionsProps): React.ReactElement {
         bg="#F2F3F8"
         hideTopCurve
         buttonText="Load More"
+        colColor="#D9DCE7"
       />
       <Box
         cssx={{

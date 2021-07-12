@@ -18,7 +18,7 @@ export interface JobinfoStyle {
 export const jobinfoStyle: JobinfoStyle = {
   jobWrapper: {
     bg: "#F2F3F8",
-    pt: "12.75rem",
+    pt: "7.5rem",
     position: "relative",
     "@mq": {
       tablet: {
@@ -39,9 +39,9 @@ export const jobinfoStyle: JobinfoStyle = {
   },
   heading: {
     color: "primary",
-    fontSize: "2.5rem",
+    fontSize: "1.5rem",
     fontWeight: 800,
-    mt: "4.5rem",
+    mt: "1.5rem",
     mb: "2rem",
     letterSpacing: "0.01em",
     zIndex: 1,
@@ -65,7 +65,7 @@ export const jobinfoStyle: JobinfoStyle = {
     position: "absolute",
     top: "2%",
     right: "0%",
-    display: "block",
+    display: "none",
     background: "url(career/jobinfo_ship_tab.svg)",
     width: "50%",
     height: "477px",
@@ -73,6 +73,9 @@ export const jobinfoStyle: JobinfoStyle = {
     backgroundPosition: "center",
     backgroundSize: "100% 100%",
     "@mq": {
+      tablet: {
+        display: "block",
+      },
       desktop: {
         display: "none",
       },
@@ -95,16 +98,19 @@ export const jobinfoStyle: JobinfoStyle = {
   },
   textHeading: {
     fontWeight: 800,
-    fontSize: "2rem",
+    fontSize: "1.5rem",
     color: "primary",
     mt: "1.5rem",
-    mb: "2rem",
+    mb: "1rem",
     "@mq": {
       tablet: {
         mt: "2rem",
+        fontSize: "2rem",
+        mb: "2rem",
       },
       desktop: {
         mt: "4.5rem",
+        mb: "2rem",
       },
     },
   },
@@ -152,7 +158,7 @@ export const jobinfoStyle: JobinfoStyle = {
     width: "100%",
     "@mq": {
       tablet: {
-        mt: "4rem",
+        mt: "2rem",
       },
       desktop: {
         mt: "0",

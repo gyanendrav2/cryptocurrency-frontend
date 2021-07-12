@@ -14,6 +14,7 @@ interface VacanciesProps {
   bg?: string
   hideTopCurve?: boolean
   link?: string
+  colColor?: string
 }
 
 export default function Vacancies({
@@ -24,6 +25,7 @@ export default function Vacancies({
   bg,
   hideTopCurve,
   link,
+  colColor,
 }: VacanciesProps): ReactElement {
   const route = useRouter()
   return (
@@ -54,36 +56,49 @@ export default function Vacancies({
             <Element as="table" cssx={vacanciesStyle.table}>
               <tbody>
                 <tr>
-                  <th
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "1.875rem",
-                      paddingBottom: "1.875rem",
-                      width: "32%",
+                  <Element
+                    as="th"
+                    cssx={{
+                      ...vacanciesStyle.tableCol,
+                      "@mq": {
+                        desktop: {
+                          backgroundColor: colColor,
+                        },
+                      },
                     }}
                   >
                     ROLE
-                  </th>
-                  <th
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "1.875rem",
-                      paddingBottom: "1.875rem",
-                      width: "32%",
+                  </Element>
+                  <Element
+                    as="th"
+                    cssx={{
+                      ...vacanciesStyle.tableCol,
+                      "@mq": {
+                        desktop: {
+                          backgroundColor: colColor,
+                        },
+                      },
                     }}
                   >
                     DEPARTMENT
-                  </th>
-                  <th
-                    style={{
-                      backgroundColor: "transparent",
-                      paddingTop: "1.875rem",
-                      paddingBottom: "1.875rem",
+                  </Element>
+                  <Element
+                    as="th"
+                    cssx={{
+                      ...vacanciesStyle.tableCol,
                       width: "36%",
+                      "@mq": {
+                        desktop: {
+                          backgroundColor: colColor,
+                        },
+                      },
                     }}
                   >
                     LOCATION
-                  </th>
+                  </Element>
+                </tr>
+                <tr>
+                  <td colSpan={3}>&nbsp;</td>
                 </tr>
 
                 <tr className="dataRow" onClick={() => route.push("/job-information")}>
@@ -169,11 +184,11 @@ export default function Vacancies({
         )}
       </Box>
       <MobileVacancies
-        buttonText="View All Positions"
         bg={bg}
         hideTopCurve
         showBtnCurve={showBtnCurve}
-        heading="Available positions"
+        heading={heading}
+        buttonText={buttonText}
       />
     </>
   )
@@ -185,4 +200,5 @@ Vacancies.defaultProps = {
   bg: "grey.light4",
   hideTopCurve: false,
   link: "",
+  colColor: "",
 }

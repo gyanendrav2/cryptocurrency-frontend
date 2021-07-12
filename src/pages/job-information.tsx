@@ -75,7 +75,6 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
       </Box>
       <Box
         cssx={{
-          display: "none",
           "@mq": {
             tablet: {
               display: "block",

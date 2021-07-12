@@ -6,6 +6,7 @@ export interface CareervacanciesStyle {
   heading: CssxObject
   curve: CssxObject
   postionHeading: CssxObject
+  tableCol: CssxObject
 }
 
 export const vacanciesStyle: CareervacanciesStyle = {
@@ -95,5 +96,19 @@ export const vacanciesStyle: CareervacanciesStyle = {
     zIndex: 2,
     objectFit: "contain",
     width: "100%",
+  },
+  tableCol: {
+    backgroundColor: "transparent",
+    paddingTop: "1.875rem",
+    paddingBottom: "1.875rem",
+    width: "32%",
+    "&:first-of-type": {
+      borderTopLeftRadius: 9,
+      borderBottomLeftRadius: 9,
+    },
+    "&:last-child": {
+      borderTopRightRadius: 9,
+      borderBottomRightRadius: 9,
+    },
   },
 }

@@ -30,8 +30,8 @@ function RightJob({ title, img, imgCssx, btnText }: RightjobProps): ReactElement
           <Button
             variant="yellow"
             cssx={{
-              px: 42,
-              py: 20,
+              px: 22,
+              py: 16,
               mb: { _: " ", tablet: "7rem", desktop: "12.187rem" },
               textAlign: "center",
               verticalAlign: "middle",
@@ -39,6 +39,8 @@ function RightJob({ title, img, imgCssx, btnText }: RightjobProps): ReactElement
               marginBottom: 68,
               "@mq": {
                 tablet: {
+                  px: 42,
+                  py: 20,
                   marginBottom: 80,
                 },
                 desktop: {
@@ -49,7 +51,6 @@ function RightJob({ title, img, imgCssx, btnText }: RightjobProps): ReactElement
             onClick={() => setModal(true)}
           >
             {btnText}
-            {/* {jobInfoPage ? "Send us a message" : "Apply anyway"} */}
           </Button>
           <Element
             as="img"

@@ -39,7 +39,7 @@ function JobInfo(): ReactElement {
                 eget nisl sed nulla nibh vestibulum. Nisl feugiat sed pretium, ut at venenatis
                 posuere interdum.
               </Element>
-              <Element as="p" cssx={jobinfoStyle.jobinfoText}>
+              <Element as="p" cssx={{ ...jobinfoStyle.jobinfoText, mb: 0 }}>
                 Sed fermentum sem vestibulum purus morbi urna, faucibus amet. Dignissim neque, eros
                 faucibus in. Pellentesque vitae leo morbi nisl commodo leo bibendum venenatis. In
                 pretium, velit augue aliquet elit viverra venenatis morbi semper. Duis sem diam
@@ -99,7 +99,7 @@ function JobInfo(): ReactElement {
               <Element as="h1" cssx={jobinfoStyle.textHeading}>
                 Where you’ll be:
               </Element>
-              <Box cssx={jobinfoStyle.listItemText}>
+              <Box cssx={{ ...jobinfoStyle.listItemText, mb: 24 }}>
                 <ul style={{ listStyle: "unset", marginLeft: "1.2rem" }}>
                   <li>
                     Sed cursus diam habitasse sodales ut purus cras. Mi egestas est eget dignissim.

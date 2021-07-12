@@ -44,17 +44,19 @@ export const rightjobStyle: RightjobStyle = {
   },
   heading: {
     color: "white",
-    fontSize: "2.5rem",
+    fontSize: "1.5rem",
     fontWeight: 800,
-    mt: "12.187rem",
-    mb: "6rem",
+    mt: "3rem",
+    mb: "4.5rem",
     letterSpacing: "0.01em",
     zIndex: 1,
     textAlign: "center",
+    maxWidth: 229,
     "@mq": {
       tablet: {
         mt: "4rem",
         mb: "3rem",
+        maxWidth: "unset",
       },
       desktop: {
         mt: "12.187rem",

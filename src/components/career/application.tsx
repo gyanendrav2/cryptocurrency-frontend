@@ -29,7 +29,7 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
   })
   const [modal, setModal] = useState(false)
   const [accepted, setAccepted] = useState(false)
-  const [document, setDocument] = useState()
+  const [, setDocument] = useState()
 
   const handleUpload = (e) => {
     setDocument(e.target.files[0])
@@ -46,7 +46,7 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
     }, 2000)
   }
 
-  console.log(document)
+  // console.log(document)
 
   return (
     <>
