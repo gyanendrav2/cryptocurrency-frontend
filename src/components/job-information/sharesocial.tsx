@@ -6,9 +6,22 @@ export default function SocialShareCard() {
   return (
     <>
       <Flex
-        align="flex-end"
         direction="column"
-        cssx={{ mt: { _: "2rem", desktop: "7.187rem" }, mb: "5.25rem" }}
+        cssx={{
+          mt: { _: "2rem", desktop: "7.187rem" },
+          mb: "4rem",
+          ml: "auto",
+          mr: "auto",
+          alignItems: "center",
+          "@mq": {
+            tablet: {
+              ml: "unset",
+              mr: "unset",
+              mb: "5.25rem",
+              alignItems: "flex-end",
+            },
+          },
+        }}
       >
         <Element
           as="p"

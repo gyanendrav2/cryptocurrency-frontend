@@ -13,6 +13,17 @@ export const wecareStyle: WecareStyle = {
     transform: "translateY(-2px)",
     pt: "12.25rem",
     pb: "13.25rem",
+    mt: -2,
+    "@mq": {
+      tablet: {
+        pt: "5.25rem",
+        pb: "6.25rem",
+      },
+      desktop: {
+        pt: "12.25rem",
+        pb: "13.25rem",
+      },
+    },
   },
   trustBottomcurve: {
     position: "absolute",

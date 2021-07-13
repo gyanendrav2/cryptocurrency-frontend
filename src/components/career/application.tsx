@@ -28,6 +28,7 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
     resolver: yupResolver(applicationFormValidation),
   })
   const [modal, setModal] = useState(false)
+  const [showNotAccepted, setShowNotAccepted] = useState(false)
   const [accepted, setAccepted] = useState(false)
   const [, setDocument] = useState()
 
@@ -37,12 +38,17 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
 
   const onSubmit = (data) => {
     if (!accepted) {
+      setShowNotAccepted(true)
+      setTimeout(() => {
+        setShowNotAccepted(false)
+      }, 2000)
       return
     }
     setModal(true)
     console.log(data)
     setTimeout(() => {
       setModal(false)
+      onClose()
     }, 2000)
   }
 
@@ -75,6 +81,35 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
               }}
             >
               Application sucessfully submitted!
+            </Element>
+          </Flex>
+        </Modal>
+      )}
+      {showNotAccepted && (
+        <Modal>
+          <Flex
+            align="center"
+            justify="center"
+            cssx={{
+              w: "20rem",
+              borderRadius: 5,
+              background:
+                "linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))",
+              backgroundColor: "#ACB1CB",
+              height: "50vh",
+            }}
+          >
+            <Element
+              as="p"
+              cssx={{
+                color: "grey.light3",
+                fontSize: "2.5rem",
+                lineHeight: "120%",
+                textAlign: "center",
+                letterSpacing: "0.01em",
+              }}
+            >
+              Please select the checkbox
             </Element>
           </Flex>
         </Modal>
@@ -141,7 +176,6 @@ export function Application({ onClose, heading, closeBtn }: Props): React.ReactE
             />
           </Button>
           <Flex align="center" wrap="nowrap" cssx={{ my: 32, ml: 16 }}>
-            {/* <Element as="img" src="/career/checkbox.svg" alt="checkbox" /> */}
             <input
               type="checkbox"
               name="checkbox"

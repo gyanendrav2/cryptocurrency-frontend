@@ -66,6 +66,18 @@ function Positions({ data }: PositionsProps): React.ReactElement {
           title="Did not find the right job?"
           img="/career/world_map_tab.svg"
           btnText="Apply anyway"
+          imgCssx={{
+            "@mq": {
+              tablet: {
+                mt: "-7%",
+                maxWidth: 385,
+              },
+              desktop: {
+                mt: "unset",
+                maxWidth: "unset",
+              },
+            },
+          }}
         />
       </Box>
       <Box

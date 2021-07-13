@@ -50,6 +50,12 @@ export const joinStyle: JoinStyle = {
     top: "7%",
     zIndex: 0,
     objectFit: "contain",
+    "@mq": {
+      tablet: {
+        left: "-10%",
+        top: "-25%",
+      },
+    },
   },
   trustBottomcurve: {
     position: "absolute",

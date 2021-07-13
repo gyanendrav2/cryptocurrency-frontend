@@ -39,12 +39,14 @@ function RightJob({ title, img, imgCssx, btnText }: RightjobProps): ReactElement
               marginBottom: 68,
               "@mq": {
                 tablet: {
-                  px: 42,
-                  py: 20,
+                  px: 22,
+                  py: 16,
                   marginBottom: 80,
                 },
                 desktop: {
                   marginBottom: 195,
+                  px: 42,
+                  py: 20,
                 },
               },
             }}
@@ -55,8 +57,7 @@ function RightJob({ title, img, imgCssx, btnText }: RightjobProps): ReactElement
           <Element
             as="img"
             src={img}
-            style={rightjobStyle.image as any}
-            cssx={imgCssx}
+            cssx={{ ...imgCssx, ...rightjobStyle.image }}
             alt="World map"
           />
         </Flex>

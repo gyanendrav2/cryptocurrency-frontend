@@ -1,4 +1,4 @@
-import { Box, CssxObject, Element, Flex } from "@react-cssx/core"
+import { Box, Element, Flex } from "@react-cssx/core"
 import React, { ReactElement } from "react"
 // import { useRouter } from "next/dist/client/router"
 import { Container } from "../../ui/Container"
@@ -242,7 +242,7 @@ export default function MobileVacancies({
 }
 
 MobileVacancies.defaultProps = {
-  postionHeading: {},
+  // postionHeading: {},
   showBtnCurve: false,
   bg: "grey.light4",
   hideTopCurve: false,

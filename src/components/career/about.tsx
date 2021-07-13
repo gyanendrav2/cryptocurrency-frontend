@@ -6,7 +6,7 @@ import { Container } from "../../ui/Container"
 function CareerAbout() {
   return (
     <Box cssx={aboutStyle.aboutWrapper}>
-      <Flex align="center" direction="column" cssx={{ textAlign: "center" }}>
+      <Flex align="center" direction="column" cssx={{ textAlign: "center", zIndex: "2" }}>
         <Element as="h1" cssx={aboutStyle.heading}>
           About CoinMetro
         </Element>
@@ -45,14 +45,14 @@ function CareerAbout() {
             flexDirection: "column",
             "@mq": {
               tablet: {
-                mt: "unset",
+                mt: "3.5rem",
                 flexDirection: "row",
                 pb: "3rem",
               },
               desktop: {
                 mt: "unset",
                 flexDirection: "row",
-                pb: "11.875rem",
+                pb: "9.875rem",
               },
             },
           }}

@@ -51,7 +51,7 @@ function CareerKnow() {
             "@mq": {
               tablet: {
                 // height: "11.875rem",
-                height: "4.875rem",
+                height: "3.875rem",
               },
             },
           }}

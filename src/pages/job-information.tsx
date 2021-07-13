@@ -53,7 +53,7 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           as="img"
           src="/career/jobinfobtmcurve.svg"
           alt="svg"
-          cssx={{ pos: "absolute", bottom: -5, zIndex: 1 }}
+          cssx={{ pos: "absolute", bottom: -5, zIndex: 1, w: "100%" }}
         />
       </Box>
       <Box
@@ -71,6 +71,16 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           title="Not the right position for you"
           img="/career/planet.svg"
           btnText="Send us a message"
+          imgCssx={{
+            "@mq": {
+              tablet: {
+                top: "-6%",
+              },
+              desktop: {
+                top: "31%",
+              },
+            },
+          }}
         />
       </Box>
       <Box
@@ -90,6 +100,16 @@ function JobInformation({ data }: JobInformationProps): React.ReactElement {
           title="Not the right position for you"
           img="/career/planet_tab.png"
           btnText="Send us a message"
+          imgCssx={{
+            "@mq": {
+              tablet: {
+                top: "-6%",
+              },
+              desktop: {
+                top: "2%",
+              },
+            },
+          }}
         />
       </Box>
       <CareerTrust />

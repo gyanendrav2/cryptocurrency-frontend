@@ -18,8 +18,8 @@ export const vacanciesStyle: CareervacanciesStyle = {
     mt: "2.5rem",
     "@mq": {
       tablet: {
-        mt: "5.812rem",
-        mb: "2.5rem",
+        mt: "4.812rem",
+        mb: "1.5rem",
       },
       desktop: {
         mt: "10.812rem",

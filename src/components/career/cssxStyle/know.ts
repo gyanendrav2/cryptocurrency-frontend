@@ -56,7 +56,7 @@ export const careerKnowStyle: CareerKnowStyle = {
       desktop: {
         mt: "10.875rem",
         fontSize: "3rem",
-        mb: "3rem",
+        mb: "5.5rem",
       },
     },
   },
@@ -69,7 +69,7 @@ export const careerKnowStyle: CareerKnowStyle = {
     marginBottom: "1.5rem",
     "@mq": {
       tablet: {
-        width: "18.5rem",
+        width: "20.5rem",
       },
     },
   },

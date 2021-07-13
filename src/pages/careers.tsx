@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react"
+import React, { ReactElement, useEffect, useState } from "react"
 import { Box } from "@react-cssx/core"
 import { HOMEPAGE_QUERY, prismicClient } from "../lib/prismicClient"
 import { InitialData } from "../interfaces/initial"
@@ -17,8 +17,16 @@ export interface Careerprops {
 }
 
 export default function Career({ data }: Careerprops): ReactElement {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    window.onload = () => {
+      setIsLoaded(true)
+    }
+  }, [])
+
   return (
-    <Box>
+    <Box cssx={{ display: isLoaded ? "block" : "none" }}>
       <Navbar
         data={data}
         bgColor="#1D2544"
@@ -49,8 +57,8 @@ export default function Career({ data }: Careerprops): ReactElement {
           "@mq": {
             tablet: {
               display: "block",
-              top: "-10%",
-              left: "-19%",
+              top: "-7rem",
+              left: "-5rem",
             },
             desktop: {
               display: "block",

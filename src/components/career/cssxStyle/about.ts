@@ -29,7 +29,7 @@ export const aboutStyle: AboutStyle = {
           bottom: 0,
           position: "absolute",
           backgroundRepeat: "no-repeat",
-          zIndex: 1,
+          zIndex: 0,
           backgroundPosition: "bottom",
           backgroundSize: "100%",
         },
@@ -50,6 +50,7 @@ export const aboutStyle: AboutStyle = {
     fontSize: "1.5rem",
     fontWeight: 800,
     mt: "2.5rem",
+    zIndex: "2",
     "@mq": {
       tablet: {
         mt: "4.5rem",
@@ -102,6 +103,7 @@ export const aboutStyle: AboutStyle = {
       desktop: {
         maxWidth: 490,
         transform: "translateX(83px)",
+        mt: "-7rem",
       },
     },
   },

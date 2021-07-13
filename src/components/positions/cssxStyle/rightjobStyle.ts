@@ -47,11 +47,11 @@ export const rightjobStyle: RightjobStyle = {
     fontSize: "1.5rem",
     fontWeight: 800,
     mt: "3rem",
-    mb: "4.5rem",
+    mb: "3.5rem",
     letterSpacing: "0.01em",
     zIndex: 1,
     textAlign: "center",
-    maxWidth: 229,
+    maxWidth: 260,
     "@mq": {
       tablet: {
         mt: "4rem",
@@ -66,7 +66,7 @@ export const rightjobStyle: RightjobStyle = {
   image: {
     position: "absolute",
     right: 0,
-    top: "7%",
+    top: "2%",
     zIndex: 0,
     objectFit: "contain",
   },
