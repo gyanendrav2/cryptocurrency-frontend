@@ -18,7 +18,7 @@ export default function StartEarning() {
             pb: "21rem",
             "@mq": {
               phablet: {
-                pb: "30rem",
+                pb: "80%",
               },
               tablet: {
                 pt: "7.6875rem",
